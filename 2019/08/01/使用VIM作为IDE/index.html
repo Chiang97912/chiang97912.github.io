@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Python,VIM,C/C++," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="BetterManPeter" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Windows环境插件管理器VIM的插件管理器主要有vim-plug和vundle Vim-plug 首先下载vim-plug，可以去github下载  下载完成后解压压缩包将plug.vim复制到vim安装目录下的autoload文件夹下，即可完成vim-plug的安装。  使用管理员身份运行gvim,，然后点击gvim的“编辑”——“启动设定”，打开_vimrc配置文件。  插件安装示例在_v">
+<meta name="keywords" content="Python,VIM,C&#x2F;C++">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用VIM作为IDE">
+<meta property="og:url" content="http://chiang97912.github.io/2019/08/01/使用VIM作为IDE/index.html">
+<meta property="og:site_name" content="BetterManPeter">
+<meta property="og:description" content="Windows环境插件管理器VIM的插件管理器主要有vim-plug和vundle Vim-plug 首先下载vim-plug，可以去github下载  下载完成后解压压缩包将plug.vim复制到vim安装目录下的autoload文件夹下，即可完成vim-plug的安装。  使用管理员身份运行gvim,，然后点击gvim的“编辑”——“启动设定”，打开_vimrc配置文件。  插件安装示例在_v">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-09-03T11:50:03.210Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用VIM作为IDE">
+<meta name="twitter:description" content="Windows环境插件管理器VIM的插件管理器主要有vim-plug和vundle Vim-plug 首先下载vim-plug，可以去github下载  下载完成后解压压缩包将plug.vim复制到vim安装目录下的autoload文件夹下，即可完成vim-plug的安装。  使用管理员身份运行gvim,，然后点击gvim的“编辑”——“启动设定”，打开_vimrc配置文件。  插件安装示例在_v">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://chiang97912.github.io/2019/08/01/使用VIM作为IDE/"/>
+
+
+
+
+
+  <title>使用VIM作为IDE | BetterManPeter</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BetterManPeter</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://chiang97912.github.io/2019/08/01/使用VIM作为IDE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Peter">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww1.sinaimg.cn/large/7bd82a07gy1fiw0ks4xi3j20e80e874b.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BetterManPeter">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">使用VIM作为IDE</h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-01T10:40:24+08:00">
+                2019-08-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/VIM/" itemprop="url" rel="index">
+                    <span itemprop="name">VIM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Windows环境"><a href="#Windows环境" class="headerlink" title="Windows环境"></a>Windows环境</h1><h2 id="插件管理器"><a href="#插件管理器" class="headerlink" title="插件管理器"></a>插件管理器</h2><p>VIM的插件管理器主要有vim-plug和vundle</p>
+<h2 id="Vim-plug"><a href="#Vim-plug" class="headerlink" title="Vim-plug"></a>Vim-plug</h2><ol>
+<li><p>首先下载vim-plug，可以去<a href="https://github.com/junegunn/vim-plug" target="_blank" rel="external">github</a>下载</p>
+</li>
+<li><p>下载完成后解压压缩包将plug.vim复制到vim安装目录下的autoload文件夹下，即可完成vim-plug的安装。</p>
+</li>
+<li>使用管理员身份运行gvim,，然后点击gvim的“编辑”——“启动设定”，打开_vimrc配置文件。</li>
+</ol>
+<h3 id="插件安装示例"><a href="#插件安装示例" class="headerlink" title="插件安装示例"></a>插件安装示例</h3><p>在_vimrc中添加如下的内容，这里以vim-plug下载<strong>nerdtree</strong>插件为例。设置完成后保存设置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">call plug#begin(&apos;~/.vim/plugged&apos;) &quot;插件保存的目录</div><div class="line">Plug &apos;scrooloose/nerdtree&apos;, &#123;&apos;on&apos;: &apos;NERDTreeToggle&apos;&#125;  &quot;NERDTree插件</div><div class="line">call plug#end()</div></pre></td></tr></table></figure>
+<h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:PlugStatus</td>
+<td>查看插件安装状态</td>
+</tr>
+<tr>
+<td>:PlugInstall</td>
+<td>安装在_vimrc中配置的插件。注意命令的大小写，执行后vim-plug会自动克隆并安装插件</td>
+</tr>
+<tr>
+<td>:PlugUpdate</td>
+<td>更新插件</td>
+</tr>
+<tr>
+<td>:PlugClean</td>
+<td>清理插件（需要先在_vimrc中删除或注释）</td>
+</tr>
+<tr>
+<td>:PlugUpgrade</td>
+<td>更新vim-plug</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="Vundle"><a href="#Vundle" class="headerlink" title="Vundle"></a>Vundle</h2><ol>
+<li><p>首先下载vundle，可以去<a href="https://github.com/VundleVim/Vundle.vim" target="_blank" rel="external">github</a>下载</p>
+</li>
+<li><p>下载完成后解压压缩包到vim安装目录下的bundle文件夹下（没有就新建），即可完成vundle的安装。</p>
+</li>
+<li>使用管理员身份运行gvim,，然后点击gvim的“编辑”——“启动设定”，打开_vimrc配置文件。</li>
+</ol>
+<h3 id="插件安装示例-1"><a href="#插件安装示例-1" class="headerlink" title="插件安装示例"></a>插件安装示例</h3><p>在_vimrc中添加如下的内容，这里以vundle下载<strong>nerdtree</strong>插件为例。设置完成后保存设置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">set rtp+=~/.vim/bundle/Vundle.vim</div><div class="line">call vundle#begin()</div><div class="line">Plugin &apos;VundleVim/Vundle.vim&apos;</div><div class="line">Plugin &apos;scrooloose/nerdtree&apos;</div><div class="line">call vundle#end()</div></pre></td></tr></table></figure>
+<h3 id="常用操作-1"><a href="#常用操作-1" class="headerlink" title="常用操作"></a>常用操作</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:PluginList</td>
+<td>查看插件安装状态</td>
+</tr>
+<tr>
+<td>:PluginInstall</td>
+<td>安装在_vimrc中配置的插件。注意命令的大小写，执行后vundle会自动克隆并安装插件</td>
+</tr>
+<tr>
+<td>:PluginUpdate</td>
+<td>更新插件</td>
+</tr>
+<tr>
+<td>:PluginClean</td>
+<td>清理插件（需要先在_vimrc中删除或注释）</td>
+</tr>
+<tr>
+<td>:PluginSearch</td>
+<td>搜索插件，例如:PluginSearch xml可以搜到xml相关的插件</td>
+</tr>
+</tbody>
+</table>
+</div>
+<a id="more"></a>
+<h2 id="Python自动补全"><a href="#Python自动补全" class="headerlink" title="Python自动补全"></a>Python自动补全</h2><p>Python自动补全插件这里主要使用<strong>jedi-vim</strong>，具体配置步骤如下：</p>
+<p>在_vimrc中添加如下的内容，设置完成后保存设置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&quot;插件管理 vim-plug</div><div class="line">call plug#begin(&apos;~/.vim/plugged&apos;) &quot;插件保存的目录</div><div class="line">Plug &apos;davidhalter/jedi-vim&apos;,</div><div class="line">call plug#end()</div></pre></td></tr></table></figure>
+<p>然后在gvim中输入<code>:PlugInstall</code>安装jedi-vim插件</p>
+<p>注意:</p>
+<ol>
+<li><p>Vim和版本一定要和Python相匹配，即32位Vim配32位Python, 64位Vim配64位Python。</p>
+</li>
+<li><p>Vim使用Python编译的版本一定要和电脑上安装的Python版本对应，可能会出现如下错误：</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Error: jedi-vim failed to initialize Python: jedi-vim requires Vim with support for Python 2 or 3. (in function jedi#init_python[4]..48_init_python, line 10)</div></pre></td></tr></table></figure>
+<p>或者在gvim中输入<code>:python3 print(&quot;Hello world&quot;)</code>出现如下类似的错误：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">E370: Could not load library python37.dll</div><div class="line">E263: Sorry, this command is disabled, the Python library could not be loaded.</div></pre></td></tr></table></figure>
+<p>那么可以在_vimrc中添加如下命令指定Python3版本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">set pythonthreedll=python36.dll</div></pre></td></tr></table></figure>
+<p>由于笔者安装的vim8.1使用的是Python3.7编译，但是电脑环境装的是Python3.6，我们可以通过上面配置来解决Windows环境中gvim不支持python3.6的问题。</p>
+<h2 id="C-C-自动补全"><a href="#C-C-自动补全" class="headerlink" title="C/C++自动补全"></a>C/C++自动补全</h2><p>C/C++自动补全插件这里主要使用ctags + OmniCppComplete方案，具体配置步骤如下：</p>
+<p>Ctags 全名 Exuberant Ctags，是一个独立的程序。它可以为各种语言的源代码生成语言元素（language object）索引文件。对于 C/C++ 而言，就是把源代码中的各种宏、函数、类、类成员等等元素和它们的相关信息生成索引文件，供其它程序使用。OmniCppComplete 是专为 C/C++ 编写的OmniComplete一个补全脚本，它根据 Ctags 生成的索引文件对代码进行补全。</p>
+<h3 id="安装Ctags"><a href="#安装Ctags" class="headerlink" title="安装Ctags"></a>安装Ctags</h3><ol>
+<li>从<a href="http://ctags.sourceforge.net/" target="_blank" rel="external">Ctags官网</a>下载 Ctags 可执行文件</li>
+<li>将下载到的文件（仅 EXE 文件即可）解压到一个目录，例如 C:/ctags</li>
+<li>将该目录加入环境变量 PATH</li>
+</ol>
+<h3 id="生成索引文件"><a href="#生成索引文件" class="headerlink" title="生成索引文件"></a>生成索引文件</h3><p>以生成 C++ 标准库索引文件为例：</p>
+<ol>
+<li><p>下载专为 Ctags 修改过的 <a href="http://www.vim.org/scripts/script.php?script_id=2358" target="_blank" rel="external">libstdc++ 头文件</a></p>
+</li>
+<li><p>将其解压到一个目录，例如 C:/ctags/cpp_src</p>
+</li>
+<li><p>使用命令行进入 D:/ctags/cpp_src 后执行：</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ctags -R --sort=1 --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ -f cpp .</div></pre></td></tr></table></figure>
+<p>建议将上一步生成的 C:/ctags/cpp_src/cpp 文件放到一个专门放置索引文件的目录以便后面的统一设置，例如放到 C:/ctags/tags</p>
+<p>其它库的索引文件也可以依法炮制，只需切换到该库的 include 文件夹，执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ -f &lt;文件名&gt; .</div></pre></td></tr></table></figure>
+<h3 id="安装OmniCppComplete"><a href="#安装OmniCppComplete" class="headerlink" title="安装OmniCppComplete"></a>安装OmniCppComplete</h3><ol>
+<li>使用插件管理器安装OmniCppComplete</li>
+<li>修改VIM配置文件_vimrc，加入如下内容：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&quot; ctags 索引文件</div><div class="line">set tags+=C:/ctags/tags/cpp &quot; 指定tags存放路径</div><div class="line"></div><div class="line">&quot; OmniCppComplete</div><div class="line">let OmniCpp_NamespaceSearch = 1</div><div class="line">let OmniCpp_GlobalScopeSearch = 1</div><div class="line">let OmniCpp_ShowAccess = 1</div><div class="line">let OmniCpp_ShowPrototypeInAbbr = 1 &quot; 显示函数参数列表</div><div class="line">let OmniCpp_MayCompleteDot = 1   &quot; 输入 .  后自动补全</div><div class="line">let OmniCpp_MayCompleteArrow = 1 &quot; 输入 -&gt; 后自动补全</div><div class="line">let OmniCpp_MayCompleteScope = 1 &quot; 输入 :: 后自动补全</div><div class="line">let OmniCpp_DefaultNamespaces = [&quot;std&quot;, &quot;_GLIBCXX_STD&quot;]</div><div class="line">&quot; 自动关闭补全窗口</div><div class="line">au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif</div><div class="line">set completeopt=menuone,menu,longest</div><div class="line"></div><div class="line">filetype plugin indent on</div></pre></td></tr></table></figure>
+<p>在插入模式编辑 C/C++ 源文件时按下 . 或 -&gt; 或 ::，或者手动按下 Ctrl+X Ctrl+O 后就会弹出自动补全窗口，此时可以用 Ctrl+N 和 Ctrl+P 上下移动光标进行选择。</p>
+<h3 id="自动生成tags文件"><a href="#自动生成tags文件" class="headerlink" title="自动生成tags文件"></a>自动生成tags文件</h3><p>omni插件的补全是依赖于tags文件的，因此需要我们手动建立tags文件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++</div></pre></td></tr></table></figure>
+<p>我们可以通过下面的代码让vim在保存文件后自动生成tags文件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">au BufWritePost *.c,*.cpp,*.cc,*.h silent! !ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++</div></pre></td></tr></table></figure>
+<p>其中silent!表示静默运行命令，不然每次保存文件的时候，Vim 总是会有一个”ctags 执行完毕“的提示，按任意键确认。</p>
+<h2 id="生产力插件"><a href="#生产力插件" class="headerlink" title="生产力插件"></a>生产力插件</h2><h3 id="Python代码检查：flake8"><a href="#Python代码检查：flake8" class="headerlink" title="Python代码检查：flake8"></a>Python代码检查：flake8</h3><ol>
+<li>实用插件管理器安装flake8</li>
+<li>配置_vimrc文件</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">au BufWritePost *.py call Flake8()</div></pre></td></tr></table></figure>
+<h3 id="注释-取消注释：vim-commentary"><a href="#注释-取消注释：vim-commentary" class="headerlink" title="注释/取消注释：vim-commentary"></a>注释/取消注释：vim-commentary</h3><p>这个插件可以快速注释与反注释多行内容, 但是它的注释符使用的是 commentstring, 默认是 /<em> %s </em>/, 但这个值满足不了Python 和 Shell这样的语言, 在 _vimrc 添加如下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&quot;为python和shell等添加注释</div><div class="line">autocmd FileType python,shell,coffee set commentstring=#\ %s</div><div class="line">&quot;修改注释风格</div><div class="line">autocmd FileType java,c,cpp set commentstring=//\ %s</div></pre></td></tr></table></figure>
+<p>普通模式下gcc 指令可以注释/取消注释</p>
+<p>可视模式下gc 命令可以注释/撤销注释</p>
+<h3 id="缩进提示：indentLine"><a href="#缩进提示：indentLine" class="headerlink" title="缩进提示：indentLine"></a>缩进提示：indentLine</h3><p>indentLine是一款Vim下用于显示缩进指示线的插件。对于Python、Golang等靠代码缩进来标识代码块的语言来说，indentLine提供的缩进指示功能非常有用。indentLine安装之后即可使用，不需要额外的配置。</p>
+<p>设置indentLine：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">set list lcs=tab:\|\ &quot; 最后面有空格</div><div class="line">let g:indentLine_leadingSpaceChar = &apos;.&apos;</div><div class="line">let g:indentLine_leadingSpaceEnabled = 1</div></pre></td></tr></table></figure>
+<h2 id="实用配置"><a href="#实用配置" class="headerlink" title="实用配置"></a>实用配置</h2><h3 id="代码折叠"><a href="#代码折叠" class="headerlink" title="代码折叠"></a>代码折叠</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&quot; Enable folding</div><div class="line">set foldmethod=syntax  &quot; 语法折叠</div><div class="line">set foldlevelstart=99  &quot; 关闭自动折叠</div></pre></td></tr></table></figure>
+<p>zc 关闭折叠<br>zo 打开折叠<br>za 打开/关闭折叠互相切换</p>
+<h3 id="系统剪贴板"><a href="#系统剪贴板" class="headerlink" title="系统剪贴板"></a>系统剪贴板</h3><p>通常Vim会忽视系统剪贴板，而使用自带的剪贴板。但是有时候你想从Vim之外的程序中剪切、复制、粘贴文本。你可以通过这行代码访问你的系统剪贴板：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">set clipboard=unnamed</div></pre></td></tr></table></figure>
+<h3 id="禁止生成缓存文件"><a href="#禁止生成缓存文件" class="headerlink" title="禁止生成缓存文件"></a>禁止生成缓存文件</h3><p>每次输入保存命令之后系统都会生成以.un~和.bak结尾的文件，我们可以通过下面的配置禁止vim生成undo文件和备份文件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">set noundofile</div><div class="line">set nobackup</div><div class="line">set noswapfile</div></pre></td></tr></table></figure>
+<h2 id="主题插件"><a href="#主题插件" class="headerlink" title="主题插件"></a>主题插件</h2><p>主题插件推荐使用flazz/vim-colorschemes</p>
+<p>可以使用vim-plug安装，然后再配置_vimrc文件，例如在配置文件中增加下面的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">colorscheme wombat</div></pre></td></tr></table></figure>
+<h1 id="Mac-amp-Linux环境"><a href="#Mac-amp-Linux环境" class="headerlink" title="Mac &amp; Linux环境"></a>Mac &amp; Linux环境</h1><h2 id="插件管理器安装"><a href="#插件管理器安装" class="headerlink" title="插件管理器安装"></a>插件管理器安装</h2><p>使用如下命令安装plug-vim插件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">mkdir -vp ~/.vim/autoload/</div><div class="line">cd ~/.vim/autoload/</div><div class="line">wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim</div></pre></td></tr></table></figure>
+<h2 id="安装示例"><a href="#安装示例" class="headerlink" title="安装示例"></a>安装示例</h2><p>仍然以NERDTree插件安装为例：</p>
+<p>编辑配置文件<code>vim ~/.vimrc</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&quot;插件管理 vim-plug</div><div class="line">call plug#begin(&apos;~/.vim/plugged&apos;) &quot;插件保存的目录</div><div class="line">Plug &apos;scrooloose/nerdtree&apos;, &#123;&apos;on&apos;: &apos;NERDTreeToggle&apos;&#125;  &quot;NERDTree插件</div><div class="line">call plug#end()</div></pre></td></tr></table></figure>
+<p>其他操作和Windows系统相同。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Peter
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://chiang97912.github.io/2019/08/01/使用VIM作为IDE/" title="使用VIM作为IDE">http://chiang97912.github.io/2019/08/01/使用VIM作为IDE/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/VIM/" rel="tag"># VIM</a>
+          
+            <a href="/tags/C-C/" rel="tag"># C/C++</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/01/Mask矩阵在深度学习中的应用/" rel="next" title="Mask矩阵在深度学习中的应用">
+                <i class="fa fa-chevron-left"></i> Mask矩阵在深度学习中的应用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/01/论文笔记-APPLYING-DEEP-LEARNING-TO-ANSWER-SELECTION/" rel="prev" title="论文笔记-APPLYING DEEP LEARNING TO ANSWER SELECTION">
+                论文笔记-APPLYING DEEP LEARNING TO ANSWER SELECTION <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+       
+         <div onclick="ShowGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+         <div id="gitment-container" style="display:none"></div>
+       
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww1.sinaimg.cn/large/7bd82a07gy1fiw0ks4xi3j20e80e874b.jpg"
+               alt="Peter" />
+          <p class="site-author-name" itemprop="name">Peter</p>
+           
+              <p class="site-description motion-element" itemprop="description">Stay hungry, stay foolish!</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Chiang97912" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:chiang97912@gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/u/2077764103" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/jiang-peng-51-20" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.52nlp.cn/" title="52nlp" target="_blank">52nlp</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://kexue.fm/" title="科学空间" target="_blank">科学空间</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.bobinsun.cn/" title="阿拉灯神丁Vicky侃AI" target="_blank">阿拉灯神丁Vicky侃AI</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Windows环境"><span class="nav-number">1.</span> <span class="nav-text">Windows环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#插件管理器"><span class="nav-number">1.1.</span> <span class="nav-text">插件管理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vim-plug"><span class="nav-number">1.2.</span> <span class="nav-text">Vim-plug</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#插件安装示例"><span class="nav-number">1.2.1.</span> <span class="nav-text">插件安装示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用操作"><span class="nav-number">1.2.2.</span> <span class="nav-text">常用操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vundle"><span class="nav-number">1.3.</span> <span class="nav-text">Vundle</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#插件安装示例-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">插件安装示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用操作-1"><span class="nav-number">1.3.2.</span> <span class="nav-text">常用操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python自动补全"><span class="nav-number">1.4.</span> <span class="nav-text">Python自动补全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-C-自动补全"><span class="nav-number">1.5.</span> <span class="nav-text">C/C++自动补全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Ctags"><span class="nav-number">1.5.1.</span> <span class="nav-text">安装Ctags</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成索引文件"><span class="nav-number">1.5.2.</span> <span class="nav-text">生成索引文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装OmniCppComplete"><span class="nav-number">1.5.3.</span> <span class="nav-text">安装OmniCppComplete</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动生成tags文件"><span class="nav-number">1.5.4.</span> <span class="nav-text">自动生成tags文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生产力插件"><span class="nav-number">1.6.</span> <span class="nav-text">生产力插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python代码检查：flake8"><span class="nav-number">1.6.1.</span> <span class="nav-text">Python代码检查：flake8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释-取消注释：vim-commentary"><span class="nav-number">1.6.2.</span> <span class="nav-text">注释/取消注释：vim-commentary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缩进提示：indentLine"><span class="nav-number">1.6.3.</span> <span class="nav-text">缩进提示：indentLine</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实用配置"><span class="nav-number">1.7.</span> <span class="nav-text">实用配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码折叠"><span class="nav-number">1.7.1.</span> <span class="nav-text">代码折叠</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统剪贴板"><span class="nav-number">1.7.2.</span> <span class="nav-text">系统剪贴板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#禁止生成缓存文件"><span class="nav-number">1.7.3.</span> <span class="nav-text">禁止生成缓存文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题插件"><span class="nav-number">1.8.</span> <span class="nav-text">主题插件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Mac-amp-Linux环境"><span class="nav-number">2.</span> <span class="nav-text">Mac & Linux环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#插件管理器安装"><span class="nav-number">2.1.</span> <span class="nav-text">插件管理器安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装示例"><span class="nav-number">2.2.</span> <span class="nav-text">安装示例</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Peter</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Gemini
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+   
+   
+   
+   
+   <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+   <script src="https://billts.site/js/gitment.js"></script>
+   
+       <script type="text/javascript">
+           function ShowGitment(){
+               document.getElementById("gitment-display-button").style.display = "none";
+               document.getElementById("gitment-container").style.display = "block";
+               var gitment = new Gitment({
+                   id: '1564627224000', 
+                   owner: 'Chiang97912',
+                   repo: 'comment',
+                   oauth: {
+                       client_id: '42037c4b079381613d46',
+                       client_secret: '5cc0745f290c72d7d4754f89ed4dc3b0f778067c',
+                   }});
+               gitment.render('gitment-container');
+           }
+       </script>
+   
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>

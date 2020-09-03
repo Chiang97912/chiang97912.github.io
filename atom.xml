@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>BetterManPeter</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://chiang97912.github.io/"/>
+  <updated>2020-09-03T11:57:17.799Z</updated>
+  <id>http://chiang97912.github.io/</id>
+  
+  <author>
+    <name>Peter</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习模型评估方法及代码实现</title>
+    <link href="http://chiang97912.github.io/2020/01/10/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95%E5%8F%8A%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://chiang97912.github.io/2020/01/10/机器学习模型评估方法及代码实现/</id>
+    <published>2020-01-09T16:04:46.000Z</published>
+    <updated>2020-09-03T11:57:17.799Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;混淆矩阵&quot;&gt;&lt;a href=&quot;#混淆矩阵&quot; class=&quot;headerlink&quot; title=&quot;混淆矩阵&quot;&gt;&lt;/a&gt;混淆矩阵&lt;/h2&gt;&lt;p&gt;混淆矩阵（confusion matrix）如下所示：&lt;/p&gt;
+&lt;div class=&quot;table-container&quot;&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;真实\预测&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;正例&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;反例&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;strong&gt;正例&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;TP(真正例)&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;FN(假反例)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;&lt;strong&gt;反例&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;FP(假正例)&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;TN(真反例)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;TP: 将正例预测为正例（预测正确）；&lt;/p&gt;
+&lt;p&gt;FN: 将正例预测为负例（预测错误）；&lt;/p&gt;
+&lt;p&gt;FP: 将负例预测为正例（预测错误）；&lt;/p&gt;
+&lt;p&gt;TN: 将负例预测为负例（预测正确）。&lt;/p&gt;
+&lt;p&gt;正例包括 TP、FN；反例包括 TN、FP&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="机器学习" scheme="http://chiang97912.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="模型评估" scheme="http://chiang97912.github.io/tags/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/"/>
+    
+      <category term="Accuracy" scheme="http://chiang97912.github.io/tags/Accuracy/"/>
+    
+      <category term="Precision" scheme="http://chiang97912.github.io/tags/Precision/"/>
+    
+      <category term="Recall" scheme="http://chiang97912.github.io/tags/Recall/"/>
+    
+      <category term="F1" scheme="http://chiang97912.github.io/tags/F1/"/>
+    
+      <category term="ROC" scheme="http://chiang97912.github.io/tags/ROC/"/>
+    
+      <category term="AUC" scheme="http://chiang97912.github.io/tags/AUC/"/>
+    
+      <category term="MAP" scheme="http://chiang97912.github.io/tags/MAP/"/>
+    
+      <category term="MRR" scheme="http://chiang97912.github.io/tags/MRR/"/>
+    
+      <category term="NDCG" scheme="http://chiang97912.github.io/tags/NDCG/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>轻量级Git服务Gogs搭建教程</title>
+    <link href="http://chiang97912.github.io/2019/12/30/%E8%BD%BB%E9%87%8F%E7%BA%A7Git%E6%9C%8D%E5%8A%A1Gogs%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/"/>
+    <id>http://chiang97912.github.io/2019/12/30/轻量级Git服务Gogs搭建教程/</id>
+    <published>2019-12-30T13:37:48.000Z</published>
+    <updated>2020-08-01T03:20:40.433Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Gogs是一个类似于Gitlab的开源Git服务，它具有易安装、跨平台、轻量级等特点。相比于Gitlab它的资源占有率极低，对于个人开发者或者小型团队是非常实用的一款Git服务。&lt;/p&gt;
+&lt;h2 id=&quot;创建系统用户&quot;&gt;&lt;a href=&quot;#创建系统用户&quot; class=&quot;headerlink&quot; title=&quot;创建系统用户&quot;&gt;&lt;/a&gt;创建系统用户&lt;/h2&gt;&lt;p&gt;创建新的系统用户 “git”，并切换为 “git” 用户:&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sudo useradd -m git&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sudo su - git&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;创建数据库&quot;&gt;&lt;a href=&quot;#创建数据库&quot; class=&quot;headerlink&quot; title=&quot;创建数据库&quot;&gt;&lt;/a&gt;创建数据库&lt;/h2&gt;&lt;p&gt;创建新的数据库并命名为gogs：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;mysql&amp;gt;create database gogs;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="服务器配置" scheme="http://chiang97912.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="Git" scheme="http://chiang97912.github.io/tags/Git/"/>
+    
+      <category term="Gogs" scheme="http://chiang97912.github.io/tags/Gogs/"/>
+    
+      <category term="Gitea" scheme="http://chiang97912.github.io/tags/Gitea/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Pyinstaller打包Python程序攻略</title>
+    <link href="http://chiang97912.github.io/2019/08/25/Pyinstaller%E6%89%93%E5%8C%85Python%E7%A8%8B%E5%BA%8F%E6%94%BB%E7%95%A5/"/>
+    <id>http://chiang97912.github.io/2019/08/25/Pyinstaller打包Python程序攻略/</id>
+    <published>2019-08-25T08:38:04.000Z</published>
+    <updated>2020-08-01T03:20:40.430Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;PyInstaller基本使用方法&quot;&gt;&lt;a href=&quot;#PyInstaller基本使用方法&quot; class=&quot;headerlink&quot; title=&quot;PyInstaller基本使用方法&quot;&gt;&lt;/a&gt;PyInstaller基本使用方法&lt;/h1&gt;&lt;p&gt;下面列举几个常见的可选参数：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;pyinstaller [options] my_script.py&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[options]:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	-h 显示帮助并退出&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	-D 生成一个文件夹，其中包含一个可执行文件（默认）&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	-F 生成单个可执行文件&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	-w 生成一个无命令行界面的程序&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	-i file.ico 指定图标&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	--add-data SRC;DEST 在程序中用到的其他（非二进制）文件，不建议用&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	--hidden-import MODULENAME 在程序中隐式导入的库，可多次使用&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	--exclude-module MODULENAME 不希望导入的库，可多次使用&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;更详细的使用方法可以参看&lt;a href=&quot;https://pyinstaller.readthedocs.io/en/stable/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方手册&lt;/a&gt;，本文不再赘述。&lt;/p&gt;
+&lt;h1 id=&quot;问题：打包后程序体积太大&quot;&gt;&lt;a href=&quot;#问题：打包后程序体积太大&quot; class=&quot;headerlink&quot; title=&quot;问题：打包后程序体积太大&quot;&gt;&lt;/a&gt;问题：打包后程序体积太大&lt;/h1&gt;&lt;p&gt;由于笔者使用的是Anaconda作为Python环境，最近有个项目需要将Python代码打包成可执行文件。在之前的需求中没有使用科学计算库（例如numpy、pandas等）所以打包出来的结果也就10M左右，完全可以接受。但是最近在项目中使用了numpy等科学计算库之后，程序打包的结果接近1G左右，这样的打包结果简直令人窒息。这里主要有两个解决方案：1. 使用虚拟环境打包 2. 使用纯净版本的Python打包&lt;/p&gt;
+&lt;p&gt;推荐使用第二种方法。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="http://chiang97912.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://chiang97912.github.io/tags/python/"/>
+    
+      <category term="Pyinstaller" scheme="http://chiang97912.github.io/tags/Pyinstaller/"/>
+    
+      <category term="python程序打包" scheme="http://chiang97912.github.io/tags/python%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85/"/>
+    
+      <category term="pipenv" scheme="http://chiang97912.github.io/tags/pipenv/"/>
+    
+      <category term="virtualenv" scheme="http://chiang97912.github.io/tags/virtualenv/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>机器阅读理解模型：膨胀门卷积神经网络（DGCNN）</title>
+    <link href="http://chiang97912.github.io/2019/08/05/%E6%9C%BA%E5%99%A8%E9%98%85%E8%AF%BB%E7%90%86%E8%A7%A3%E6%A8%A1%E5%9E%8B%EF%BC%9A%E8%86%A8%E8%83%80%E9%97%A8%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%88DGCNN%EF%BC%89/"/>
+    <id>http://chiang97912.github.io/2019/08/05/机器阅读理解模型：膨胀门卷积神经网络（DGCNN）/</id>
+    <published>2019-08-05T07:50:19.000Z</published>
+    <updated>2020-08-01T03:20:40.432Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;占位&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="http://chiang97912.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="NLP" scheme="http://chiang97912.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/NLP/"/>
+    
+    
+      <category term="Deep Learning" scheme="http://chiang97912.github.io/tags/Deep-Learning/"/>
+    
+      <category term="NLP" scheme="http://chiang97912.github.io/tags/NLP/"/>
+    
+      <category term="QA" scheme="http://chiang97912.github.io/tags/QA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>论文笔记-QANET: COMBINING LOCAL CONVOLUTION WITH GLOBAL SELF-ATTENTION FOR READING COMPREHENSION</title>
+    <link href="http://chiang97912.github.io/2019/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-QANET-COMBINING-LOCAL-CONVOLUTION-WITH-GLOBAL-SELF-ATTENTION-FOR-READING-COMPREHENSION/"/>
+    <id>http://chiang97912.github.io/2019/08/05/论文笔记-QANET-COMBINING-LOCAL-CONVOLUTION-WITH-GLOBAL-SELF-ATTENTION-FOR-READING-COMPREHENSION/</id>
+    <published>2019-08-05T07:48:19.000Z</published>
+    <updated>2020-08-01T03:20:40.433Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;占位&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="http://chiang97912.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="NLP" scheme="http://chiang97912.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/NLP/"/>
+    
+    
+      <category term="Deep Learning" scheme="http://chiang97912.github.io/tags/Deep-Learning/"/>
+    
+      <category term="NLP" scheme="http://chiang97912.github.io/tags/NLP/"/>
+    
+      <category term="QA" scheme="http://chiang97912.github.io/tags/QA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>论文笔记-R-NET: MACHINE READING COMPREHENSION WITH SELF-MATCHING NETWORKS</title>
+    <link href="http://chiang97912.github.io/2019/08/05/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-R-NET-MACHINE-READING-COMPREHENSION-WITH-SELF-MATCHING-NETWORKS/"/>
+    <id>http://chiang97912.github.io/2019/08/05/论文笔记-R-NET-MACHINE-READING-COMPREHENSION-WITH-SELF-MATCHING-NETWORKS/</id>
+    <published>2019-08-05T07:47:15.000Z</published>
+    <updated>2020-08-01T03:20:40.433Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;占位&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="http://chiang97912.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="NLP" scheme="http://chiang97912.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/NLP/"/>
+    
+    
+      <category term="Deep Learning" scheme="http://chiang97912.github.io/tags/Deep-Learning/"/>
+    
+      <category term="NLP" scheme="http://chiang97912.github.io/tags/NLP/"/>
+    
+      <category term="QA" scheme="http://chiang97912.github.io/tags/QA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>论文笔记-BI-DIRECTIONAL ATTENTION FLOW FOR MACHINE COMPREHENSION</title>
+    <link href="http://chiang97912.github.io/2019/08/01/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-BI-DIRECTIONAL-ATTENTION-FLOW-FOR-MACHINE-COMPREHENSION/"/>
+    <id>http://chiang97912.github.io/2019/08/01/论文笔记-BI-DIRECTIONAL-ATTENTION-FLOW-FOR-MACHINE-COMPREHENSION/</id>
+    <published>2019-08-01T03:54:27.000Z</published>
+    <updated>2020-08-01T03:20:40.433Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;占位&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="http://chiang97912.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="NLP" scheme="http://chiang97912.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/NLP/"/>
+    
+    
+      <category term="Deep Learning" scheme="http://chiang97912.github.io/tags/Deep-Learning/"/>
+    
+      <category term="NLP" scheme="http://chiang97912.github.io/tags/NLP/"/>
+    
+      <category term="QA" scheme="http://chiang97912.github.io/tags/QA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>论文笔记-LSTM-BASED DEEP LEARNING MODELS FOR NONFACTOID ANSWER SELECTION</title>
+    <link href="http://chiang97912.github.io/2019/08/01/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-LSTM-BASED-DEEP-LEARNING-MODELS-FOR-NONFACTOID-ANSWER-SELECTION/"/>
+    <id>http://chiang97912.github.io/2019/08/01/论文笔记-LSTM-BASED-DEEP-LEARNING-MODELS-FOR-NONFACTOID-ANSWER-SELECTION/</id>
+    <published>2019-08-01T03:53:56.000Z</published>
+    <updated>2020-08-01T03:20:40.433Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;占位&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="http://chiang97912.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="NLP" scheme="http://chiang97912.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/NLP/"/>
+    
+    
+      <category term="Deep Learning" scheme="http://chiang97912.github.io/tags/Deep-Learning/"/>
+    
+      <category term="NLP" scheme="http://chiang97912.github.io/tags/NLP/"/>
+    
+      <category term="QA" scheme="http://chiang97912.github.io/tags/QA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>论文笔记-APPLYING DEEP LEARNING TO ANSWER SELECTION</title>
+    <link href="http://chiang97912.github.io/2019/08/01/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-APPLYING-DEEP-LEARNING-TO-ANSWER-SELECTION/"/>
+    <id>http://chiang97912.github.io/2019/08/01/论文笔记-APPLYING-DEEP-LEARNING-TO-ANSWER-SELECTION/</id>
+    <published>2019-08-01T03:52:37.000Z</published>
+    <updated>2020-08-01T03:20:40.433Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;占位&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+      <category term="深度学习" scheme="http://chiang97912.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="NLP" scheme="http://chiang97912.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/NLP/"/>
+    
+    
+      <category term="Deep Learning" scheme="http://chiang97912.github.io/tags/Deep-Learning/"/>
+    
+      <category term="NLP" scheme="http://chiang97912.github.io/tags/NLP/"/>
+    
+      <category term="QA" scheme="http://chiang97912.github.io/tags/QA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用VIM作为IDE</title>
+    <link href="http://chiang97912.github.io/2019/08/01/%E4%BD%BF%E7%94%A8VIM%E4%BD%9C%E4%B8%BAIDE/"/>
+    <id>http://chiang97912.github.io/2019/08/01/使用VIM作为IDE/</id>
+    <published>2019-08-01T02:40:24.000Z</published>
+    <updated>2020-09-03T11:50:03.210Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Windows环境&quot;&gt;&lt;a href=&quot;#Windows环境&quot; class=&quot;headerlink&quot; title=&quot;Windows环境&quot;&gt;&lt;/a&gt;Windows环境&lt;/h1&gt;&lt;h2 id=&quot;插件管理器&quot;&gt;&lt;a href=&quot;#插件管理器&quot; class=&quot;headerlink&quot; title=&quot;插件管理器&quot;&gt;&lt;/a&gt;插件管理器&lt;/h2&gt;&lt;p&gt;VIM的插件管理器主要有vim-plug和vundle&lt;/p&gt;
+&lt;h2 id=&quot;Vim-plug&quot;&gt;&lt;a href=&quot;#Vim-plug&quot; class=&quot;headerlink&quot; title=&quot;Vim-plug&quot;&gt;&lt;/a&gt;Vim-plug&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;首先下载vim-plug，可以去&lt;a href=&quot;https://github.com/junegunn/vim-plug&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;github&lt;/a&gt;下载&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;下载完成后解压压缩包将plug.vim复制到vim安装目录下的autoload文件夹下，即可完成vim-plug的安装。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;使用管理员身份运行gvim,，然后点击gvim的“编辑”——“启动设定”，打开_vimrc配置文件。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;插件安装示例&quot;&gt;&lt;a href=&quot;#插件安装示例&quot; class=&quot;headerlink&quot; title=&quot;插件安装示例&quot;&gt;&lt;/a&gt;插件安装示例&lt;/h3&gt;&lt;p&gt;在_vimrc中添加如下的内容，这里以vim-plug下载&lt;strong&gt;nerdtree&lt;/strong&gt;插件为例。设置完成后保存设置。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;call plug#begin(&amp;apos;~/.vim/plugged&amp;apos;) &amp;quot;插件保存的目录&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Plug &amp;apos;scrooloose/nerdtree&amp;apos;, &amp;#123;&amp;apos;on&amp;apos;: &amp;apos;NERDTreeToggle&amp;apos;&amp;#125;  &amp;quot;NERDTree插件&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;call plug#end()&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;常用操作&quot;&gt;&lt;a href=&quot;#常用操作&quot; class=&quot;headerlink&quot; title=&quot;常用操作&quot;&gt;&lt;/a&gt;常用操作&lt;/h3&gt;&lt;div class=&quot;table-container&quot;&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;命令&lt;/th&gt;
+&lt;th&gt;解释&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;:PlugStatus&lt;/td&gt;
+&lt;td&gt;查看插件安装状态&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;:PlugInstall&lt;/td&gt;
+&lt;td&gt;安装在_vimrc中配置的插件。注意命令的大小写，执行后vim-plug会自动克隆并安装插件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;:PlugUpdate&lt;/td&gt;
+&lt;td&gt;更新插件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;:PlugClean&lt;/td&gt;
+&lt;td&gt;清理插件（需要先在_vimrc中删除或注释）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;:PlugUpgrade&lt;/td&gt;
+&lt;td&gt;更新vim-plug&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;Vundle&quot;&gt;&lt;a href=&quot;#Vundle&quot; class=&quot;headerlink&quot; title=&quot;Vundle&quot;&gt;&lt;/a&gt;Vundle&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;首先下载vundle，可以去&lt;a href=&quot;https://github.com/VundleVim/Vundle.vim&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;github&lt;/a&gt;下载&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;下载完成后解压压缩包到vim安装目录下的bundle文件夹下（没有就新建），即可完成vundle的安装。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;使用管理员身份运行gvim,，然后点击gvim的“编辑”——“启动设定”，打开_vimrc配置文件。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;插件安装示例-1&quot;&gt;&lt;a href=&quot;#插件安装示例-1&quot; class=&quot;headerlink&quot; title=&quot;插件安装示例&quot;&gt;&lt;/a&gt;插件安装示例&lt;/h3&gt;&lt;p&gt;在_vimrc中添加如下的内容，这里以vundle下载&lt;strong&gt;nerdtree&lt;/strong&gt;插件为例。设置完成后保存设置。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;set rtp+=~/.vim/bundle/Vundle.vim&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;call vundle#begin()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Plugin &amp;apos;VundleVim/Vundle.vim&amp;apos;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Plugin &amp;apos;scrooloose/nerdtree&amp;apos;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;call vundle#end()&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;常用操作-1&quot;&gt;&lt;a href=&quot;#常用操作-1&quot; class=&quot;headerlink&quot; title=&quot;常用操作&quot;&gt;&lt;/a&gt;常用操作&lt;/h3&gt;&lt;div class=&quot;table-container&quot;&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;命令&lt;/th&gt;
+&lt;th&gt;解释&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;:PluginList&lt;/td&gt;
+&lt;td&gt;查看插件安装状态&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;:PluginInstall&lt;/td&gt;
+&lt;td&gt;安装在_vimrc中配置的插件。注意命令的大小写，执行后vundle会自动克隆并安装插件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;:PluginUpdate&lt;/td&gt;
+&lt;td&gt;更新插件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;:PluginClean&lt;/td&gt;
+&lt;td&gt;清理插件（需要先在_vimrc中删除或注释）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;:PluginSearch&lt;/td&gt;
+&lt;td&gt;搜索插件，例如:PluginSearch xml可以搜到xml相关的插件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+    
+    </summary>
+    
+      <category term="VIM" scheme="http://chiang97912.github.io/categories/VIM/"/>
+    
+    
+      <category term="Python" scheme="http://chiang97912.github.io/tags/Python/"/>
+    
+      <category term="VIM" scheme="http://chiang97912.github.io/tags/VIM/"/>
+    
+      <category term="C/C++" scheme="http://chiang97912.github.io/tags/C-C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mask矩阵在深度学习中的应用</title>
+    <link href="http://chiang97912.github.io/2019/08/01/Mask%E7%9F%A9%E9%98%B5%E5%9C%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/"/>
+    <id>http://chiang97912.github.io/2019/08/01/Mask矩阵在深度学习中的应用/</id>
+    <published>2019-07-31T17:20:49.000Z</published>
+    <updated>2020-08-01T03:20:40.429Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h1&gt;&lt;p&gt;mask矩阵是一个由0和1组成的矩阵。在NLP中，一个常见的问题是输入序列长度不等，而mask可以帮助我们处理。虽然RNN等模型可以处理不定长的输入，但是在实践中，需要对输入中长度较短的句子进行填充，即在句尾填充0占位，转换成固定大小的tensor，方便矩阵操作。&lt;/p&gt;
+&lt;p&gt; 举个例子：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;case 1: I like cats.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;case 2: He does not like cats.&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;假设默认的序列长度是5，一般会对case 1做pad处理，变成&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;I like cats &amp;lt;PAD&amp;gt; &amp;lt;PAD&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;在上述例子数字编码后，开始做embedding，而pad也会有embedding向量，但pad本身没有实际意义，参与训练可能还是有害的。因此，有必要维护一个mask tensor来记录哪些是真实的value，上述例子的两个mask如下： &lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1 1 1 0 0&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;1 1 1 1 1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;后续再梯度传播中，mask起到了过滤的作用。&lt;/p&gt;
+&lt;p&gt;使用TensorFlow实现上述过程：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; tensorflow &lt;span class=&quot;keyword&quot;&gt;as&lt;/span&gt; tf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;maxlen = &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;lengths = [[&lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;], [&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;3&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;]]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;mask = tf.cast(tf.sequence_mask(lengths, maxlen), tf.float32)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sess = tf.Session()&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;mask = sess.run(mask)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;print(mask)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;运行结果：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;[[[1. 1. 1. 0. 0.]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  [1. 1. 1. 1. 1.]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  [1. 1. 1. 1. 0.]]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt; [[1. 0. 0. 0. 0.]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  [1. 1. 1. 0. 0.]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  [1. 1. 0. 0. 0.]]]&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="深度学习" scheme="http://chiang97912.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="NLP" scheme="http://chiang97912.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/NLP/"/>
+    
+    
+      <category term="tensorflow" scheme="http://chiang97912.github.io/tags/tensorflow/"/>
+    
+      <category term="Python" scheme="http://chiang97912.github.io/tags/Python/"/>
+    
+      <category term="Deep Learning" scheme="http://chiang97912.github.io/tags/Deep-Learning/"/>
+    
+      <category term="NLP" scheme="http://chiang97912.github.io/tags/NLP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Git常用操作记录</title>
+    <link href="http://chiang97912.github.io/2019/03/24/Git%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/"/>
+    <id>http://chiang97912.github.io/2019/03/24/Git常用操作记录/</id>
+    <published>2019-03-24T07:26:30.000Z</published>
+    <updated>2020-08-01T03:20:40.429Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;基本操作&quot;&gt;&lt;a href=&quot;#基本操作&quot; class=&quot;headerlink&quot; title=&quot;基本操作&quot;&gt;&lt;/a&gt;基本操作&lt;/h1&gt;&lt;h2 id=&quot;Git基本配置（git-config）&quot;&gt;&lt;a href=&quot;#Git基本配置（git-config）&quot; class=&quot;headerlink&quot; title=&quot;Git基本配置（git config）&quot;&gt;&lt;/a&gt;Git基本配置（git config）&lt;/h2&gt;&lt;p&gt;git config可以配置git的参数，可以使用&lt;code&gt;git config --list&lt;/code&gt;查看已经配置的git参数。其中有三个级别的保存位置，—system、—global、—local，分别表示所有用户（本系统）、当前用户（全局）、本地配置（当前目录），默认使用—local。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;配置用户名及邮箱&lt;/strong&gt;&lt;br&gt;在使用Git提交前，必须配置用户名和邮箱，这些信息会永久保存到历史记录中。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git config --global user.name &amp;quot;Peter&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;git config --global user.email Peter@gmail.com&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;创建Git仓库（git init）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;可以直接调用&lt;code&gt;git init&lt;/code&gt;初始化当前目录，即创建Git仓库。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;获取Git仓库（git clone）&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果需要克隆远程仓库，可以使用&lt;code&gt;git clone&lt;/code&gt;，比如：&lt;/p&gt;
+ &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;git  clone https://github.com/tensorflow/tensorflow.git&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="Git" scheme="http://chiang97912.github.io/categories/Git/"/>
+    
+    
+      <category term="Git" scheme="http://chiang97912.github.io/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tensorflow共享变量机制理解与应用</title>
+    <link href="http://chiang97912.github.io/2019/02/25/tensorflow%E5%85%B1%E4%BA%AB%E5%8F%98%E9%87%8F%E6%9C%BA%E5%88%B6%E7%90%86%E8%A7%A3%E4%B8%8E%E5%BA%94%E7%94%A8/"/>
+    <id>http://chiang97912.github.io/2019/02/25/tensorflow共享变量机制理解与应用/</id>
+    <published>2019-02-25T00:33:21.000Z</published>
+    <updated>2020-08-01T03:20:40.431Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;创建变量&quot;&gt;&lt;a href=&quot;#创建变量&quot; class=&quot;headerlink&quot; title=&quot;创建变量&quot;&gt;&lt;/a&gt;创建变量&lt;/h2&gt;&lt;p&gt;Tensorflow创建变量有两种方式：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;tf.get_variable()&lt;/li&gt;
+&lt;li&gt;tf.Variable()&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;它们的区别如下：&lt;/p&gt;
+&lt;p&gt;在 tf.name_scope下时，tf.get_variable()创建的变量名不受 name_scope 的影响，而且在未指定共享变量时，如果重名会报错，tf.Variable()会自动检测有没有变量重名，如果有则会自行处理。&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;import tensorflow as tf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;with tf.name_scope(&amp;apos;name_scope_x&amp;apos;):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    var1 = tf.get_variable(name=&amp;apos;var1&amp;apos;, shape=[1], dtype=tf.float32)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    var3 = tf.Variable(name=&amp;apos;var2&amp;apos;, initial_value=[2], dtype=tf.float32)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    var4 = tf.Variable(name=&amp;apos;var2&amp;apos;, initial_value=[2], dtype=tf.float32)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;with tf.Session() as sess:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    sess.run(tf.global_variables_initializer())&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    print(var1.name, sess.run(var1))&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    print(var3.name, sess.run(var3))&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    print(var4.name, sess.run(var4))&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# 输出结果：&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# var1:0 [-0.30036557]   可以看到前面不含有指定的&amp;apos;name_scope_x&amp;apos;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# name_scope_x/var2:0 [ 2.]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# name_scope_x/var2_1:0 [ 2.]  可以看到变量名自行变成了&amp;apos;var2_1&amp;apos;，避免了和&amp;apos;var2&amp;apos;冲突&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;如果使用tf.get_variable()创建变量，且没有设置共享变量，重名时会报错&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;import tensorflow as tf&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;with tf.name_scope(&amp;apos;name_scope_1&amp;apos;):&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    var1 = tf.get_variable(name=&amp;apos;var1&amp;apos;, shape=[1], dtype=tf.float32)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    var2 = tf.get_variable(name=&amp;apos;var1&amp;apos;, shape=[1], dtype=tf.float32)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;with tf.Session() as sess:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    sess.run(tf.global_variables_initializer())&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    print(var1.name, sess.run(var1))&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    print(var2.name, sess.run(var2))&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# ValueError: Variable var1 already exists, disallowed. Did you mean &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# to set reuse=True in VarScope? Originally defined at:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# var1 = tf.get_variable(name=&amp;apos;var1&amp;apos;, shape=[1], dtype=tf.float32)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="tensorflow" scheme="http://chiang97912.github.io/categories/tensorflow/"/>
+    
+    
+      <category term="tensorflow" scheme="http://chiang97912.github.io/tags/tensorflow/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu环境MYSQL乱码问题修复</title>
+    <link href="http://chiang97912.github.io/2018/12/09/Ubuntu%E7%8E%AF%E5%A2%83MYSQL%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E4%BF%AE%E5%A4%8D/"/>
+    <id>http://chiang97912.github.io/2018/12/09/Ubuntu环境MYSQL乱码问题修复/</id>
+    <published>2018-12-09T05:10:29.000Z</published>
+    <updated>2020-08-01T03:20:40.430Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;首先声明笔者使用的服务器是Ubuntu16.04，数据库安装的是Mysql 5.7。初始的mysql默认字符集是latin1，如果向数据库中插入中文就会出现乱码，下面我们通过修改配置文件的方式修改mysql的默认编码。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;修改配置文件&quot;&gt;&lt;a href=&quot;#修改配置文件&quot; class=&quot;headerlink&quot; title=&quot;修改配置文件&quot;&gt;&lt;/a&gt;修改配置文件&lt;/h1&gt;&lt;h2 id=&quot;修改-mysqld&quot;&gt;&lt;a href=&quot;#修改-mysqld&quot; class=&quot;headerlink&quot; title=&quot;修改[mysqld]&quot;&gt;&lt;/a&gt;修改[mysqld]&lt;/h2&gt;&lt;p&gt;找到文件/etc/mysql/mysql.conf.d/mysqld.cnf 中的[mysqld]并在其最后面追加如下代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;character-set-server=utf8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;修改-mysql&quot;&gt;&lt;a href=&quot;#修改-mysql&quot; class=&quot;headerlink&quot; title=&quot;修改[mysql]&quot;&gt;&lt;/a&gt;修改[mysql]&lt;/h2&gt;&lt;p&gt;找到文件/etc/mysql/conf.d/mysql.cnf中的[mysql]并在其最后面追加如下代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;default-character-set=utf8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;修改-client&quot;&gt;&lt;a href=&quot;#修改-client&quot; class=&quot;headerlink&quot; title=&quot;修改[client]&quot;&gt;&lt;/a&gt;修改[client]&lt;/h2&gt;&lt;p&gt;找到文件/etc/mysql/debian.cnf中的[client]并在其最后面追加如下代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;default-character-set=utf8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&quot;重启MYSQL&quot;&gt;&lt;a href=&quot;#重启MYSQL&quot; class=&quot;headerlink&quot; title=&quot;重启MYSQL&quot;&gt;&lt;/a&gt;重启MYSQL&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;service mysql restart&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="服务器配置" scheme="http://chiang97912.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="mysql" scheme="http://chiang97912.github.io/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LAMP环境搭建以及MYSQL远程访问配置</title>
+    <link href="http://chiang97912.github.io/2018/12/04/LAMP%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8AMYSQL%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE%E9%85%8D%E7%BD%AE/"/>
+    <id>http://chiang97912.github.io/2018/12/04/LAMP环境搭建以及MYSQL远程访问配置/</id>
+    <published>2018-12-04T03:51:55.000Z</published>
+    <updated>2020-08-01T03:20:40.429Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;首先声明笔者使用的服务器是Ubuntu16.04。下面正式进入配置教程：&lt;/p&gt;
+&lt;h1 id=&quot;LAMP环境搭建&quot;&gt;&lt;a href=&quot;#LAMP环境搭建&quot; class=&quot;headerlink&quot; title=&quot;LAMP环境搭建&quot;&gt;&lt;/a&gt;LAMP环境搭建&lt;/h1&gt;&lt;h2 id=&quot;安装Apache2&quot;&gt;&lt;a href=&quot;#安装Apache2&quot; class=&quot;headerlink&quot; title=&quot;安装Apache2&quot;&gt;&lt;/a&gt;安装Apache2&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sudo apt-get  install apache2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;检查apache2是否安装成功&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;apache2 –v&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;安装PHP7&quot;&gt;&lt;a href=&quot;#安装PHP7&quot; class=&quot;headerlink&quot; title=&quot;安装PHP7&quot;&gt;&lt;/a&gt;安装PHP7&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sudo apt-get install php&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;查看PHP版本并检查PHP是否按照成功&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;php –v&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;安装MYSQL&quot;&gt;&lt;a href=&quot;#安装MYSQL&quot; class=&quot;headerlink&quot; title=&quot;安装MYSQL&quot;&gt;&lt;/a&gt;安装MYSQL&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;sudo apt-get install mysql-server&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sudo apt-get install mysql-client&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="服务器配置" scheme="http://chiang97912.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="sql" scheme="http://chiang97912.github.io/tags/sql/"/>
+    
+      <category term="lamp" scheme="http://chiang97912.github.io/tags/lamp/"/>
+    
+      <category term="linux" scheme="http://chiang97912.github.io/tags/linux/"/>
+    
+      <category term="mysql" scheme="http://chiang97912.github.io/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHP接口返回500错误状态码解决方法</title>
+    <link href="http://chiang97912.github.io/2018/11/17/PHP%E6%8E%A5%E5%8F%A3%E8%BF%94%E5%9B%9E500%E9%94%99%E8%AF%AF%E7%8A%B6%E6%80%81%E7%A0%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <id>http://chiang97912.github.io/2018/11/17/PHP接口返回500错误状态码解决方法/</id>
+    <published>2018-11-17T14:12:43.000Z</published>
+    <updated>2020-08-01T03:20:40.430Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;最近在用PHP写用户登录接口，但是将PHP代码部署到生产环境却发生了错误，用浏览器访问接口产生错误状态码500如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;HTTP ERROR 500&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这个错误是由于PHP代码存在错误引起的，但是默认PHP是关闭错误提示的。如果想要知道代码的错误必须先打开PHP的错误显示功能。&lt;/p&gt;
+&lt;h2 id=&quot;解决方法&quot;&gt;&lt;a href=&quot;#解决方法&quot; class=&quot;headerlink&quot; title=&quot;解决方法&quot;&gt;&lt;/a&gt;解决方法&lt;/h2&gt;&lt;p&gt;首先声明笔者使用的生产环境是Ubuntu 16.04。&lt;/p&gt;
+&lt;p&gt;第一步：先找到PHP的配置文件php.ini文件所在位置，这里笔者的Ubuntu中的php7的php.ini存在于路径/etc/php/7.0/apache2/下面，我们只需要使用vi/vim从上述路径下打开php.ini文件；&lt;/p&gt;
+&lt;p&gt;第二步：查找并修改php.ini文件中的display_errors和display_startup_errors中的值为On即可；&lt;/p&gt;
+&lt;p&gt;修改后的内容如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;#修改你的php.ini文件&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;display_errors = On&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;display_startup_errors = On&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="PHP" scheme="http://chiang97912.github.io/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="http://chiang97912.github.io/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python大数据量计数</title>
+    <link href="http://chiang97912.github.io/2018/09/10/Python%E5%A4%A7%E6%95%B0%E6%8D%AE%E9%87%8F%E8%AE%A1%E6%95%B0/"/>
+    <id>http://chiang97912.github.io/2018/09/10/Python大数据量计数/</id>
+    <published>2018-09-10T07:58:34.000Z</published>
+    <updated>2020-08-01T03:20:40.430Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;和上一篇文章一样，这篇文章也是我在数学建模中碰到的，如果只是普通数据量的计数问题那么我们不妨使用counter，但是如果数据量达到一定规模，那么我们不得不考虑其他算法来解决问题了。我们这里使用hyperloglog算法来实现大数据量计数问题，这种算法是一种基于统计的计数算法，算法并不一定准确，但是足够快，如果读者将速度放在第一位那么不妨试试这种算法，而且hyperloglog算法准确率逼近100%，试问1000001和100000又有多大的差距呢，所以这种算法是有一定实用性的。&lt;/p&gt;
+&lt;h1 id=&quot;代码实现&quot;&gt;&lt;a href=&quot;#代码实现&quot; class=&quot;headerlink&quot; title=&quot;代码实现&quot;&gt;&lt;/a&gt;代码实现&lt;/h1&gt;&lt;p&gt;当然作为胶水语言的Python，我们当然不必重复造轮子，这里我们可以直接使用python的bounter库来实现hyperloglog算法计数。&lt;/p&gt;
+&lt;p&gt;安装方法：&lt;code&gt;pip install bounter&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这里给出bounter在github上的官方教材使用的代码：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;示例一：&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;from bounter import bounter&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;counts = bounter(size_mb=1024)  # use at most 1 GB of RAM&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;counts.update([u&amp;apos;a&amp;apos;, &amp;apos;few&amp;apos;, u&amp;apos;words&amp;apos;, u&amp;apos;a&amp;apos;, u&amp;apos;few&amp;apos;, u&amp;apos;times&amp;apos;])  # count item frequencies&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;print(counts[u&amp;apos;few&amp;apos;])  # query the counts&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;示例二&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;from bounter import bounter&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;counts = bounter(size_mb=200)  # default version, unless you specify need_items or need_counts&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;counts.update([&amp;apos;a&amp;apos;, &amp;apos;b&amp;apos;, &amp;apos;c&amp;apos;, &amp;apos;a&amp;apos;, &amp;apos;b&amp;apos;])&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;print(counts.total(), counts.cardinality())  # total and cardinality still work&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;(5L, 3)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;print(counts[&amp;apos;a&amp;apos;])  # individual item frequency still works&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;print(list(counts))  # iterator returns keys, just like Counter&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[u&amp;apos;b&amp;apos;, u&amp;apos;a&amp;apos;, u&amp;apos;c&amp;apos;]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;print(list(counts.iteritems()))  # supports iterating over key-count pairs, etc.&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;[(u&amp;apos;b&amp;apos;, 2L), (u&amp;apos;a&amp;apos;, 2L), (u&amp;apos;c&amp;apos;, 1L)]&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://chiang97912.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="python" scheme="http://chiang97912.github.io/tags/python/"/>
+    
+      <category term="算法" scheme="http://chiang97912.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python实现最近点对求解</title>
+    <link href="http://chiang97912.github.io/2018/09/10/Python%E5%AE%9E%E7%8E%B0%E6%9C%80%E8%BF%91%E7%82%B9%E5%AF%B9%E6%B1%82%E8%A7%A3/"/>
+    <id>http://chiang97912.github.io/2018/09/10/Python实现最近点对求解/</id>
+    <published>2018-09-10T07:21:27.000Z</published>
+    <updated>2020-08-01T03:20:40.430Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;数学建模中遇到求最近点对的问题，按理说我们使用朴素法进行暴力求解答案也是可行的，但是由于数据过于庞大，我们最初使用朴素法在计算机上跑了6个小时都没有得到问题的解，最终只得作罢。后来我们利用分治法解决了最近点对问题，具体思路参看&lt;a href=&quot;http://apir8181.github.io/algorithm/2014/10/02/closest_pair.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+&lt;h1 id=&quot;分治法&quot;&gt;&lt;a href=&quot;#分治法&quot; class=&quot;headerlink&quot; title=&quot;分治法&quot;&gt;&lt;/a&gt;分治法&lt;/h1&gt;&lt;p&gt;分治法解决最近点对问题的算法过程读者可以参见上文给出的参考博客。分治法的思想就是先将问题分解成一个个小的问题，最后将小问题的答案合并得到问题的解。这其中关键步骤是分解与合并，具体实现方法是使用递归，核心思想是空间换时间。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://chiang97912.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="python" scheme="http://chiang97912.github.io/tags/python/"/>
+    
+      <category term="算法" scheme="http://chiang97912.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="数学建模" scheme="http://chiang97912.github.io/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python实现argsort排序返回索引值</title>
+    <link href="http://chiang97912.github.io/2018/09/05/python%E5%AE%9E%E7%8E%B0argsort%E6%8E%92%E5%BA%8F%E8%BF%94%E5%9B%9E%E7%B4%A2%E5%BC%95%E5%80%BC/"/>
+    <id>http://chiang97912.github.io/2018/09/05/python实现argsort排序返回索引值/</id>
+    <published>2018-09-05T12:58:14.000Z</published>
+    <updated>2020-08-01T03:20:40.431Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;插曲是这样的，之前一直在给别人写外包程序，在程序中我使用到了numpy库中的argsort排序方法，这个排序方法十分方便，对可迭代对象进行排序并返回原顺序的索引值。由于程序要传给客户，所以我将代码封装成了exe可执行程序。之前封装出来的程序最多也就40来兆，可是自从我将开发环境切换到anaconda后，封装出来的程序高达200多兆，简直吓死我了。今天客户再次需要这个程序，于是我决定抛弃numpy库，自己实现argsort算法。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&quot;numpy实现&quot;&gt;&lt;a href=&quot;#numpy实现&quot; class=&quot;headerlink&quot; title=&quot;numpy实现&quot;&gt;&lt;/a&gt;numpy实现&lt;/h1&gt;&lt;p&gt;首先来看看numpy库中argsort的用法：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;argsort(a, axis=-1, kind=&amp;apos;quicksort&amp;apos;, order=None)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;第一个参数是需要排序的可迭代对象，第二个参数是排序的维度，第三个参数是排序的算法，常见的有快排（quicksort）、堆排序（heapsort）以及归并排序（mergesort）。第四个参数是排序的次序。&lt;/p&gt;
+&lt;p&gt;实例：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;import numpy as np&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;li = [1.5, 3, 15, 21, 7, 31, 5]&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;indies = np.argsort(li, kind=&amp;apos;heapsort&amp;apos;)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;print(indies)&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;运行结果：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;[0 1 6 4 2 3 5]&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="代码" scheme="http://chiang97912.github.io/categories/%E4%BB%A3%E7%A0%81/"/>
+    
+    
+      <category term="python" scheme="http://chiang97912.github.io/tags/python/"/>
+    
+      <category term="代码" scheme="http://chiang97912.github.io/tags/%E4%BB%A3%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>模糊综合评价法原理及实现</title>
+    <link href="http://chiang97912.github.io/2018/09/02/%E6%A8%A1%E7%B3%8A%E7%BB%BC%E5%90%88%E8%AF%84%E4%BB%B7%E6%B3%95%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://chiang97912.github.io/2018/09/02/模糊综合评价法原理及实现/</id>
+    <published>2018-09-02T09:45:12.000Z</published>
+    <updated>2020-08-01T03:20:40.432Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;模糊综合评价法原理&quot;&gt;&lt;a href=&quot;#模糊综合评价法原理&quot; class=&quot;headerlink&quot; title=&quot;模糊综合评价法原理&quot;&gt;&lt;/a&gt;模糊综合评价法原理&lt;/h1&gt;&lt;h2 id=&quot;基本思想&quot;&gt;&lt;a href=&quot;#基本思想&quot; class=&quot;headerlink&quot; title=&quot;基本思想&quot;&gt;&lt;/a&gt;基本思想&lt;/h2&gt;&lt;p&gt;模糊综合评价法是一种基于模糊数学的综合评价方法。该综合评价法根据模糊数学的&lt;strong&gt;隶属度理论&lt;/strong&gt;把定性评价转化为定量评价，即用模糊数学对受到多种因素制约的事物或对象做出一个总体的评价。它具有结果清晰，系统性强的特点，能较好地解决模糊的、难以量化的问题，适合各种非确定性问题的解决。&lt;/p&gt;
+&lt;h2 id=&quot;隶属度&quot;&gt;&lt;a href=&quot;#隶属度&quot; class=&quot;headerlink&quot; title=&quot;隶属度&quot;&gt;&lt;/a&gt;隶属度&lt;/h2&gt;&lt;p&gt;隶属函数，也称为归属函数或模糊元函数，是模糊集合中会用到的函数，是一般集合中指示函数的一般化。指示函数可以&lt;strong&gt;说明一个集合中的元素是否属于特定子集合&lt;/strong&gt;。一元素的指示函数的值可能是0或是1，而元素的&lt;strong&gt;隶属函数会是0到1之间的数值&lt;/strong&gt;，表示元素属于某模糊集合的“真实程度”（degree of truth）即隶属度。&lt;/p&gt;
+&lt;h2 id=&quot;基本模型&quot;&gt;&lt;a href=&quot;#基本模型&quot; class=&quot;headerlink&quot; title=&quot;基本模型&quot;&gt;&lt;/a&gt;基本模型&lt;/h2&gt;&lt;p&gt;设评判对象为P: 其因素集$ U=\left{ u_1, u_2, \cdots , u_n \right} $ ,评判等级集$ V=\left{ v_1, v_2, \cdots ,v_m \right} $。对U中每一因素根据评判集中的等级指标进行模糊评判，得到评判矩阵：&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+R=\begin{bmatrix}
+r{11},r{12},\cdots,r{1m} \\ 
+r{21},r{22},\cdots,r{2m} \\ 
+r{n1},r{n2},\cdots,r_{nm}
+\end{bmatrix}&lt;/script&gt;&lt;p&gt;通常为了避免量纲的影响，我们还要进行去量纲操作。&lt;/p&gt;
+&lt;p&gt;其中， $r&lt;em&gt;{ij}$表示$u_i$关于$v_j$的隶属度。(U,V,R) 则构成了一个模糊综合评判模型。确定各因素重要性指标（也称权数）后，记为$A=\left { a_1,a_2, \cdots,a_n \right }$,满足$ \sum&lt;/em&gt;{i=1}^na_i=1$ ，合成得&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\overline B = A\cdot R=\left(\overline {b_1}, \overline {b_2}, \cdots ,\overline {b_m} \right)&lt;/script&gt;&lt;p&gt;经归一化后，得$B=\left { b_i, b_2, \cdots, b_m \right}$ ,于是可确定对象P的评判等级。&lt;/p&gt;
+&lt;p&gt;如果想得到综合得分，那么我们还可以对B进一步打分，即以同样的方式设置权数，对B进行综合评定。&lt;/p&gt;
+&lt;p&gt;对问题进行模糊综合分析之后我们通常还要考察该模型的置信度。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="数学建模" scheme="http://chiang97912.github.io/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
+    
+    
+      <category term="数学建模" scheme="http://chiang97912.github.io/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
+    
+      <category term="模糊综合评价法" scheme="http://chiang97912.github.io/tags/%E6%A8%A1%E7%B3%8A%E7%BB%BC%E5%90%88%E8%AF%84%E4%BB%B7%E6%B3%95/"/>
+    
+  </entry>
+  
+</feed>

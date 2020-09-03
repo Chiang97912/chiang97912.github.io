@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="数学建模," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="BetterManPeter" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="优化模型优化模型就是给定一个目标函数，然后在约束条件下求出该目标函数的最优值。 形如：  \min(或\max)\ z=f(x), x=(x_1,...)\\ s.t. g_i(x)\leq0,i=1,2,...决策变量： x 目标函数： f(x) 约束条件： $ s.t. g_i(x)\leq0 $ 优化问题三要素：  决策变量 目标函数 约束条件  数学规划：  线性规划（Linear Pro">
+<meta name="keywords" content="数学建模">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数学建模笔记">
+<meta property="og:url" content="http://chiang97912.github.io/2018/08/29/数学建模笔记/index.html">
+<meta property="og:site_name" content="BetterManPeter">
+<meta property="og:description" content="优化模型优化模型就是给定一个目标函数，然后在约束条件下求出该目标函数的最优值。 形如：  \min(或\max)\ z=f(x), x=(x_1,...)\\ s.t. g_i(x)\leq0,i=1,2,...决策变量： x 目标函数： f(x) 约束条件： $ s.t. g_i(x)\leq0 $ 优化问题三要素：  决策变量 目标函数 约束条件  数学规划：  线性规划（Linear Pro">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-08-01T03:20:40.431Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数学建模笔记">
+<meta name="twitter:description" content="优化模型优化模型就是给定一个目标函数，然后在约束条件下求出该目标函数的最优值。 形如：  \min(或\max)\ z=f(x), x=(x_1,...)\\ s.t. g_i(x)\leq0,i=1,2,...决策变量： x 目标函数： f(x) 约束条件： $ s.t. g_i(x)\leq0 $ 优化问题三要素：  决策变量 目标函数 约束条件  数学规划：  线性规划（Linear Pro">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://chiang97912.github.io/2018/08/29/数学建模笔记/"/>
+
+
+
+
+
+  <title>数学建模笔记 | BetterManPeter</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">BetterManPeter</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://chiang97912.github.io/2018/08/29/数学建模笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Peter">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ww1.sinaimg.cn/large/7bd82a07gy1fiw0ks4xi3j20e80e874b.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="BetterManPeter">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数学建模笔记</h1>
+        
+
+        <div class="post-meta">
+          
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-29T10:08:05+08:00">
+                2018-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数学建模/" itemprop="url" rel="index">
+                    <span itemprop="name">数学建模</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="优化模型"><a href="#优化模型" class="headerlink" title="优化模型"></a>优化模型</h1><p>优化模型就是给定一个目标函数，然后在约束条件下求出该目标函数的最优值。</p>
+<p>形如：</p>
+<script type="math/tex; mode=display">
+\min(或\max)\ z=f(x), x=(x_1,...)\\
+s.t. g_i(x)\leq0,i=1,2,...</script><p>决策变量： x</p>
+<p>目标函数： f(x)</p>
+<p>约束条件： $ s.t. g_i(x)\leq0 $</p>
+<p>优化问题三要素：</p>
+<ul>
+<li>决策变量</li>
+<li>目标函数</li>
+<li>约束条件</li>
+</ul>
+<p>数学规划：</p>
+<ul>
+<li>线性规划（Linear Programming，简称LP）</li>
+<li>非线性规划(Nonlinear Programming，简称NLP)</li>
+<li>整数规划</li>
+</ul>
+<a id="more"></a>
+<h2 id="LINGO软件求解优化模型"><a href="#LINGO软件求解优化模型" class="headerlink" title="LINGO软件求解优化模型"></a>LINGO软件求解优化模型</h2><p>例题：</p>
+<script type="math/tex; mode=display">
+\begin{array}{lcl}
+\max \ S\\
+\begin{cases}
+    a_i x_i=S,i=1,2,... \\
+    \sum^6_{i=1}x_i=5000, \\
+    a_5x_6=5000.
+\end{cases}
+\end{array}</script><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>存期年限</th>
+<th>1年</th>
+<th>2年</th>
+<th>3年</th>
+<th>4年</th>
+<th>5年</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最有收益</td>
+<td>1.018</td>
+<td>1.0432</td>
+<td>1.0776</td>
+<td>1.09715968</td>
+<td>1.144</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>LINGO代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">!求解规划问题;</div><div class="line">model:</div><div class="line">min = S;</div><div class="line">1.018 * x1 = S;</div><div class="line">1.0432 * x2 = S;</div><div class="line">1.07776 * x3 = S;</div><div class="line">1.09715968 * x4 = S;</div><div class="line">1.144 * x5 = S;</div><div class="line">x1 + x2 + x3 + x4 + x5 + x6 = 5000;</div><div class="line">1.144 * x6 = 5000;</div><div class="line">end</div></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">Global optimal solution found.</div><div class="line">Objective value:                              135.2227</div><div class="line">Infeasibilities:                              0.000000</div><div class="line">Total solver iterations:                             0</div><div class="line"></div><div class="line"></div><div class="line">                     Variable           Value        Reduced Cost</div><div class="line">                            S        135.2227            0.000000</div><div class="line">                           X1        132.8317            0.000000</div><div class="line">                           X2        129.6230            0.000000</div><div class="line">                           X3        125.4664            0.000000</div><div class="line">                           X4        123.2479            0.000000</div><div class="line">                           X5        118.2016            0.000000</div><div class="line">                           X6        4370.629            0.000000</div><div class="line"></div><div class="line">                          Row    Slack or Surplus      Dual Price</div><div class="line">                            1        135.2227           -1.000000</div><div class="line">                            2        0.000000           0.2110548</div><div class="line">                            3        0.000000           0.2059565</div><div class="line">                            4        0.000000           0.1993522</div><div class="line">                            5        0.000000           0.1958273</div><div class="line">                            6        0.000000           0.1878093</div><div class="line">                            7        0.000000          -0.2148538</div><div class="line">                            8        0.000000           0.1878093</div></pre></td></tr></table></figure>
+<p>其中Objective value项即为所求目标值，下面的Variable即为在最优状态下各变量值。</p>
+<p>关于LINGO教程网上有很多，在这里不再赘述。读者可以前往 <a href="https://www.jianshu.com/p/08be2f682323" target="_blank" rel="external">这里</a>查看。</p>
+<h2 id="MATLAB软件求解优化模型"><a href="#MATLAB软件求解优化模型" class="headerlink" title="MATLAB软件求解优化模型"></a>MATLAB软件求解优化模型</h2><p>常用的优化功能函数：</p>
+<ul>
+<li>求解线性规划问题的主要函数是linprog。</li>
+<li>求解二次规划问题的主要函数是quadprog。</li>
+<li>求解无约束非线性规划问题的主要函数是fminbnd、fminunc和fminsearch。</li>
+<li>求解约束非线性规划问题的主要函数是fgoalattain和fminimax。</li>
+</ul>
+<p>一般步骤：</p>
+<ol>
+<li>针对具体工程问题建立优化设计的数学模型</li>
+<li>建立目标函数文件</li>
+<li>建立约束函数文件</li>
+<li>建立调用优化工具函数的命令文件</li>
+<li>将优化设计的命令文件复制到MATLAB命令窗口中进行运算求解。</li>
+</ol>
+<h2 id="线性规划问题"><a href="#线性规划问题" class="headerlink" title="线性规划问题"></a>线性规划问题</h2><p><strong>数学模型形式：</strong></p>
+<script type="math/tex; mode=display">
+\begin{array}{lcl}
+    \min f^TX \\
+    s.t. AX\leq b~~~~(线性不等式约束条件) \\
+    AeqX=beq~~~~（线性等式约束条件 \\
+    lb \leq X \leq ub~~~~(边界约束条件)
+\end{array}</script><p><strong>MATLAB中函数调用格式:</strong></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[xopt, fopt]=linprog(f,  A,  b,  Aeq,  beq,  lb,  ub,  x0,  options)</div></pre></td></tr></table></figure>
+<p>参数及返回值释义：</p>
+<p>xopt: 最优解</p>
+<p>fopt: 最优值</p>
+<p>f: 目标函数各维变量系数向量</p>
+<p>x0：初始点</p>
+<p>options: 可选项</p>
+<p>注： A,  b,  Aeq,  beq,  lb,  ub均和上述数学模型对应。</p>
+<h2 id="二次规划问题"><a href="#二次规划问题" class="headerlink" title="二次规划问题"></a>二次规划问题</h2><p>数学模型形式：</p>
+<script type="math/tex; mode=display">
+\begin{array}{lcl}
+    \min f(X)=\frac{1}{2}X^THX+C^TX \\
+    s.t. AX\leq b
+    AeqX=beq \\
+    lb \leq X \leq ub
+\end{array}</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[xopt, fopt]=quadprog(H,C, A, b, Aeq, beq, lb, ub, x0, options)</div></pre></td></tr></table></figure>
+<p>参数及返回值释义：</p>
+<p>xopt: 最优解</p>
+<p>fopt: 最优值</p>
+<p>H: 目标函数的海塞矩阵</p>
+<p>C： 目标函数的一次项系数向量</p>
+<p>其余同上。</p>
+<p>示例：</p>
+<p>求解约束优化问题</p>
+<script type="math/tex; mode=display">
+\begin{array}{lcl}
+    f(X)=2X^2_1+2x^2_2+x^2_3-2x_1x_2+x_3\\
+    s.t. g(X)=x_1+3x_2+2x_3\leq 6\\
+    h(X)=2x_1-x_2+x_3=4\\
+    x_1,x_2,x_3\geq 0
+\end{array}</script><p>解：(1)将目标函数写成二次函数的形式$f(X)=\frac{1}{2}X^THX+C^TX$,其中：</p>
+<p>$\begin{array}{lcl}<br>    X=\begin{bmatrix}<br>        x_1\<br>        x_2\<br>        x_3<br>    \end{bmatrix}<br>    H=\begin{bmatrix}<br>        4 &amp; -2 &amp; 0\<br>        -2 &amp; 4 &amp; 0\<br>        0 &amp; 0 &amp; 2<br>    \end{bmatrix}<br>    C=\begin{bmatrix}<br>        0\<br>        0\<br>        1<br>    \end{bmatrix}<br>\end{array}$</p>
+<p>(2)编写求解二次规划的M文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">H=[4,-2,0;-2,4,0;0,0,2];</div><div class="line">C=[0,0,1];</div><div class="line">A=[1,3,2];</div><div class="line">b=[6];</div><div class="line">Aeq=[2,-1,1];</div><div class="line">beq=[4];</div><div class="line">lb=zeros(3,1);</div><div class="line">[xopt,fopt]=quadprig(H,C,A,b,Aeq,beq,lb)</div></pre></td></tr></table></figure>
+<h2 id="其他规划问题"><a href="#其他规划问题" class="headerlink" title="其他规划问题"></a>其他规划问题</h2><p>其他规划问题的MATLAB函数使用方法和前面两个类似，这里不再赘述，具体使用方法读者可以查阅相关资料。</p>
+<h1 id="微分方程及数值解"><a href="#微分方程及数值解" class="headerlink" title="微分方程及数值解"></a>微分方程及数值解</h1><p>数学建模中的微分方程模型，其实就是高等数学中的微积分知识在建模中的应用。常见的微分方程模型有人口模型和种群数量模型。</p>
+<h2 id="实例-温度冷却"><a href="#实例-温度冷却" class="headerlink" title="实例 温度冷却"></a>实例 温度冷却</h2><p>由物理学知道,物体冷却的速度与当时的物体温度和周围环境温度之差成正比.今 100℃的沸水注入杯里,放在室温为 20℃的环境冷却,5min 后测得水温为 60℃.求水温 u 与时间 t 的函数关系.</p>
+<ol>
+<li>问题分析及模型的建立<br>设比例系数为k(k&gt;0),根据题意可得微分方程</li>
+</ol>
+<script type="math/tex; mode=display">
+\begin{array}{lcl}
+    \frac{du}{dt}=-k(u-20)\\
+    u|_{t=0}=100,u|_{t=5}=60
+\end{array}</script><ol>
+<li><p>模型的求解</p>
+<p>此为简单的一阶可分离变量微分方程,可得解析解$u=20+80(0.5)^{\frac{t}{5}}$.</p>
+</li>
+</ol>
+<p>使用MATLAB求解微分方程<strong>解析解</strong>(通解或特解)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">dsolve(&apos;Du+k*(u-20)=0&apos;,&apos;u(0)=100&apos;,&apos;t&apos;)</div><div class="line">%dsolve 为求常微分方程的符号解函数</div></pre></td></tr></table></figure>
+<p>运算结果为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">u =20+80*exp(-k*t)</div></pre></td></tr></table></figure>
+<p>使用MATLAB求解微分方程<strong>数值解</strong>：</p>
+<p>由给定条件$u|_{t=5}=60$,可得$k=\frac{\ln 2}{5}$,即$u=20+80(0.5)^\frac{t}{5}$.</p>
+<p>MATLAB代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">f=inline(&apos;-0.2*log(2)*(u-20)&apos;,&apos;t&apos;,&apos;u&apos;);</div><div class="line">[t,u]=ode45(f,[0,100],100);</div><div class="line">%ode45 为龙格库塔法求微分方程的数值解</div><div class="line">plot(t,u)</div><div class="line">%绘制 0 到 100 分钟的温度随时间变化的图形</div></pre></td></tr></table></figure>
+<h2 id="MATLAB求解的函数微分方程-组"><a href="#MATLAB求解的函数微分方程-组" class="headerlink" title="MATLAB求解的函数微分方程(组)"></a>MATLAB求解的函数微分方程(组)</h2><p>那些不可以用积分方法求解的微分方程初值问题，可以用 MATLAB 的函数，如<strong>二三阶龙格-库塔法ode23</strong> 或<strong>四五阶龙格-库塔法 ode45</strong> 命令来求其数值解．<br>对于微分方程(组)的初值问题</p>
+<script type="math/tex; mode=display">
+\begin{array}{lcl}
+    x(t)=f(t,x),x=(x_1,...,x_n)^T,f=(f_1,...,f_n)^T\\
+    x(t_0)=x_0, x_0(x_{01},...,x_{0n})^T
+\end{array}</script><p>可用下面的 MATLAB 命令实现计算：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[t,x]= =ode23(odefun ，ts ，x0 ，options)</div><div class="line">[t,x]= =ode45(odefun ，ts ，x0 ，options)</div></pre></td></tr></table></figure>
+<p>这里 ode23 用的是 3 级 2 阶的龙格-库塔法公式，ode45 用的是 5 级 4 阶的龙格-库塔公式．输入参数 odefun 是待解方程写成的函数 M 文件或inline 格式的函数$f(t,x)$。</p>
+<p> ts=[t0，t1，…，tf]，则输出为在指定时刻 t0，t1，…，tf 的函数值．如果输入 t0∶k∶tf，则输出为在[t0，tf]内以 k 为间隔的等分点处的函数值。</p>
+<p>x0 为函数初值( n 维向量)。</p>
+<p>options 可用于设定误差限（options 默认时设定相对误差${10}^{-3}$绝对误差${10}^{-6}$)，命令为：<br><code>options=odeset(‘reltol’，rt，‘abstol’，at)</code><br>这里 rt，at 分别为设定的相对误差和绝对误差。<br>命令的输出 t 为由输入指定的 ts，x 为相应的函数值( n维向量)。</p>
+<h2 id="其他MATLAB函数"><a href="#其他MATLAB函数" class="headerlink" title="其他MATLAB函数"></a>其他MATLAB函数</h2><p>MATLAB中还有诸如求解偏微分方程的函数，读者可以自行查询相关资料。</p>
+<h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><p>由于机器学习内容很多这里我只将常用学习算法进行归类。机器学习分为监督学习和无监督学习。其中监督学习又分为分类、集成学习、降维。</p>
+<p>分类：</p>
+<ul>
+<li>K最近邻</li>
+<li>决策树</li>
+<li>贝叶斯分类器</li>
+<li>逻辑回归</li>
+<li>支持向量机</li>
+</ul>
+<p>集成学习：</p>
+<ul>
+<li>bagging：随机森林</li>
+<li>boosting：AdaBoost、GBDT、XGBoost（工业级）</li>
+</ul>
+<p>无监督学习：</p>
+<ul>
+<li>K-Means</li>
+<li>DBSCAN（基于密度的聚类）</li>
+</ul>
+<h1 id="概率统计模型"><a href="#概率统计模型" class="headerlink" title="概率统计模型"></a>概率统计模型</h1><script type="math/tex; mode=display">
+\begin{array}{lcl}
+    聚类~~\begin{cases}
+    K-Means聚类（快速聚类）\\
+    分层聚类（系统聚类）hierarchical\ cluster
+    \end{cases}\\
+    判别分析~~\begin{cases}
+    根据距离判别\\
+    fisher判别法\\
+    逐步判别法（选择变量）
+    \end{cases}\\
+    时间序列分析~~\begin{cases}
+    指数平滑\\
+    Box-Jenkins方法
+    \end{cases}
+\end{array}</script><p>注：聚类分析对类及类的数量是未知的，而判别分析是已知的。</p>
+<h1 id="评价模型"><a href="#评价模型" class="headerlink" title="评价模型"></a>评价模型</h1><p>常用评价模型：</p>
+<ul>
+<li><strong>层次分析法</strong>：定性与定量相结合的多准则决策</li>
+<li>灰色综合评价法：灰色关联度分析</li>
+<li>模糊综合评价法： 根据模糊数学的隶属度评价</li>
+<li>BP神经网络综合评价法</li>
+<li>数据包络（DEA）： 是一个对多投入/多产出的多决策单元的效率评价方法，广泛使用于业绩评价</li>
+</ul>
+<p>综合评价模型：</p>
+<ul>
+<li>线性加权综合法 $y=\sum^m_{j=1}w_ix_j$</li>
+<li>非线性加权综合法 $y=\prod^m_{j=1}x_j^{w_j}$</li>
+<li>逼近理想点（TOPSIS）方法</li>
+<li>动态加权</li>
+</ul>
+<p>动态加权函数：</p>
+<ul>
+<li>分段变幂函数</li>
+</ul>
+<ul>
+<li>偏大型正态分布函数</li>
+</ul>
+<ul>
+<li>S型分布函数</li>
+</ul>
+<h1 id="智能计算方法"><a href="#智能计算方法" class="headerlink" title="智能计算方法"></a>智能计算方法</h1><ul>
+<li>模拟退火算法（SA）：寻找全局最优思想<ol>
+<li>自动转换: 满足条件自动转换到另外一种状态</li>
+<li>概率转换： 当不满足条件时按照一定的概率转换到另外一种状态</li>
+</ol>
+</li>
+<li>遗传算法（GA）： 1. 选择 2. 交叉 3. 变异</li>
+<li>粒子群算法（PSO）：信息共享思想</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Peter
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://chiang97912.github.io/2018/08/29/数学建模笔记/" title="数学建模笔记">http://chiang97912.github.io/2018/08/29/数学建模笔记/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数学建模/" rel="tag"># 数学建模</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/28/灰色关联分析模型及其改进/" rel="next" title="灰色关联分析模型及其改进">
+                <i class="fa fa-chevron-left"></i> 灰色关联分析模型及其改进
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/02/模糊综合评价法原理及实现/" rel="prev" title="模糊综合评价法原理及实现">
+                模糊综合评价法原理及实现 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+       
+         <div onclick="ShowGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+         <div id="gitment-container" style="display:none"></div>
+       
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ww1.sinaimg.cn/large/7bd82a07gy1fiw0ks4xi3j20e80e874b.jpg"
+               alt="Peter" />
+          <p class="site-author-name" itemprop="name">Peter</p>
+           
+              <p class="site-description motion-element" itemprop="description">Stay hungry, stay foolish!</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Chiang97912" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:chiang97912@gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://weibo.com/u/2077764103" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                    
+                      Weibo
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/jiang-peng-51-20" target="_blank" title="Zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                    
+                      Zhihu
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-block">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.52nlp.cn/" title="52nlp" target="_blank">52nlp</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://kexue.fm/" title="科学空间" target="_blank">科学空间</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.bobinsun.cn/" title="阿拉灯神丁Vicky侃AI" target="_blank">阿拉灯神丁Vicky侃AI</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#优化模型"><span class="nav-number">1.</span> <span class="nav-text">优化模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#LINGO软件求解优化模型"><span class="nav-number">1.1.</span> <span class="nav-text">LINGO软件求解优化模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MATLAB软件求解优化模型"><span class="nav-number">1.2.</span> <span class="nav-text">MATLAB软件求解优化模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性规划问题"><span class="nav-number">1.3.</span> <span class="nav-text">线性规划问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二次规划问题"><span class="nav-number">1.4.</span> <span class="nav-text">二次规划问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他规划问题"><span class="nav-number">1.5.</span> <span class="nav-text">其他规划问题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#微分方程及数值解"><span class="nav-number">2.</span> <span class="nav-text">微分方程及数值解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#实例-温度冷却"><span class="nav-number">2.1.</span> <span class="nav-text">实例 温度冷却</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MATLAB求解的函数微分方程-组"><span class="nav-number">2.2.</span> <span class="nav-text">MATLAB求解的函数微分方程(组)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他MATLAB函数"><span class="nav-number">2.3.</span> <span class="nav-text">其他MATLAB函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#机器学习"><span class="nav-number">3.</span> <span class="nav-text">机器学习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#概率统计模型"><span class="nav-number">4.</span> <span class="nav-text">概率统计模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#评价模型"><span class="nav-number">5.</span> <span class="nav-text">评价模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#智能计算方法"><span class="nav-number">6.</span> <span class="nav-text">智能计算方法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Peter</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Gemini
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+   
+   
+   
+   
+   <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+   <script src="https://billts.site/js/gitment.js"></script>
+   
+       <script type="text/javascript">
+           function ShowGitment(){
+               document.getElementById("gitment-display-button").style.display = "none";
+               document.getElementById("gitment-container").style.display = "block";
+               var gitment = new Gitment({
+                   id: '1535508485000', 
+                   owner: 'Chiang97912',
+                   repo: 'comment',
+                   oauth: {
+                       client_id: '42037c4b079381613d46',
+                       client_secret: '5cc0745f290c72d7d4754f89ed4dc3b0f778067c',
+                   }});
+               gitment.render('gitment-container');
+           }
+       </script>
+   
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+  
+
+  
+
+</body>
+</html>
