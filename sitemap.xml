@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://chiang97912.github.io/about/index.html</loc>
+    
+    <lastmod>2020-12-31T04:30:45.908Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://chiang97912.github.io/2020/01/10/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95%E5%8F%8A%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/</loc>
     
     <lastmod>2020-09-03T11:57:17.799Z</lastmod>
@@ -16,14 +23,14 @@
   </url>
   
   <url>
-    <loc>http://chiang97912.github.io/tags/index.html</loc>
+    <loc>http://chiang97912.github.io/categories/index.html</loc>
     
     <lastmod>2020-08-01T03:20:40.434Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://chiang97912.github.io/categories/index.html</loc>
+    <loc>http://chiang97912.github.io/tags/index.html</loc>
     
     <lastmod>2020-08-01T03:20:40.434Z</lastmod>
     
@@ -73,13 +80,6 @@
   
   <url>
     <loc>http://chiang97912.github.io/2017/08/25/%E8%B0%88%E8%B0%88%E6%88%91%E5%AF%B9%E4%BA%8E%E7%BB%B4%E5%BA%A6%E7%9A%84%E7%90%86%E8%A7%A3/</loc>
-    
-    <lastmod>2020-08-01T03:20:40.433Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://chiang97912.github.io/about/index.html</loc>
     
     <lastmod>2020-08-01T03:20:40.433Z</lastmod>
     
