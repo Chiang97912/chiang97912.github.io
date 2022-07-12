@@ -99,7 +99,7 @@
 <meta name="description" content="Stay hungry, stay foolish!">
 <meta property="og:type" content="website">
 <meta property="og:title" content="BetterManPeter">
-<meta property="og:url" content="http://chiang97912.github.io/tags/Python/index.html">
+<meta property="og:url" content="http://chiang97912.github.io/tags/python/index.html">
 <meta property="og:site_name" content="BetterManPeter">
 <meta property="og:description" content="Stay hungry, stay foolish!">
 <meta property="og:locale" content="zh-Hans">
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://chiang97912.github.io/tags/Python/"/>
+  <link rel="canonical" href="http://chiang97912.github.io/tags/python/"/>
 
 
 
 
 
-  <title>标签: Python | BetterManPeter</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>标签: python | BetterManPeter</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
 
@@ -310,7 +310,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>Python<small>标签</small>
+        <h1>python<small>标签</small>
         </h1>
       </div>
 
@@ -322,9 +322,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2019/08/01/使用VIM作为IDE/" itemprop="url">
+            <a class="post-title-link" href="/2019/08/25/Pyinstaller打包Python程序攻略/" itemprop="url">
               
-                <span itemprop="name">使用VIM作为IDE</span>
+                <span itemprop="name">Pyinstaller打包Python程序攻略</span>
               
             </a>
         
@@ -332,9 +332,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2019-08-01T10:40:24+08:00"
-              content="2019-08-01" >
-          08-01
+              datetime="2019-08-25T16:38:04+08:00"
+              content="2019-08-25" >
+          08-25
         </time>
       </div>
 
@@ -350,9 +350,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2019/08/01/Mask矩阵在深度学习中的应用/" itemprop="url">
+            <a class="post-title-link" href="/2018/09/10/Python大数据量计数/" itemprop="url">
               
-                <span itemprop="name">Mask矩阵在深度学习中的应用</span>
+                <span itemprop="name">Python大数据量计数</span>
               
             </a>
         
@@ -360,9 +360,93 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2019-08-01T01:20:49+08:00"
-              content="2019-08-01" >
-          08-01
+              datetime="2018-09-10T15:58:34+08:00"
+              content="2018-09-10" >
+          09-10
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/09/10/Python实现最近点对求解/" itemprop="url">
+              
+                <span itemprop="name">Python实现最近点对求解</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-09-10T15:21:27+08:00"
+              content="2018-09-10" >
+          09-10
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/09/05/python实现argsort排序返回索引值/" itemprop="url">
+              
+                <span itemprop="name">Python实现argsort排序返回索引值</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-09-05T20:58:14+08:00"
+              content="2018-09-05" >
+          09-05
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2017/09/17/Python3连接MySQL数据库/" itemprop="url">
+              
+                <span itemprop="name">Python3连接MySQL数据库</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-09-17T13:20:25+08:00"
+              content="2017-09-17" >
+          09-17
         </time>
       </div>
 
@@ -1019,94 +1103,6 @@
                 searchResultList += result.item;
               })
               searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-  
-
-
-  
-
-  
-
-</body>
-</html>
-/ul>";
               resultContent.innerHTML = searchResultList;
             }
           }
