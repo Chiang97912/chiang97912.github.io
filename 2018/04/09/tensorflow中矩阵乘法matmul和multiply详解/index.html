@@ -96,20 +96,18 @@
 
 
 
-<meta name="description" content="在机器学习或者神经网络编程过程中，我们的运算对象通常是矩阵，而常用的矩阵操作就是点乘(dot product)和元素相乘(elementwise multiplication)。学过线性代数的读者肯定对点乘不会陌生，但是元素相乘就不一定知道了。其实elementwise multiplication就是将两个shape一样的矩阵按照对应元素相乘。  点乘matmul在tensorflow中的点">
+<meta name="description" content="在机器学习或者神经网络编程过程中，我们的运算对象通常是矩阵，而常用的矩阵操作就是点乘(dot product)和元素相乘(elementwise multiplication)。学过线性代数的读者肯定对点乘不会陌生，但是元素相乘就不一定知道了。其实elementwise multiplication就是将两个shape一样的矩阵按照对应元素相乘。  点乘matmul在tensorflow中的点乘使">
 <meta name="keywords" content="tensorflow">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tensorflow中矩阵乘法matmul和multiply详解">
 <meta property="og:url" content="http://chiang97912.github.io/2018/04/09/tensorflow中矩阵乘法matmul和multiply详解/index.html">
 <meta property="og:site_name" content="BetterManPeter">
-<meta property="og:description" content="在机器学习或者神经网络编程过程中，我们的运算对象通常是矩阵，而常用的矩阵操作就是点乘(dot product)和元素相乘(elementwise multiplication)。学过线性代数的读者肯定对点乘不会陌生，但是元素相乘就不一定知道了。其实elementwise multiplication就是将两个shape一样的矩阵按照对应元素相乘。  点乘matmul在tensorflow中的点">
+<meta property="og:description" content="在机器学习或者神经网络编程过程中，我们的运算对象通常是矩阵，而常用的矩阵操作就是点乘(dot product)和元素相乘(elementwise multiplication)。学过线性代数的读者肯定对点乘不会陌生，但是元素相乘就不一定知道了。其实elementwise multiplication就是将两个shape一样的矩阵按照对应元素相乘。  点乘matmul在tensorflow中的点乘使">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1532183050134&di=95c77e2a9da19c9af11dd752f62115ec&imgtype=0&src=http%3A%2F%2Fstatic.leiphone.com%2Fuploads%2Fnew%2Farticle%2Fpic%2F201704%2F58eda9a84786a.jpg%3FimageMogr2%2Fthumbnail%2F480x290%2521%2Fquality%2F90">
-<meta property="og:updated_time" content="2020-08-01T03:20:40.431Z">
+<meta property="og:updated_time" content="2022-07-12T06:14:13.819Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tensorflow中矩阵乘法matmul和multiply详解">
-<meta name="twitter:description" content="在机器学习或者神经网络编程过程中，我们的运算对象通常是矩阵，而常用的矩阵操作就是点乘(dot product)和元素相乘(elementwise multiplication)。学过线性代数的读者肯定对点乘不会陌生，但是元素相乘就不一定知道了。其实elementwise multiplication就是将两个shape一样的矩阵按照对应元素相乘。  点乘matmul在tensorflow中的点">
-<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1532183050134&di=95c77e2a9da19c9af11dd752f62115ec&imgtype=0&src=http%3A%2F%2Fstatic.leiphone.com%2Fuploads%2Fnew%2Farticle%2Fpic%2F201704%2F58eda9a84786a.jpg%3FimageMogr2%2Fthumbnail%2F480x290%2521%2Fquality%2F90">
+<meta name="twitter:description" content="在机器学习或者神经网络编程过程中，我们的运算对象通常是矩阵，而常用的矩阵操作就是点乘(dot product)和元素相乘(elementwise multiplication)。学过线性代数的读者肯定对点乘不会陌生，但是元素相乘就不一定知道了。其实elementwise multiplication就是将两个shape一样的矩阵按照对应元素相乘。  点乘matmul在tensorflow中的点乘使">
 
 
 
@@ -420,8 +418,7 @@
       
 
       
-        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1532183050134&amp;di=95c77e2a9da19c9af11dd752f62115ec&amp;imgtype=0&amp;src=http%3A%2F%2Fstatic.leiphone.com%2Fuploads%2Fnew%2Farticle%2Fpic%2F201704%2F58eda9a84786a.jpg%3FimageMogr2%2Fthumbnail%2F480x290%2521%2Fquality%2F90" alt=""> </p>
-<p>在机器学习或者神经网络编程过程中，我们的运算对象通常是矩阵，而常用的矩阵操作就是点乘(dot product)和元素相乘(elementwise multiplication)。学过线性代数的读者肯定对点乘不会陌生，但是元素相乘就不一定知道了。其实elementwise multiplication就是将两个shape一样的矩阵按照对应元素相乘。 </p>
+        <p>在机器学习或者神经网络编程过程中，我们的运算对象通常是矩阵，而常用的矩阵操作就是点乘(dot product)和元素相乘(elementwise multiplication)。学过线性代数的读者肯定对点乘不会陌生，但是元素相乘就不一定知道了。其实elementwise multiplication就是将两个shape一样的矩阵按照对应元素相乘。 </p>
 <h2 id="点乘matmul"><a href="#点乘matmul" class="headerlink" title="点乘matmul"></a>点乘matmul</h2><p>在tensorflow中的点乘使用matmul方法，其中matmul分两种情况。</p>
 <p>首先我们通过一个例子来了解matmul方法的使用 ：<br>代码示例:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"></div><div class="line"><span class="string">""" 2-D """</span></div><div class="line">print(<span class="string">"2-D:"</span>)</div><div class="line">sess = tf.Session()</div><div class="line">a = tf.constant([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], shape=[<span class="number">2</span>, <span class="number">3</span>])  <span class="comment"># 2-D tensor `a`</span></div><div class="line">print(<span class="string">"a = "</span>, sess.run(a))</div><div class="line">b = tf.constant([<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>], shape=[<span class="number">3</span>, <span class="number">2</span>])  <span class="comment"># 2-D tensor `b`</span></div><div class="line">print(<span class="string">"b = "</span>, sess.run(a))</div><div class="line">c = tf.matmul(a, b)</div><div class="line">print(<span class="string">"c = "</span>, sess.run(c))</div><div class="line"></div><div class="line"><span class="string">""" 3-D """</span></div><div class="line">print(<span class="string">"3-D:"</span>)</div><div class="line">a = tf.constant(np.arange(<span class="number">1</span>, <span class="number">13</span>, dtype=np.int32), shape=[<span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>])  <span class="comment"># 3-D tensor `a`</span></div><div class="line">print(<span class="string">"a = "</span>, sess.run(a))</div><div class="line">b = tf.constant(np.arange(<span class="number">13</span>, <span class="number">25</span>, dtype=np.int32), shape=[<span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>])  <span class="comment"># 3-D tensor `b`</span></div><div class="line">print(<span class="string">"b = "</span>, sess.run(a))</div><div class="line">c = tf.matmul(a, b)</div><div class="line">print(<span class="string">"c = "</span>, sess.run(c))</div><div class="line">sess.close()</div></pre></td></tr></table></figure>
@@ -597,7 +594,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -619,7 +616,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">40</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -752,7 +749,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

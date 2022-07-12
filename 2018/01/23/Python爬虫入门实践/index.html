@@ -96,20 +96,18 @@
 
 
 
-<meta name="description" content="写这篇博客，一来是整理我最近一两个月的数据抓取经验，二来是帮助新手快速入门爬虫。听到爬虫这个词很多人可能会联想到谷歌，百度，必应等搜索引擎，它们拥有强大的数据检索能力，为我们查找资料提供了极大的帮助。这些搜索引擎之所以强大就是因为它们有一个强大的数据抓取系统。下面我们从0到1逐层展开讲解。  基础其实爬虫很简单，归结起来就是下面两个步骤：   获取网页源代码 解析源代码获取需要的信息  获取">
+<meta name="description" content="写这篇博客，一来是整理我最近一两个月的数据抓取经验，二来是帮助新手快速入门爬虫。听到爬虫这个词很多人可能会联想到谷歌，百度，必应等搜索引擎，它们拥有强大的数据检索能力，为我们查找资料提供了极大的帮助。这些搜索引擎之所以强大就是因为它们有一个强大的数据抓取系统。下面我们从0到1逐层展开讲解。  基础其实爬虫很简单，归结起来就是下面两个步骤：   获取网页源代码 解析源代码获取需要的信息  获取网页">
 <meta name="keywords" content="爬虫">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python爬虫入门实践">
 <meta property="og:url" content="http://chiang97912.github.io/2018/01/23/Python爬虫入门实践/index.html">
 <meta property="og:site_name" content="BetterManPeter">
-<meta property="og:description" content="写这篇博客，一来是整理我最近一两个月的数据抓取经验，二来是帮助新手快速入门爬虫。听到爬虫这个词很多人可能会联想到谷歌，百度，必应等搜索引擎，它们拥有强大的数据检索能力，为我们查找资料提供了极大的帮助。这些搜索引擎之所以强大就是因为它们有一个强大的数据抓取系统。下面我们从0到1逐层展开讲解。  基础其实爬虫很简单，归结起来就是下面两个步骤：   获取网页源代码 解析源代码获取需要的信息  获取">
+<meta property="og:description" content="写这篇博客，一来是整理我最近一两个月的数据抓取经验，二来是帮助新手快速入门爬虫。听到爬虫这个词很多人可能会联想到谷歌，百度，必应等搜索引擎，它们拥有强大的数据检索能力，为我们查找资料提供了极大的帮助。这些搜索引擎之所以强大就是因为它们有一个强大的数据抓取系统。下面我们从0到1逐层展开讲解。  基础其实爬虫很简单，归结起来就是下面两个步骤：   获取网页源代码 解析源代码获取需要的信息  获取网页">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531495509146&di=7abf250af13b33c1c4db517e32a48f1d&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20171109%2F9dfd7282adb3499c959aa96d4e4fa805.jpeg">
-<meta property="og:updated_time" content="2020-08-01T03:20:40.430Z">
+<meta property="og:updated_time" content="2022-07-12T06:18:00.191Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python爬虫入门实践">
-<meta name="twitter:description" content="写这篇博客，一来是整理我最近一两个月的数据抓取经验，二来是帮助新手快速入门爬虫。听到爬虫这个词很多人可能会联想到谷歌，百度，必应等搜索引擎，它们拥有强大的数据检索能力，为我们查找资料提供了极大的帮助。这些搜索引擎之所以强大就是因为它们有一个强大的数据抓取系统。下面我们从0到1逐层展开讲解。  基础其实爬虫很简单，归结起来就是下面两个步骤：   获取网页源代码 解析源代码获取需要的信息  获取">
-<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1531495509146&di=7abf250af13b33c1c4db517e32a48f1d&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20171109%2F9dfd7282adb3499c959aa96d4e4fa805.jpeg">
+<meta name="twitter:description" content="写这篇博客，一来是整理我最近一两个月的数据抓取经验，二来是帮助新手快速入门爬虫。听到爬虫这个词很多人可能会联想到谷歌，百度，必应等搜索引擎，它们拥有强大的数据检索能力，为我们查找资料提供了极大的帮助。这些搜索引擎之所以强大就是因为它们有一个强大的数据抓取系统。下面我们从0到1逐层展开讲解。  基础其实爬虫很简单，归结起来就是下面两个步骤：   获取网页源代码 解析源代码获取需要的信息  获取网页">
 
 
 
@@ -416,8 +414,7 @@
       
 
       
-        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1531495509146&amp;di=7abf250af13b33c1c4db517e32a48f1d&amp;imgtype=0&amp;src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20171109%2F9dfd7282adb3499c959aa96d4e4fa805.jpeg" alt=""> </p>
-<blockquote>
+        <blockquote>
 <p>写这篇博客，一来是整理我最近一两个月的数据抓取经验，二来是帮助新手快速入门爬虫。听到爬虫这个词很多人可能会联想到谷歌，百度，必应等搜索引擎，它们拥有强大的数据检索能力，为我们查找资料提供了极大的帮助。这些搜索引擎之所以强大就是因为它们有一个强大的数据抓取系统。下面我们从0到1逐层展开讲解。</p>
 </blockquote>
 <h1 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h1><p>其实爬虫很简单，归结起来就是下面两个步骤： </p>
@@ -659,7 +656,7 @@ https://cdn.pixabay.com/photo/2018/06/29/01/47/piano-3505109__340.jpg
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -681,7 +678,7 @@ https://cdn.pixabay.com/photo/2018/06/29/01/47/piano-3505109__340.jpg
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">40</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -814,7 +811,7 @@ https://cdn.pixabay.com/photo/2018/06/29/01/47/piano-3505109__340.jpg
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
