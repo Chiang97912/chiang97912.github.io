@@ -526,22 +526,22 @@
     <link href="http://chiang97912.github.io/2018/09/02/%E6%A8%A1%E7%B3%8A%E7%BB%BC%E5%90%88%E8%AF%84%E4%BB%B7%E6%B3%95%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/"/>
     <id>http://chiang97912.github.io/2018/09/02/模糊综合评价法原理及实现/</id>
     <published>2018-09-02T09:45:12.000Z</published>
-    <updated>2020-08-01T03:20:40.432Z</updated>
+    <updated>2022-07-26T03:02:45.851Z</updated>
     
     <summary type="html">
     
       &lt;h1 id=&quot;模糊综合评价法原理&quot;&gt;&lt;a href=&quot;#模糊综合评价法原理&quot; class=&quot;headerlink&quot; title=&quot;模糊综合评价法原理&quot;&gt;&lt;/a&gt;模糊综合评价法原理&lt;/h1&gt;&lt;h2 id=&quot;基本思想&quot;&gt;&lt;a href=&quot;#基本思想&quot; class=&quot;headerlink&quot; title=&quot;基本思想&quot;&gt;&lt;/a&gt;基本思想&lt;/h2&gt;&lt;p&gt;模糊综合评价法是一种基于模糊数学的综合评价方法。该综合评价法根据模糊数学的&lt;strong&gt;隶属度理论&lt;/strong&gt;把定性评价转化为定量评价，即用模糊数学对受到多种因素制约的事物或对象做出一个总体的评价。它具有结果清晰，系统性强的特点，能较好地解决模糊的、难以量化的问题，适合各种非确定性问题的解决。&lt;/p&gt;
 &lt;h2 id=&quot;隶属度&quot;&gt;&lt;a href=&quot;#隶属度&quot; class=&quot;headerlink&quot; title=&quot;隶属度&quot;&gt;&lt;/a&gt;隶属度&lt;/h2&gt;&lt;p&gt;隶属函数，也称为归属函数或模糊元函数，是模糊集合中会用到的函数，是一般集合中指示函数的一般化。指示函数可以&lt;strong&gt;说明一个集合中的元素是否属于特定子集合&lt;/strong&gt;。一元素的指示函数的值可能是0或是1，而元素的&lt;strong&gt;隶属函数会是0到1之间的数值&lt;/strong&gt;，表示元素属于某模糊集合的“真实程度”（degree of truth）即隶属度。&lt;/p&gt;
-&lt;h2 id=&quot;基本模型&quot;&gt;&lt;a href=&quot;#基本模型&quot; class=&quot;headerlink&quot; title=&quot;基本模型&quot;&gt;&lt;/a&gt;基本模型&lt;/h2&gt;&lt;p&gt;设评判对象为P: 其因素集$ U=\left{ u_1, u_2, \cdots , u_n \right} $ ,评判等级集$ V=\left{ v_1, v_2, \cdots ,v_m \right} $。对U中每一因素根据评判集中的等级指标进行模糊评判，得到评判矩阵：&lt;/p&gt;
+&lt;h2 id=&quot;基本模型&quot;&gt;&lt;a href=&quot;#基本模型&quot; class=&quot;headerlink&quot; title=&quot;基本模型&quot;&gt;&lt;/a&gt;基本模型&lt;/h2&gt;&lt;p&gt;设评判对象为P: 其因素集 $ U={ u_1, u_2, \cdots , u_n } $  ,评判等级集 $ V={ v_1, v_2, \cdots ,v_m } $ 。对U中每一因素根据评判集中的等级指标进行模糊评判，得到评判矩阵：&lt;/p&gt;
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
 R=\begin{bmatrix}
 r{11},r{12},\cdots,r{1m} \\ 
 r{21},r{22},\cdots,r{2m} \\ 
 r{n1},r{n2},\cdots,r_{nm}
 \end{bmatrix}&lt;/script&gt;&lt;p&gt;通常为了避免量纲的影响，我们还要进行去量纲操作。&lt;/p&gt;
-&lt;p&gt;其中， $r&lt;em&gt;{ij}$表示$u_i$关于$v_j$的隶属度。(U,V,R) 则构成了一个模糊综合评判模型。确定各因素重要性指标（也称权数）后，记为$A=\left { a_1,a_2, \cdots,a_n \right }$,满足$ \sum&lt;/em&gt;{i=1}^na_i=1$ ，合成得&lt;/p&gt;
+&lt;p&gt;其中，$r&lt;em&gt;{ij}$表示$u_i$关于$v_j$的隶属度。(U,V,R) 则构成了一个模糊综合评判模型。确定各因素重要性指标（也称权数）后，记为$A={ a_1,a_2, \cdots,a_n }$,满足$\sum&lt;/em&gt;{i=1}^na_i=1$，合成得&lt;/p&gt;
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
-\overline B = A\cdot R=\left(\overline {b_1}, \overline {b_2}, \cdots ,\overline {b_m} \right)&lt;/script&gt;&lt;p&gt;经归一化后，得$B=\left { b_i, b_2, \cdots, b_m \right}$ ,于是可确定对象P的评判等级。&lt;/p&gt;
+\overline B = A\cdot R=\left(\overline {b_1}, \overline {b_2}, \cdots ,\overline {b_m} \right)&lt;/script&gt;&lt;p&gt;经归一化后，得 $ B= { b_i, b_2, \cdots, b_m } $ ,于是可确定对象P的评判等级。&lt;/p&gt;
 &lt;p&gt;如果想得到综合得分，那么我们还可以对B进一步打分，即以同样的方式设置权数，对B进行综合评定。&lt;/p&gt;
 &lt;p&gt;对问题进行模糊综合分析之后我们通常还要考察该模型的置信度。&lt;/p&gt;
     

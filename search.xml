@@ -942,16 +942,16 @@ NDCG_k=\frac{DCG_k}{IDCG_k}</script><p>其中IDCG(Ideal DCG)，指推荐系统�
     <url>/2018/09/02/%E6%A8%A1%E7%B3%8A%E7%BB%BC%E5%90%88%E8%AF%84%E4%BB%B7%E6%B3%95%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/</url>
     <content><![CDATA[<h1 id="模糊综合评价法原理"><a href="#模糊综合评价法原理" class="headerlink" title="模糊综合评价法原理"></a>模糊综合评价法原理</h1><h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h2><p>模糊综合评价法是一种基于模糊数学的综合评价方法。该综合评价法根据模糊数学的<strong>隶属度理论</strong>把定性评价转化为定量评价，即用模糊数学对受到多种因素制约的事物或对象做出一个总体的评价。它具有结果清晰，系统性强的特点，能较好地解决模糊的、难以量化的问题，适合各种非确定性问题的解决。</p>
 <h2 id="隶属度"><a href="#隶属度" class="headerlink" title="隶属度"></a>隶属度</h2><p>隶属函数，也称为归属函数或模糊元函数，是模糊集合中会用到的函数，是一般集合中指示函数的一般化。指示函数可以<strong>说明一个集合中的元素是否属于特定子集合</strong>。一元素的指示函数的值可能是0或是1，而元素的<strong>隶属函数会是0到1之间的数值</strong>，表示元素属于某模糊集合的“真实程度”（degree of truth）即隶属度。</p>
-<h2 id="基本模型"><a href="#基本模型" class="headerlink" title="基本模型"></a>基本模型</h2><p>设评判对象为P: 其因素集$ U=\left{ u_1, u_2, \cdots , u_n \right} $ ,评判等级集$ V=\left{ v_1, v_2, \cdots ,v_m \right} $。对U中每一因素根据评判集中的等级指标进行模糊评判，得到评判矩阵：</p>
+<h2 id="基本模型"><a href="#基本模型" class="headerlink" title="基本模型"></a>基本模型</h2><p>设评判对象为P: 其因素集 $ U={ u_1, u_2, \cdots , u_n } $  ,评判等级集 $ V={ v_1, v_2, \cdots ,v_m } $ 。对U中每一因素根据评判集中的等级指标进行模糊评判，得到评判矩阵：</p>
 <script type="math/tex; mode=display">
 R=\begin{bmatrix}
 r{11},r{12},\cdots,r{1m} \\ 
 r{21},r{22},\cdots,r{2m} \\ 
 r{n1},r{n2},\cdots,r_{nm}
 \end{bmatrix}</script><p>通常为了避免量纲的影响，我们还要进行去量纲操作。</p>
-<p>其中， $r<em>{ij}$表示$u_i$关于$v_j$的隶属度。(U,V,R) 则构成了一个模糊综合评判模型。确定各因素重要性指标（也称权数）后，记为$A=\left { a_1,a_2, \cdots,a_n \right }$,满足$ \sum</em>{i=1}^na_i=1$ ，合成得</p>
+<p>其中，$r<em>{ij}$表示$u_i$关于$v_j$的隶属度。(U,V,R) 则构成了一个模糊综合评判模型。确定各因素重要性指标（也称权数）后，记为$A={ a_1,a_2, \cdots,a_n }$,满足$\sum</em>{i=1}^na_i=1$，合成得</p>
 <script type="math/tex; mode=display">
-\overline B = A\cdot R=\left(\overline {b_1}, \overline {b_2}, \cdots ,\overline {b_m} \right)</script><p>经归一化后，得$B=\left { b_i, b_2, \cdots, b_m \right}$ ,于是可确定对象P的评判等级。</p>
+\overline B = A\cdot R=\left(\overline {b_1}, \overline {b_2}, \cdots ,\overline {b_m} \right)</script><p>经归一化后，得 $ B= { b_i, b_2, \cdots, b_m } $ ,于是可确定对象P的评判等级。</p>
 <p>如果想得到综合得分，那么我们还可以对B进一步打分，即以同样的方式设置权数，对B进行综合评定。</p>
 <p>对问题进行模糊综合分析之后我们通常还要考察该模型的置信度。</p>
 <a id="more"></a>
