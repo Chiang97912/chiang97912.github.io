@@ -36,14 +36,14 @@
 <h2 id="准确率（Accuracy）"><a href="#准确率（Accuracy）" class="headerlink" title="准确率（Accuracy）"></a>准确率（Accuracy）</h2><p>定义：指的是分类正确的样本数量占样本总数的比例</p>
 <p>公式：</p>
 <script type="math/tex; mode=display">
-A=\frac{TP+TN}{TP+TN+FN+FP}</script><p>代码：</p>
+A=\frac{TP+TN}{TP+TN+FN+FP}</script><p>scikit-learn接口：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> accuracy_score</div><div class="line">y_pred = [<span class="number">0</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>]</div><div class="line">y_true = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line">accuracy_score(y_true, y_pred)</div></pre></td></tr></table></figure>
 <h2 id="精确率-Precision"><a href="#精确率-Precision" class="headerlink" title="精确率(Precision)"></a>精确率(Precision)</h2><p>定义：精确率(Precision)，即查准率。通常我们所说的精确率是正例的精确率，<strong>它是被判定为正例的样本中，真正的正例样本的比例。</strong>我们同样可以计算负例的精确率，但是通常没有人这样做。精确率主要用来评测是否<strong>误检</strong>。举个例子，假设一个班级有10个学生，5男5女。我们目标是寻找班级中的女生，返回6个结果分别是男 、 女 、女 、 男 、女 、 男。如果返回的结果中只有3个正确，那么查准率为3/6=0.5。</p>
 <p>公式（分类任务）：</p>
 <script type="math/tex; mode=display">
 P=\frac{TP}{TP+FP}或\frac{TN}{TN+FN}</script><p>在信息检索领域，精确率是返回结果中相关文档的数目与返回结果的数目的比例：</p>
 <script type="math/tex; mode=display">
-precision=\frac{|\{relevant\ documents\}∩\{retrieved\ documents\}|}{\{retrieved\ documents\}}</script><p>代码：</p>
+precision=\frac{|\{relevant\ documents\}∩\{retrieved\ documents\}|}{\{retrieved\ documents\}}</script><p>scikit-learn接口：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> precision_score</div><div class="line">y_true = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>]</div><div class="line">y_pred = [<span class="number">0</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>]</div><div class="line">precision_score(y_true, y_pred, average=<span class="string">'macro'</span>)</div><div class="line"></div><div class="line">precision_score(y_true, y_pred, average=<span class="string">'micro'</span>)</div><div class="line"></div><div class="line">precision_score(y_true, y_pred, average=<span class="string">'weighted'</span>)</div><div class="line"></div><div class="line">precision_score(y_true, y_pred, average=<span class="keyword">None</span>)</div></pre></td></tr></table></figure>
 <p>注释：</p>
 <p>macro 度量：对于n个二分类混淆矩阵，在各混淆矩阵上分别计算精确率和召回率，记（P1,R1），（P2,R2）…（Pn，Rn），再计算平均值，得到宏精确率（macro-P）、宏召回率（macro-R），继而得到宏F1（macro-F1）。</p>
@@ -53,15 +53,15 @@ precision=\frac{|\{relevant\ documents\}∩\{retrieved\ documents\}|}{\{retrieve
 <script type="math/tex; mode=display">
 R=\frac{TP}{TP+FN}或\frac{TN}{TN+FP}</script><p>在信息检索领域，召回率是返回结果中相关文档的数目与所有相关文档的数目的比例：</p>
 <script type="math/tex; mode=display">
-precision=\frac{|\{relevant\ documents\}∩\{retrieved\ documents\}|}{\{relevant\ documents\}}</script><p>代码：</p>
+precision=\frac{|\{relevant\ documents\}∩\{retrieved\ documents\}|}{\{relevant\ documents\}}</script><p>scikit-learn接口：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> recall_score</div><div class="line">y_true = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>]</div><div class="line">y_pred = [<span class="number">0</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>]</div><div class="line">recall_score(y_true, y_pred, average=<span class="string">'macro'</span>)</div><div class="line"></div><div class="line">recall_score(y_true, y_pred, average=<span class="string">'micro'</span>)</div><div class="line"></div><div class="line">recall_score(y_true, y_pred, average=<span class="string">'weighted'</span>)</div><div class="line"></div><div class="line">recall_score(y_true, y_pred, average=<span class="keyword">None</span>)</div></pre></td></tr></table></figure>
 <h2 id="F1-score"><a href="#F1-score" class="headerlink" title="F1_score"></a>F1_score</h2><p>定义：精确率和召回率的调和平均值。</p>
 <p>公式：</p>
 <script type="math/tex; mode=display">
-\frac{1}{F1}=\frac{1}{2}.(\frac{1}{P}+\frac{1}{R})，即F1=\frac{2\times P\times R}{P+R}=\frac{2TP}{2TP+FP+FN}</script><p>代码：</p>
+\frac{1}{F1}=\frac{1}{2}.(\frac{1}{P}+\frac{1}{R})，即F1=\frac{2\times P\times R}{P+R}=\frac{2TP}{2TP+FP+FN}</script><p>scikit-learn接口：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> f1_score</div><div class="line">y_true = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>]</div><div class="line">y_pred = [<span class="number">0</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>]</div><div class="line">f1_score(y_true, y_pred, average=<span class="string">'macro'</span>)</div><div class="line"></div><div class="line">f1_score(y_true, y_pred, average=<span class="string">'micro'</span>)</div><div class="line"></div><div class="line">f1_score(y_true, y_pred, average=<span class="string">'weighted'</span>)</div><div class="line"></div><div class="line">f1_score(y_true, y_pred, average=<span class="keyword">None</span>)</div></pre></td></tr></table></figure>
 <h2 id="ROC和AUC"><a href="#ROC和AUC" class="headerlink" title="ROC和AUC"></a>ROC和AUC</h2><p>定义： <strong>ROC曲线</strong>，是以FPR(False Positive Rate, 召回率) 为横轴、TPR(True Positive Rate, 取伪率)为纵轴，衡量二分类系统性能的曲线。分类器对分类的置信度一般设为50%，即置信度超过50%认为是正例，低于50%认为是反例。依次改变这个置信度为10%~100%，会得到一组不同的混淆矩阵，取其中的FPR和TPR值组成坐标，连接这些值，就得到ROC曲线。<strong>ROC曲线与X轴围成的图形面积可以作为一个综合衡量指标，即AUC（Area Under Curve，曲线下面积）</strong>。AUC越大，曲线就越凸，分类器的效果也就越好。ROC曲线反映了分类器对正例的覆盖能力和对负例的覆盖能力之间的权衡。</p>
-<p>代码：</p>
+<p>scikit-learn接口：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> roc_curve, auc, roc_auc_score</div><div class="line"></div><div class="line">y = np.array([<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>])</div><div class="line">pred = np.array([<span class="number">0.1</span>,<span class="number">0.4</span>,<span class="number">0.35</span>,<span class="number">0.8</span>])</div><div class="line">fpr,tpr,thresholds = roc_curve(y,pred,pos_label=<span class="number">2</span>)</div><div class="line">result = auc(fpr,tpr)</div><div class="line">print(result)</div></pre></td></tr></table></figure>
 <h2 id="AP-MAP"><a href="#AP-MAP" class="headerlink" title="AP/MAP"></a>AP/MAP</h2><p>定义：我们首先引入PR曲线概念。<strong>PR曲线</strong>（Precision-recall曲线）与ROC曲线的区别是横轴和纵轴不同，PR曲线的横轴Recall也就是TPR，反映了分类器对正例的覆盖能力。而纵轴Precision的分母是识别为正例的数目，而不是实际正例数目。Precision反映了分类器预测正例的准确程度。那么，PR曲线反映了分类器对正例的识别准确程度和对正例的覆盖能力之间的权衡。对于随机分类器而言，其Precision固定的等于样本中正例的比例，不随recall的变化而变化。与AUC相似，<strong>AP（Average Precision）就是PR曲线与X轴围成的图形面积</strong>，</p>
 <p>若PR曲线为连续型，则：</p>
@@ -141,7 +141,7 @@ AP=\frac{\sum_{k=1}^n (P(k)\times rel(k))}{number\ of\ relevant\ documents}</scr
 <p>上表中Prediction列表示文档的得分排序结果，Correctness列表示结果的正确性，Points列为精确率得分。那么我们将计算得到AP=(0+1/2+2/3+0+3/5+0+0+0+4/9+0)/4=0.55。</p>
 <p>MAP计算方法：主集合的平均准确率(MAP)是每个主题的平均准确率（AP）的平均值。假设在测试集中一共有k个类别。我们先算出我们的模型对于每个类别的AP，然后将这些AP相加在一起再除以所有类别的数量k，就可以得到最终模型的MAP。</p>
 <p>例如：假设有两个主题，主题1有4个相关网页，主题2有3个相关网页。对于主题1检索出4个相关网页，其rank分别为1, 2, 4, 7，平均准确率为(1/1+2/2+3/4+4/7)/4=0.83；对于主题2检索出3个相关网页，其rank分别为1,3,5，平均准确率为(1/1+2/3+3/5+0+0)/5=0.45。则MAP= (0.83+0.45)/2=0.64。</p>
-<p>代码：</p>
+<p>scikit-learn接口：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> average_precision_score</div><div class="line">y_true = np.array([<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>])</div><div class="line">y_scores = np.array([<span class="number">0.1</span>, <span class="number">0.4</span>, <span class="number">0.35</span>, <span class="number">0.8</span>])</div><div class="line">result = average_precision_score(y_true, y_scores)  <span class="comment"># 计算AP</span></div><div class="line">print(result)</div></pre></td></tr></table></figure>
 <h2 id="MRR"><a href="#MRR" class="headerlink" title="MRR"></a>MRR</h2><p>定义：MRR(Mean Reciprocal Rank, 平均倒数排名)把标准答案在搜索结果中分数的排序取倒数作为它的准确度，再对所有的问题取平均。例如：</p>
 <div class="table-container">
@@ -185,6 +185,7 @@ AP=\frac{\sum_{k=1}^n (P(k)\times rel(k))}{number\ of\ relevant\ documents}</scr
 <p>公式：</p>
 <script type="math/tex; mode=display">
 MRR=\frac{1}{Q}\sum_{i=1}^{|Q|} \frac{1}{rank_i}</script><p>其中|Q|是查询个数，$rank_i$是第i个查询相对于第一个相关的结果所在的排列位置。</p>
+<p>scikit-learn接口：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> label_ranking_average_precision_score</div><div class="line">y_true = np.array([[<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>]])</div><div class="line">y_score = np.array([[<span class="number">0.75</span>, <span class="number">0.5</span>, <span class="number">1</span>], [<span class="number">1</span>, <span class="number">0.2</span>, <span class="number">0.1</span>]])</div><div class="line">result = label_ranking_average_precision_score(y_true, y_score)</div><div class="line">print(result)</div></pre></td></tr></table></figure>
 <h2 id="NDCG"><a href="#NDCG" class="headerlink" title="NDCG"></a>NDCG</h2><p>定义：NDCG(Normalized Discounted Cumulative Gain, 归一化折损累计增益)，在MAP中，四个文档和query要么相关，要么不相关，即相关度只能是0或1。NDCG对MAP进行了改进，相关度分成从0到r等级。当取r=5时，等级设定如下图所示：</p>
 <div class="table-container">
@@ -331,6 +332,10 @@ DCG_k=\sum_{i=1}^k \frac{2^{rel_i}-1}{log_2 (i+1)}</script><div class="table-con
 <p>最后我们对DCG进行归一化得到<strong>NDCG</strong>(Normalized Discounted Cumulative Gain,归一化折损累计增益)。</p>
 <script type="math/tex; mode=display">
 NDCG_k=\frac{DCG_k}{IDCG_k}</script><p>其中IDCG(Ideal DCG)，指推荐系统为某一用户返回的最好推荐结果列表，即假设返回结果按照相关性排序，最相关的结果放在前面，此序列的DCG为IDCG。因此DCG的值介于(0, IDCG]，故NDCG的值介于(0,1]。</p>
+<h2 id="评估方法实现"><a href="#评估方法实现" class="headerlink" title="评估方法实现"></a>评估方法实现</h2><script src="https://gist.github.com/Chiang97912/5ebca5f3fa58eff4a096119dd356e032.js"></script>
+
+
+
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1]: <a href="https://en.wikipedia.org/wiki/Precision_and_recall" target="_blank" rel="external">Precision and recall</a></p>
 <p>[2]:  <a href="https://en.wikipedia.org/wiki/Evaluation_measures_(information_retrieval" target="_blank" rel="external">https://en.wikipedia.org/wiki/Evaluation_measures_(information_retrieval</a>)</p>
 <p>[3]:  <a href="https://www.cnblogs.com/shixiangwan/p/7215926.html" target="_blank" rel="external">Precision/Recall、ROC/AUC、AP/MAP等概念区分</a> </p>
