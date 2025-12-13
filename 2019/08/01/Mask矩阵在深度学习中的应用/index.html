@@ -267,7 +267,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1>定义</h1>
+        <h1 id="定义"><a class="markdownIt-Anchor" href="#定义"></a> 定义</h1>
 <p>mask矩阵是一个由0和1组成的矩阵。在NLP中，一个常见的问题是输入序列长度不等，而mask可以帮助我们处理。虽然RNN等模型可以处理不定长的输入，但是在实践中，需要对输入中长度较短的句子进行填充，即在句尾填充0占位，转换成固定大小的tensor，方便矩阵操作。</p>
 <span id="more"></span>
 <p>举个例子：</p>
@@ -281,7 +281,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">maxlen = <span class="number">5</span></span><br><span class="line">lengths = [[<span class="number">3</span>, <span class="number">5</span>, <span class="number">4</span>], [<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>]]</span><br><span class="line">mask = tf.cast(tf.sequence_mask(lengths, maxlen), tf.float32)</span><br><span class="line">sess = tf.Session()</span><br><span class="line">mask = sess.run(mask)</span><br><span class="line"><span class="built_in">print</span>(mask)</span><br></pre></td></tr></table></figure>
 <p>运行结果：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[[[1. 1. 1. 0. 0.]</span><br><span class="line">  [1. 1. 1. 1. 1.]</span><br><span class="line">  [1. 1. 1. 1. 0.]]</span><br><span class="line"></span><br><span class="line"> [[1. 0. 0. 0. 0.]</span><br><span class="line">  [1. 1. 1. 0. 0.]</span><br><span class="line">  [1. 1. 0. 0. 0.]]]</span><br></pre></td></tr></table></figure>
-<h1>作用</h1>
+<h1 id="作用"><a class="markdownIt-Anchor" href="#作用"></a> 作用</h1>
 <ol>
 <li>
 <p>使用mask矩阵是为了让那些被mask掉的tensor不会被更新。一个tensor T和同样大小的mask矩阵M相乘在梯度回传的时候，T对应mask为0的地方梯度为0。因此权重不会被更新。</p>
@@ -295,7 +295,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">subsequent_mask</span>(<span class="params">size</span>):</span><br><span class="line">    <span class="string">&quot;Mask out subsequent positions.&quot;</span></span><br><span class="line">    attn_mask = tf.ones([size, size])</span><br><span class="line">    mask = tf.matrix_band_part(attn_mask, -<span class="number">1</span>, <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> mask </span><br><span class="line"></span><br><span class="line">sess = tf.Session()</span><br><span class="line">mask = sess.run(subsequent_mask(<span class="number">10</span>))</span><br><span class="line"><span class="built_in">print</span>(mask)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Display matrix</span></span><br><span class="line">plt.matshow(mask)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 <p>运行结果：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[[1. 0. 0. 0. 0. 0. 0. 0. 0. 0.]</span><br><span class="line"> [1. 1. 0. 0. 0. 0. 0. 0. 0. 0.]</span><br><span class="line"> [1. 1. 1. 0. 0. 0. 0. 0. 0. 0.]</span><br><span class="line"> [1. 1. 1. 1. 0. 0. 0. 0. 0. 0.]</span><br><span class="line"> [1. 1. 1. 1. 1. 0. 0. 0. 0. 0.]</span><br><span class="line"> [1. 1. 1. 1. 1. 1. 0. 0. 0. 0.]</span><br><span class="line"> [1. 1. 1. 1. 1. 1. 1. 0. 0. 0.]</span><br><span class="line"> [1. 1. 1. 1. 1. 1. 1. 1. 0. 0.]</span><br><span class="line"> [1. 1. 1. 1. 1. 1. 1. 1. 1. 0.]</span><br><span class="line"> [1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]]</span><br></pre></td></tr></table></figure>
-<h2 id="参考">参考</h2>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
 <p>[1]: <a href="https://www.zhihu.com/question/305508138/answer/550573253">Mask矩阵在深度学习中有哪些应用场景？</a></p>
 <p>[2]: <a href="http://www.linzehui.me/2018/10/12/%E7%A2%8E%E7%89%87%E7%9F%A5%E8%AF%86/%E6%B5%85%E8%B0%88mask%E7%9F%A9%E9%98%B5/">浅谈mask矩阵</a></p>
 
@@ -404,7 +404,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">作用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">2.1.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text"> 定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%9C%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text"> 作用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">2.1.</span> <span class="nav-text"> 参考</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

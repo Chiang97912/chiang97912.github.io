@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"chiang97912.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Windows环境 插件管理器 VIM的插件管理器主要有vim-plug和vundle">
+  <meta name="description" content="Windows环境  插件管理器 VIM的插件管理器主要有vim-plug和vundle">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用VIM作为IDE">
 <meta property="og:url" content="http://chiang97912.github.io/2019/08/01/%E4%BD%BF%E7%94%A8VIM%E4%BD%9C%E4%B8%BAIDE/index.html">
 <meta property="og:site_name" content="Peter&#39;s Blog">
-<meta property="og:description" content="Windows环境 插件管理器 VIM的插件管理器主要有vim-plug和vundle">
+<meta property="og:description" content="Windows环境  插件管理器 VIM的插件管理器主要有vim-plug和vundle">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-08-01T02:40:24.000Z">
 <meta property="article:modified_time" content="2025-12-13T12:18:36.570Z">
@@ -262,11 +262,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1>Windows环境</h1>
-<h2 id="插件管理器">插件管理器</h2>
+        <h1 id="windows环境"><a class="markdownIt-Anchor" href="#windows环境"></a> Windows环境</h1>
+<h2 id="插件管理器"><a class="markdownIt-Anchor" href="#插件管理器"></a> 插件管理器</h2>
 <p>VIM的插件管理器主要有vim-plug和vundle</p>
 <span id="more"></span>
-<h2 id="Vim-plug">Vim-plug</h2>
+<h2 id="vim-plug"><a class="markdownIt-Anchor" href="#vim-plug"></a> Vim-plug</h2>
 <ol>
 <li>
 <p>首先下载vim-plug，可以去<a href="https://github.com/junegunn/vim-plug">github</a>下载</p>
@@ -278,10 +278,10 @@
 <p>使用管理员身份运行gvim,，然后点击gvim的“编辑”——“启动设定”，打开_vimrc配置文件。</p>
 </li>
 </ol>
-<h3 id="插件安装示例">插件安装示例</h3>
+<h3 id="插件安装示例"><a class="markdownIt-Anchor" href="#插件安装示例"></a> 插件安装示例</h3>
 <p>在_vimrc中添加如下的内容，这里以vim-plug下载<strong>nerdtree</strong>插件为例。设置完成后保存设置。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">call plug#begin(&#x27;~/.vim/plugged&#x27;) &quot;插件保存的目录</span><br><span class="line">Plug &#x27;scrooloose/nerdtree&#x27;, &#123;&#x27;on&#x27;: &#x27;NERDTreeToggle&#x27;&#125;  &quot;NERDTree插件</span><br><span class="line">call plug#end()</span><br></pre></td></tr></table></figure>
-<h3 id="常用操作">常用操作</h3>
+<h3 id="常用操作"><a class="markdownIt-Anchor" href="#常用操作"></a> 常用操作</h3>
 <table>
 <thead>
 <tr>
@@ -312,7 +312,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="Vundle">Vundle</h2>
+<h2 id="vundle"><a class="markdownIt-Anchor" href="#vundle"></a> Vundle</h2>
 <ol>
 <li>
 <p>首先下载vundle，可以去<a href="https://github.com/VundleVim/Vundle.vim">github</a>下载</p>
@@ -324,10 +324,10 @@
 <p>使用管理员身份运行gvim,，然后点击gvim的“编辑”——“启动设定”，打开_vimrc配置文件。</p>
 </li>
 </ol>
-<h3 id="插件安装示例-2">插件安装示例</h3>
+<h3 id="插件安装示例-2"><a class="markdownIt-Anchor" href="#插件安装示例-2"></a> 插件安装示例</h3>
 <p>在_vimrc中添加如下的内容，这里以vundle下载<strong>nerdtree</strong>插件为例。设置完成后保存设置。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">set rtp+=~/.vim/bundle/Vundle.vim</span><br><span class="line">call vundle#begin()</span><br><span class="line">Plugin &#x27;VundleVim/Vundle.vim&#x27;</span><br><span class="line">Plugin &#x27;scrooloose/nerdtree&#x27;</span><br><span class="line">call vundle#end()</span><br></pre></td></tr></table></figure>
-<h3 id="常用操作-2">常用操作</h3>
+<h3 id="常用操作-2"><a class="markdownIt-Anchor" href="#常用操作-2"></a> 常用操作</h3>
 <table>
 <thead>
 <tr>
@@ -358,7 +358,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="Python自动补全">Python自动补全</h2>
+<h2 id="python自动补全"><a class="markdownIt-Anchor" href="#python自动补全"></a> Python自动补全</h2>
 <p>Python自动补全插件这里主要使用<strong>jedi-vim</strong>，具体配置步骤如下：</p>
 <p>在_vimrc中添加如下的内容，设置完成后保存设置。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;插件管理 vim-plug</span><br><span class="line">call plug#begin(&#x27;~/.vim/plugged&#x27;) &quot;插件保存的目录</span><br><span class="line">Plug &#x27;davidhalter/jedi-vim&#x27;,</span><br><span class="line">call plug#end()</span><br></pre></td></tr></table></figure>
@@ -378,16 +378,16 @@
 <p>那么可以在_vimrc中添加如下命令指定Python3版本：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set pythonthreedll=python36.dll</span><br></pre></td></tr></table></figure>
 <p>由于笔者安装的vim8.1使用的是Python3.7编译，但是电脑环境装的是Python3.6，我们可以通过上面配置来解决Windows环境中gvim不支持python3.6的问题。</p>
-<h2 id="C-C-自动补全">C/C++自动补全</h2>
+<h2 id="cc自动补全"><a class="markdownIt-Anchor" href="#cc自动补全"></a> C/C++自动补全</h2>
 <p>C/C++自动补全插件这里主要使用ctags + OmniCppComplete方案，具体配置步骤如下：</p>
 <p>Ctags 全名 Exuberant Ctags，是一个独立的程序。它可以为各种语言的源代码生成语言元素（language object）索引文件。对于 C/C++ 而言，就是把源代码中的各种宏、函数、类、类成员等等元素和它们的相关信息生成索引文件，供其它程序使用。OmniCppComplete 是专为 C/C++ 编写的OmniComplete一个补全脚本，它根据 Ctags 生成的索引文件对代码进行补全。</p>
-<h3 id="安装Ctags">安装Ctags</h3>
+<h3 id="安装ctags"><a class="markdownIt-Anchor" href="#安装ctags"></a> 安装Ctags</h3>
 <ol>
 <li>从<a href="http://ctags.sourceforge.net/">Ctags官网</a>下载 Ctags 可执行文件</li>
 <li>将下载到的文件（仅 EXE 文件即可）解压到一个目录，例如 C:/ctags</li>
 <li>将该目录加入环境变量 PATH</li>
 </ol>
-<h3 id="生成索引文件">生成索引文件</h3>
+<h3 id="生成索引文件"><a class="markdownIt-Anchor" href="#生成索引文件"></a> 生成索引文件</h3>
 <p>以生成 C++ 标准库索引文件为例：</p>
 <ol>
 <li>
@@ -404,56 +404,56 @@
 <p>建议将上一步生成的 C:/ctags/cpp_src/cpp 文件放到一个专门放置索引文件的目录以便后面的统一设置，例如放到 C:/ctags/tags</p>
 <p>其它库的索引文件也可以依法炮制，只需切换到该库的 include 文件夹，执行：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ -f &lt;文件名&gt; .</span><br></pre></td></tr></table></figure>
-<h3 id="安装OmniCppComplete">安装OmniCppComplete</h3>
+<h3 id="安装omnicppcomplete"><a class="markdownIt-Anchor" href="#安装omnicppcomplete"></a> 安装OmniCppComplete</h3>
 <ol>
 <li>使用插件管理器安装OmniCppComplete</li>
 <li>修改VIM配置文件_vimrc，加入如下内容：</li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&quot; ctags 索引文件</span><br><span class="line">set tags+=C:/ctags/tags/cpp &quot; 指定tags存放路径</span><br><span class="line"></span><br><span class="line">&quot; OmniCppComplete</span><br><span class="line">let OmniCpp_NamespaceSearch = 1</span><br><span class="line">let OmniCpp_GlobalScopeSearch = 1</span><br><span class="line">let OmniCpp_ShowAccess = 1</span><br><span class="line">let OmniCpp_ShowPrototypeInAbbr = 1 &quot; 显示函数参数列表</span><br><span class="line">let OmniCpp_MayCompleteDot = 1   &quot; 输入 .  后自动补全</span><br><span class="line">let OmniCpp_MayCompleteArrow = 1 &quot; 输入 -&gt; 后自动补全</span><br><span class="line">let OmniCpp_MayCompleteScope = 1 &quot; 输入 :: 后自动补全</span><br><span class="line">let OmniCpp_DefaultNamespaces = [&quot;std&quot;, &quot;_GLIBCXX_STD&quot;]</span><br><span class="line">&quot; 自动关闭补全窗口</span><br><span class="line">au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif</span><br><span class="line">set completeopt=menuone,menu,longest</span><br><span class="line"></span><br><span class="line">filetype plugin indent on</span><br></pre></td></tr></table></figure>
 <p>在插入模式编辑 C/C++ 源文件时按下 . 或 -&gt; 或 ::，或者手动按下 Ctrl+X Ctrl+O 后就会弹出自动补全窗口，此时可以用 Ctrl+N 和 Ctrl+P 上下移动光标进行选择。</p>
-<h3 id="自动生成tags文件">自动生成tags文件</h3>
+<h3 id="自动生成tags文件"><a class="markdownIt-Anchor" href="#自动生成tags文件"></a> 自动生成tags文件</h3>
 <p>omni插件的补全是依赖于tags文件的，因此需要我们手动建立tags文件:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++</span><br></pre></td></tr></table></figure>
 <p>我们可以通过下面的代码让vim在保存文件后自动生成tags文件:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">au BufWritePost *.c,*.cpp,*.cc,*.h silent! !ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++</span><br></pre></td></tr></table></figure>
 <p>其中silent!表示静默运行命令，不然每次保存文件的时候，Vim 总是会有一个”ctags 执行完毕“的提示，按任意键确认。</p>
-<h2 id="生产力插件">生产力插件</h2>
-<h3 id="Python代码检查：flake8">Python代码检查：flake8</h3>
+<h2 id="生产力插件"><a class="markdownIt-Anchor" href="#生产力插件"></a> 生产力插件</h2>
+<h3 id="python代码检查flake8"><a class="markdownIt-Anchor" href="#python代码检查flake8"></a> Python代码检查：flake8</h3>
 <ol>
 <li>实用插件管理器安装flake8</li>
 <li>配置_vimrc文件</li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">au BufWritePost *.py call Flake8()</span><br></pre></td></tr></table></figure>
-<h3 id="注释-取消注释：vim-commentary">注释/取消注释：vim-commentary</h3>
+<h3 id="注释取消注释vim-commentary"><a class="markdownIt-Anchor" href="#注释取消注释vim-commentary"></a> 注释/取消注释：vim-commentary</h3>
 <p>这个插件可以快速注释与反注释多行内容, 但是它的注释符使用的是 commentstring, 默认是 /* %s */, 但这个值满足不了Python 和 Shell这样的语言, 在 _vimrc 添加如下内容</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;为python和shell等添加注释</span><br><span class="line">autocmd FileType python,shell,coffee set commentstring=#\ %s</span><br><span class="line">&quot;修改注释风格</span><br><span class="line">autocmd FileType java,c,cpp set commentstring=//\ %s</span><br></pre></td></tr></table></figure>
 <p>普通模式下gcc 指令可以注释/取消注释</p>
 <p>可视模式下gc 命令可以注释/撤销注释</p>
-<h3 id="缩进提示：indentLine">缩进提示：indentLine</h3>
+<h3 id="缩进提示indentline"><a class="markdownIt-Anchor" href="#缩进提示indentline"></a> 缩进提示：indentLine</h3>
 <p>indentLine是一款Vim下用于显示缩进指示线的插件。对于Python、Golang等靠代码缩进来标识代码块的语言来说，indentLine提供的缩进指示功能非常有用。indentLine安装之后即可使用，不需要额外的配置。</p>
 <p>设置indentLine：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set list lcs=tab:\|\ &quot; 最后面有空格</span><br><span class="line">let g:indentLine_leadingSpaceChar = &#x27;.&#x27;</span><br><span class="line">let g:indentLine_leadingSpaceEnabled = 1</span><br></pre></td></tr></table></figure>
-<h2 id="实用配置">实用配置</h2>
-<h3 id="代码折叠">代码折叠</h3>
+<h2 id="实用配置"><a class="markdownIt-Anchor" href="#实用配置"></a> 实用配置</h2>
+<h3 id="代码折叠"><a class="markdownIt-Anchor" href="#代码折叠"></a> 代码折叠</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot; Enable folding</span><br><span class="line">set foldmethod=syntax  &quot; 语法折叠</span><br><span class="line">set foldlevelstart=99  &quot; 关闭自动折叠</span><br></pre></td></tr></table></figure>
 <p>zc 关闭折叠<br>
 zo 打开折叠<br>
 za 打开/关闭折叠互相切换</p>
-<h3 id="系统剪贴板">系统剪贴板</h3>
+<h3 id="系统剪贴板"><a class="markdownIt-Anchor" href="#系统剪贴板"></a> 系统剪贴板</h3>
 <p>通常Vim会忽视系统剪贴板，而使用自带的剪贴板。但是有时候你想从Vim之外的程序中剪切、复制、粘贴文本。你可以通过这行代码访问你的系统剪贴板：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set clipboard=unnamed</span><br></pre></td></tr></table></figure>
-<h3 id="禁止生成缓存文件">禁止生成缓存文件</h3>
+<h3 id="禁止生成缓存文件"><a class="markdownIt-Anchor" href="#禁止生成缓存文件"></a> 禁止生成缓存文件</h3>
 <p>每次输入保存命令之后系统都会生成以.un~和.bak结尾的文件，我们可以通过下面的配置禁止vim生成undo文件和备份文件:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set noundofile</span><br><span class="line">set nobackup</span><br><span class="line">set noswapfile</span><br></pre></td></tr></table></figure>
-<h2 id="主题插件">主题插件</h2>
+<h2 id="主题插件"><a class="markdownIt-Anchor" href="#主题插件"></a> 主题插件</h2>
 <p>主题插件推荐使用flazz/vim-colorschemes</p>
 <p>可以使用vim-plug安装，然后再配置_vimrc文件，例如在配置文件中增加下面的代码：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">colorscheme wombat</span><br></pre></td></tr></table></figure>
-<h1>Mac &amp; Linux环境</h1>
-<h2 id="插件管理器安装">插件管理器安装</h2>
+<h1 id="mac-linux环境"><a class="markdownIt-Anchor" href="#mac-linux环境"></a> Mac &amp; Linux环境</h1>
+<h2 id="插件管理器安装"><a class="markdownIt-Anchor" href="#插件管理器安装"></a> 插件管理器安装</h2>
 <p>使用如下命令安装plug-vim插件:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -vp ~/.vim/autoload/</span><br><span class="line">cd ~/.vim/autoload/</span><br><span class="line">wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim</span><br></pre></td></tr></table></figure>
-<h2 id="安装示例">安装示例</h2>
+<h2 id="安装示例"><a class="markdownIt-Anchor" href="#安装示例"></a> 安装示例</h2>
 <p>仍然以NERDTree插件安装为例：</p>
 <p>编辑配置文件<code>vim ~/.vimrc</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;插件管理 vim-plug</span><br><span class="line">call plug#begin(&#x27;~/.vim/plugged&#x27;) &quot;插件保存的目录</span><br><span class="line">Plug &#x27;scrooloose/nerdtree&#x27;, &#123;&#x27;on&#x27;: &#x27;NERDTreeToggle&#x27;&#125;  &quot;NERDTree插件</span><br><span class="line">call plug#end()</span><br></pre></td></tr></table></figure>
@@ -563,7 +563,7 @@ za 打开/关闭折叠互相切换</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">Windows环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-number">1.1.</span> <span class="nav-text">插件管理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vim-plug"><span class="nav-number">1.2.</span> <span class="nav-text">Vim-plug</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.2.1.</span> <span class="nav-text">插件安装示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="nav-number">1.2.2.</span> <span class="nav-text">常用操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vundle"><span class="nav-number">1.3.</span> <span class="nav-text">Vundle</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85%E7%A4%BA%E4%BE%8B-2"><span class="nav-number">1.3.1.</span> <span class="nav-text">插件安装示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-2"><span class="nav-number">1.3.2.</span> <span class="nav-text">常用操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8"><span class="nav-number">1.4.</span> <span class="nav-text">Python自动补全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-C-%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8"><span class="nav-number">1.5.</span> <span class="nav-text">C&#x2F;C++自动补全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Ctags"><span class="nav-number">1.5.1.</span> <span class="nav-text">安装Ctags</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E7%B4%A2%E5%BC%95%E6%96%87%E4%BB%B6"><span class="nav-number">1.5.2.</span> <span class="nav-text">生成索引文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85OmniCppComplete"><span class="nav-number">1.5.3.</span> <span class="nav-text">安装OmniCppComplete</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tags%E6%96%87%E4%BB%B6"><span class="nav-number">1.5.4.</span> <span class="nav-text">自动生成tags文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E4%BA%A7%E5%8A%9B%E6%8F%92%E4%BB%B6"><span class="nav-number">1.6.</span> <span class="nav-text">生产力插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5%EF%BC%9Aflake8"><span class="nav-number">1.6.1.</span> <span class="nav-text">Python代码检查：flake8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A-%E5%8F%96%E6%B6%88%E6%B3%A8%E9%87%8A%EF%BC%9Avim-commentary"><span class="nav-number">1.6.2.</span> <span class="nav-text">注释&#x2F;取消注释：vim-commentary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%A9%E8%BF%9B%E6%8F%90%E7%A4%BA%EF%BC%9AindentLine"><span class="nav-number">1.6.3.</span> <span class="nav-text">缩进提示：indentLine</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%94%A8%E9%85%8D%E7%BD%AE"><span class="nav-number">1.7.</span> <span class="nav-text">实用配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0"><span class="nav-number">1.7.1.</span> <span class="nav-text">代码折叠</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E5%89%AA%E8%B4%B4%E6%9D%BF"><span class="nav-number">1.7.2.</span> <span class="nav-text">系统剪贴板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A6%81%E6%AD%A2%E7%94%9F%E6%88%90%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6"><span class="nav-number">1.7.3.</span> <span class="nav-text">禁止生成缓存文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E6%8F%92%E4%BB%B6"><span class="nav-number">1.8.</span> <span class="nav-text">主题插件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">Mac &amp; Linux环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.</span> <span class="nav-text">插件管理器安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E7%A4%BA%E4%BE%8B"><span class="nav-number">2.2.</span> <span class="nav-text">安装示例</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#windows%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text"> Windows环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-number">1.1.</span> <span class="nav-text"> 插件管理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim-plug"><span class="nav-number">1.2.</span> <span class="nav-text"> Vim-plug</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.2.1.</span> <span class="nav-text"> 插件安装示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="nav-number">1.2.2.</span> <span class="nav-text"> 常用操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vundle"><span class="nav-number">1.3.</span> <span class="nav-text"> Vundle</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85%E7%A4%BA%E4%BE%8B-2"><span class="nav-number">1.3.1.</span> <span class="nav-text"> 插件安装示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C-2"><span class="nav-number">1.3.2.</span> <span class="nav-text"> 常用操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8"><span class="nav-number">1.4.</span> <span class="nav-text"> Python自动补全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cc%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8"><span class="nav-number">1.5.</span> <span class="nav-text"> C&#x2F;C++自动补全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85ctags"><span class="nav-number">1.5.1.</span> <span class="nav-text"> 安装Ctags</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E7%B4%A2%E5%BC%95%E6%96%87%E4%BB%B6"><span class="nav-number">1.5.2.</span> <span class="nav-text"> 生成索引文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85omnicppcomplete"><span class="nav-number">1.5.3.</span> <span class="nav-text"> 安装OmniCppComplete</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90tags%E6%96%87%E4%BB%B6"><span class="nav-number">1.5.4.</span> <span class="nav-text"> 自动生成tags文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E4%BA%A7%E5%8A%9B%E6%8F%92%E4%BB%B6"><span class="nav-number">1.6.</span> <span class="nav-text"> 生产力插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#python%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5flake8"><span class="nav-number">1.6.1.</span> <span class="nav-text"> Python代码检查：flake8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A%E5%8F%96%E6%B6%88%E6%B3%A8%E9%87%8Avim-commentary"><span class="nav-number">1.6.2.</span> <span class="nav-text"> 注释&#x2F;取消注释：vim-commentary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%A9%E8%BF%9B%E6%8F%90%E7%A4%BAindentline"><span class="nav-number">1.6.3.</span> <span class="nav-text"> 缩进提示：indentLine</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%94%A8%E9%85%8D%E7%BD%AE"><span class="nav-number">1.7.</span> <span class="nav-text"> 实用配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0"><span class="nav-number">1.7.1.</span> <span class="nav-text"> 代码折叠</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E5%89%AA%E8%B4%B4%E6%9D%BF"><span class="nav-number">1.7.2.</span> <span class="nav-text"> 系统剪贴板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A6%81%E6%AD%A2%E7%94%9F%E6%88%90%E7%BC%93%E5%AD%98%E6%96%87%E4%BB%B6"><span class="nav-number">1.7.3.</span> <span class="nav-text"> 禁止生成缓存文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E6%8F%92%E4%BB%B6"><span class="nav-number">1.8.</span> <span class="nav-text"> 主题插件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mac-linux%E7%8E%AF%E5%A2%83"><span class="nav-number">2.</span> <span class="nav-text"> Mac &amp; Linux环境</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.</span> <span class="nav-text"> 插件管理器安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E7%A4%BA%E4%BE%8B"><span class="nav-number">2.2.</span> <span class="nav-text"> 安装示例</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
