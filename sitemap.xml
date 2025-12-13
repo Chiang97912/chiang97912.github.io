@@ -56,15 +56,6 @@
   </url>
   
   <url>
-    <loc>http://chiang97912.github.io/2018/01/08/%E5%BC%80%E6%BA%90%E5%95%A6%EF%BC%8160%E7%BB%B4%E7%BB%B4%E5%9F%BA%E7%99%BE%E7%A7%91%E8%AF%8D%E5%90%91%E9%87%8F%E5%85%8D%E8%B4%B9%E6%94%BE%E9%80%81/</loc>
-    
-    <lastmod>2025-12-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://chiang97912.github.io/2019/12/30/%E8%BD%BB%E9%87%8F%E7%BA%A7Git%E6%9C%8D%E5%8A%A1Gogs%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</loc>
     
     <lastmod>2025-12-13</lastmod>
@@ -218,7 +209,7 @@
   </url>
   
   <url>
-    <loc>http://chiang97912.github.io/categories/index.html</loc>
+    <loc>http://chiang97912.github.io/tags/index.html</loc>
     
     <lastmod>2020-08-01</lastmod>
     
@@ -227,7 +218,7 @@
   </url>
   
   <url>
-    <loc>http://chiang97912.github.io/tags/index.html</loc>
+    <loc>http://chiang97912.github.io/categories/index.html</loc>
     
     <lastmod>2020-08-01</lastmod>
     
@@ -301,7 +292,7 @@
   </url>
   
   <url>
-    <loc>http://chiang97912.github.io/tags/PHP/</loc>
+    <loc>http://chiang97912.github.io/tags/Git/</loc>
     <lastmod>2025-12-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -343,6 +334,13 @@
   </url>
   
   <url>
+    <loc>http://chiang97912.github.io/tags/PHP/</loc>
+    <lastmod>2025-12-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://chiang97912.github.io/tags/django/</loc>
     <lastmod>2025-12-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -364,13 +362,6 @@
   </url>
   
   <url>
-    <loc>http://chiang97912.github.io/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/</loc>
-    <lastmod>2025-12-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://chiang97912.github.io/tags/%E7%88%AC%E8%99%AB/</loc>
     <lastmod>2025-12-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -378,7 +369,7 @@
   </url>
   
   <url>
-    <loc>http://chiang97912.github.io/tags/Git/</loc>
+    <loc>http://chiang97912.github.io/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/</loc>
     <lastmod>2025-12-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -483,13 +474,6 @@
   </url>
   
   <url>
-    <loc>http://chiang97912.github.io/tags/word-embedding/</loc>
-    <lastmod>2025-12-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://chiang97912.github.io/tags/%E6%A8%A1%E7%B3%8A%E7%BB%BC%E5%90%88%E8%AF%84%E4%BB%B7%E6%B3%95/</loc>
     <lastmod>2025-12-13</lastmod>
     <changefreq>weekly</changefreq>
@@ -541,7 +525,7 @@
   </url>
   
   <url>
-    <loc>http://chiang97912.github.io/categories/PHP/</loc>
+    <loc>http://chiang97912.github.io/categories/Git/</loc>
     <lastmod>2025-12-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -555,14 +539,14 @@
   </url>
   
   <url>
-    <loc>http://chiang97912.github.io/categories/%E4%BB%A3%E7%A0%81/</loc>
+    <loc>http://chiang97912.github.io/categories/PHP/</loc>
     <lastmod>2025-12-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://chiang97912.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
+    <loc>http://chiang97912.github.io/categories/%E4%BB%A3%E7%A0%81/</loc>
     <lastmod>2025-12-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -576,14 +560,14 @@
   </url>
   
   <url>
-    <loc>http://chiang97912.github.io/categories/%E7%88%AC%E8%99%AB/</loc>
+    <loc>http://chiang97912.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2025-12-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://chiang97912.github.io/categories/Git/</loc>
+    <loc>http://chiang97912.github.io/categories/%E7%88%AC%E8%99%AB/</loc>
     <lastmod>2025-12-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -604,14 +588,14 @@
   </url>
   
   <url>
-    <loc>http://chiang97912.github.io/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/</loc>
+    <loc>http://chiang97912.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2025-12-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://chiang97912.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>http://chiang97912.github.io/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/</loc>
     <lastmod>2025-12-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

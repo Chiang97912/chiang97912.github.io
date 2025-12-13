@@ -448,31 +448,6 @@
   </entry>
   
   <entry>
-    <title>开源啦！60维维基百科词向量免费放送</title>
-    <link href="http://chiang97912.github.io/2018/01/08/%E5%BC%80%E6%BA%90%E5%95%A6%EF%BC%8160%E7%BB%B4%E7%BB%B4%E5%9F%BA%E7%99%BE%E7%A7%91%E8%AF%8D%E5%90%91%E9%87%8F%E5%85%8D%E8%B4%B9%E6%94%BE%E9%80%81/"/>
-    <id>http://chiang97912.github.io/2018/01/08/%E5%BC%80%E6%BA%90%E5%95%A6%EF%BC%8160%E7%BB%B4%E7%BB%B4%E5%9F%BA%E7%99%BE%E7%A7%91%E8%AF%8D%E5%90%91%E9%87%8F%E5%85%8D%E8%B4%B9%E6%94%BE%E9%80%81/</id>
-    <published>2018-01-08T04:23:34.000Z</published>
-    <updated>2025-12-13T12:17:52.442Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;开源啦60维维基百科词向量免费放送&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#开源啦60维维基百科词向量免费放送&quot;&gt;&lt;/a&gt; 开源啦！60维维基百科词向量免费放送&lt;/h2&gt;</summary>
-    
-    
-    
-    <category term="深度学习" scheme="http://chiang97912.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="NLP" scheme="http://chiang97912.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/NLP/"/>
-    
-    
-    <category term="Deep Learning" scheme="http://chiang97912.github.io/tags/Deep-Learning/"/>
-    
-    <category term="NLP" scheme="http://chiang97912.github.io/tags/NLP/"/>
-    
-    <category term="word embedding" scheme="http://chiang97912.github.io/tags/word-embedding/"/>
-    
-  </entry>
-  
-  <entry>
     <title>自然语言处理入门实践</title>
     <link href="http://chiang97912.github.io/2017/11/16/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%85%A5%E9%97%A8%E5%AE%9E%E8%B7%B5/"/>
     <id>http://chiang97912.github.io/2017/11/16/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E5%85%A5%E9%97%A8%E5%AE%9E%E8%B7%B5/</id>
@@ -492,6 +467,26 @@
     
     
     <category term="NLP" scheme="http://chiang97912.github.io/tags/NLP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>二级域名指向网站子目录的配置</title>
+    <link href="http://chiang97912.github.io/2017/11/11/%E4%BA%8C%E7%BA%A7%E5%9F%9F%E5%90%8D%E6%8C%87%E5%90%91%E7%BD%91%E7%AB%99%E5%AD%90%E7%9B%AE%E5%BD%95%E7%9A%84%E9%85%8D%E7%BD%AE/"/>
+    <id>http://chiang97912.github.io/2017/11/11/%E4%BA%8C%E7%BA%A7%E5%9F%9F%E5%90%8D%E6%8C%87%E5%90%91%E7%BD%91%E7%AB%99%E5%AD%90%E7%9B%AE%E5%BD%95%E7%9A%84%E9%85%8D%E7%BD%AE/</id>
+    <published>2017-11-11T03:52:00.000Z</published>
+    <updated>2025-12-13T12:18:13.028Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;第一步添加二级域名&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#第一步添加二级域名&quot;&gt;&lt;/a&gt; 第一步：添加二级域名&lt;/h1&gt;
+&lt;p&gt;首先声明的是，我的wordpress保存在网站的根目录下的wordpress子目录，所以我现在想把wordpress目录指向二级域名blog.figurinn.xyz.经过多次尝试终于成功了。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="服务器配置" scheme="http://chiang97912.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/"/>
+    
+    
+    <category term="服务器配置" scheme="http://chiang97912.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   
