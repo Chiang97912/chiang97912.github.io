@@ -77,9 +77,9 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<link rel="alternate" href="/atom.xml" title="Peter's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="alternate" href="/atom.xml" title="Peter's Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -280,7 +280,7 @@
 </ol>
 <h3 id="插件安装示例"><a class="markdownIt-Anchor" href="#插件安装示例"></a> 插件安装示例</h3>
 <p>在_vimrc中添加如下的内容，这里以vim-plug下载<strong>nerdtree</strong>插件为例。设置完成后保存设置。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">call plug#begin(&#x27;~/.vim/plugged&#x27;) &quot;插件保存的目录</span><br><span class="line">Plug &#x27;scrooloose/nerdtree&#x27;, &#123;&#x27;on&#x27;: &#x27;NERDTreeToggle&#x27;&#125;  &quot;NERDTree插件</span><br><span class="line">call plug#end()</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">call plug#begin(&#x27;~/.vim/plugged&#x27;) &quot;插件保存的目录</span><br><span class="line">Plug &#x27;scrooloose/nerdtree&#x27;, &#123;&#x27;on&#x27;: &#x27;NERDTreeToggle&#x27;&#125;  &quot;NERDTree插件</span><br><span class="line">call plug#end()</span><br></pre></td></tr></table></figure>
 <h3 id="常用操作"><a class="markdownIt-Anchor" href="#常用操作"></a> 常用操作</h3>
 <table>
 <thead>
@@ -326,7 +326,7 @@
 </ol>
 <h3 id="插件安装示例-2"><a class="markdownIt-Anchor" href="#插件安装示例-2"></a> 插件安装示例</h3>
 <p>在_vimrc中添加如下的内容，这里以vundle下载<strong>nerdtree</strong>插件为例。设置完成后保存设置。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">set rtp+=~/.vim/bundle/Vundle.vim</span><br><span class="line">call vundle#begin()</span><br><span class="line">Plugin &#x27;VundleVim/Vundle.vim&#x27;</span><br><span class="line">Plugin &#x27;scrooloose/nerdtree&#x27;</span><br><span class="line">call vundle#end()</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set rtp+=~/.vim/bundle/Vundle.vim</span><br><span class="line">call vundle#begin()</span><br><span class="line">Plugin &#x27;VundleVim/Vundle.vim&#x27;</span><br><span class="line">Plugin &#x27;scrooloose/nerdtree&#x27;</span><br><span class="line">call vundle#end()</span><br></pre></td></tr></table></figure>
 <h3 id="常用操作-2"><a class="markdownIt-Anchor" href="#常用操作-2"></a> 常用操作</h3>
 <table>
 <thead>
@@ -361,7 +361,7 @@
 <h2 id="python自动补全"><a class="markdownIt-Anchor" href="#python自动补全"></a> Python自动补全</h2>
 <p>Python自动补全插件这里主要使用<strong>jedi-vim</strong>，具体配置步骤如下：</p>
 <p>在_vimrc中添加如下的内容，设置完成后保存设置。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;插件管理 vim-plug</span><br><span class="line">call plug#begin(&#x27;~/.vim/plugged&#x27;) &quot;插件保存的目录</span><br><span class="line">Plug &#x27;davidhalter/jedi-vim&#x27;,</span><br><span class="line">call plug#end()</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;插件管理 vim-plug</span><br><span class="line">call plug#begin(&#x27;~/.vim/plugged&#x27;) &quot;插件保存的目录</span><br><span class="line">Plug &#x27;davidhalter/jedi-vim&#x27;,</span><br><span class="line">call plug#end()</span><br></pre></td></tr></table></figure>
 <p>然后在gvim中输入<code>:PlugInstall</code>安装jedi-vim插件</p>
 <p>注意:</p>
 <ol>
@@ -372,11 +372,11 @@
 <p>Vim使用Python编译的版本一定要和电脑上安装的Python版本对应，可能会出现如下错误：</p>
 </li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: jedi-vim failed to initialize Python: jedi-vim requires Vim with support for Python 2 or 3. (in function jedi#init_python[4]..48_init_python, line 10)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Error: jedi-vim failed to initialize Python: jedi-vim requires Vim with support for Python 2 or 3. (in function jedi#init_python[4]..48_init_python, line 10)</span><br></pre></td></tr></table></figure>
 <p>或者在gvim中输入<code>:python3 print(&quot;Hello world&quot;)</code>出现如下类似的错误：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">E370: Could not load library python37.dll</span><br><span class="line">E263: Sorry, this command is disabled, the Python library could not be loaded.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">E370: Could not load library python37.dll</span><br><span class="line">E263: Sorry, this command is disabled, the Python library could not be loaded.</span><br></pre></td></tr></table></figure>
 <p>那么可以在_vimrc中添加如下命令指定Python3版本：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set pythonthreedll=python36.dll</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set pythonthreedll=python36.dll</span><br></pre></td></tr></table></figure>
 <p>由于笔者安装的vim8.1使用的是Python3.7编译，但是电脑环境装的是Python3.6，我们可以通过上面配置来解决Windows环境中gvim不支持python3.6的问题。</p>
 <h2 id="cc自动补全"><a class="markdownIt-Anchor" href="#cc自动补全"></a> C/C++自动补全</h2>
 <p>C/C++自动补全插件这里主要使用ctags + OmniCppComplete方案，具体配置步骤如下：</p>
@@ -400,22 +400,22 @@
 <p>使用命令行进入 D:/ctags/cpp_src 后执行：</p>
 </li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ctags -R --sort=1 --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ -f cpp .</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ctags -R --sort=1 --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ -f cpp .</span><br></pre></td></tr></table></figure>
 <p>建议将上一步生成的 C:/ctags/cpp_src/cpp 文件放到一个专门放置索引文件的目录以便后面的统一设置，例如放到 C:/ctags/tags</p>
 <p>其它库的索引文件也可以依法炮制，只需切换到该库的 include 文件夹，执行：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ -f &lt;文件名&gt; .</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ -f &lt;文件名&gt; .</span><br></pre></td></tr></table></figure>
 <h3 id="安装omnicppcomplete"><a class="markdownIt-Anchor" href="#安装omnicppcomplete"></a> 安装OmniCppComplete</h3>
 <ol>
 <li>使用插件管理器安装OmniCppComplete</li>
 <li>修改VIM配置文件_vimrc，加入如下内容：</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&quot; ctags 索引文件</span><br><span class="line">set tags+=C:/ctags/tags/cpp &quot; 指定tags存放路径</span><br><span class="line"></span><br><span class="line">&quot; OmniCppComplete</span><br><span class="line">let OmniCpp_NamespaceSearch = 1</span><br><span class="line">let OmniCpp_GlobalScopeSearch = 1</span><br><span class="line">let OmniCpp_ShowAccess = 1</span><br><span class="line">let OmniCpp_ShowPrototypeInAbbr = 1 &quot; 显示函数参数列表</span><br><span class="line">let OmniCpp_MayCompleteDot = 1   &quot; 输入 .  后自动补全</span><br><span class="line">let OmniCpp_MayCompleteArrow = 1 &quot; 输入 -&gt; 后自动补全</span><br><span class="line">let OmniCpp_MayCompleteScope = 1 &quot; 输入 :: 后自动补全</span><br><span class="line">let OmniCpp_DefaultNamespaces = [&quot;std&quot;, &quot;_GLIBCXX_STD&quot;]</span><br><span class="line">&quot; 自动关闭补全窗口</span><br><span class="line">au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif</span><br><span class="line">set completeopt=menuone,menu,longest</span><br><span class="line"></span><br><span class="line">filetype plugin indent on</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot; ctags 索引文件</span><br><span class="line">set tags+=C:/ctags/tags/cpp &quot; 指定tags存放路径</span><br><span class="line"></span><br><span class="line">&quot; OmniCppComplete</span><br><span class="line">let OmniCpp_NamespaceSearch = 1</span><br><span class="line">let OmniCpp_GlobalScopeSearch = 1</span><br><span class="line">let OmniCpp_ShowAccess = 1</span><br><span class="line">let OmniCpp_ShowPrototypeInAbbr = 1 &quot; 显示函数参数列表</span><br><span class="line">let OmniCpp_MayCompleteDot = 1   &quot; 输入 .  后自动补全</span><br><span class="line">let OmniCpp_MayCompleteArrow = 1 &quot; 输入 -&gt; 后自动补全</span><br><span class="line">let OmniCpp_MayCompleteScope = 1 &quot; 输入 :: 后自动补全</span><br><span class="line">let OmniCpp_DefaultNamespaces = [&quot;std&quot;, &quot;_GLIBCXX_STD&quot;]</span><br><span class="line">&quot; 自动关闭补全窗口</span><br><span class="line">au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif</span><br><span class="line">set completeopt=menuone,menu,longest</span><br><span class="line"></span><br><span class="line">filetype plugin indent on</span><br></pre></td></tr></table></figure>
 <p>在插入模式编辑 C/C++ 源文件时按下 . 或 -&gt; 或 ::，或者手动按下 Ctrl+X Ctrl+O 后就会弹出自动补全窗口，此时可以用 Ctrl+N 和 Ctrl+P 上下移动光标进行选择。</p>
 <h3 id="自动生成tags文件"><a class="markdownIt-Anchor" href="#自动生成tags文件"></a> 自动生成tags文件</h3>
 <p>omni插件的补全是依赖于tags文件的，因此需要我们手动建立tags文件:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++</span><br></pre></td></tr></table></figure>
 <p>我们可以通过下面的代码让vim在保存文件后自动生成tags文件:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">au BufWritePost *.c,*.cpp,*.cc,*.h silent! !ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">au BufWritePost *.c,*.cpp,*.cc,*.h silent! !ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++</span><br></pre></td></tr></table></figure>
 <p>其中silent!表示静默运行命令，不然每次保存文件的时候，Vim 总是会有一个”ctags 执行完毕“的提示，按任意键确认。</p>
 <h2 id="生产力插件"><a class="markdownIt-Anchor" href="#生产力插件"></a> 生产力插件</h2>
 <h3 id="python代码检查flake8"><a class="markdownIt-Anchor" href="#python代码检查flake8"></a> Python代码检查：flake8</h3>
@@ -423,40 +423,40 @@
 <li>实用插件管理器安装flake8</li>
 <li>配置_vimrc文件</li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">au BufWritePost *.py call Flake8()</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">au BufWritePost *.py call Flake8()</span><br></pre></td></tr></table></figure>
 <h3 id="注释取消注释vim-commentary"><a class="markdownIt-Anchor" href="#注释取消注释vim-commentary"></a> 注释/取消注释：vim-commentary</h3>
 <p>这个插件可以快速注释与反注释多行内容, 但是它的注释符使用的是 commentstring, 默认是 /* %s */, 但这个值满足不了Python 和 Shell这样的语言, 在 _vimrc 添加如下内容</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;为python和shell等添加注释</span><br><span class="line">autocmd FileType python,shell,coffee set commentstring=#\ %s</span><br><span class="line">&quot;修改注释风格</span><br><span class="line">autocmd FileType java,c,cpp set commentstring=//\ %s</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;为python和shell等添加注释</span><br><span class="line">autocmd FileType python,shell,coffee set commentstring=#\ %s</span><br><span class="line">&quot;修改注释风格</span><br><span class="line">autocmd FileType java,c,cpp set commentstring=//\ %s</span><br></pre></td></tr></table></figure>
 <p>普通模式下gcc 指令可以注释/取消注释</p>
 <p>可视模式下gc 命令可以注释/撤销注释</p>
 <h3 id="缩进提示indentline"><a class="markdownIt-Anchor" href="#缩进提示indentline"></a> 缩进提示：indentLine</h3>
 <p>indentLine是一款Vim下用于显示缩进指示线的插件。对于Python、Golang等靠代码缩进来标识代码块的语言来说，indentLine提供的缩进指示功能非常有用。indentLine安装之后即可使用，不需要额外的配置。</p>
 <p>设置indentLine：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set list lcs=tab:\|\ &quot; 最后面有空格</span><br><span class="line">let g:indentLine_leadingSpaceChar = &#x27;.&#x27;</span><br><span class="line">let g:indentLine_leadingSpaceEnabled = 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set list lcs=tab:\|\ &quot; 最后面有空格</span><br><span class="line">let g:indentLine_leadingSpaceChar = &#x27;.&#x27;</span><br><span class="line">let g:indentLine_leadingSpaceEnabled = 1</span><br></pre></td></tr></table></figure>
 <h2 id="实用配置"><a class="markdownIt-Anchor" href="#实用配置"></a> 实用配置</h2>
 <h3 id="代码折叠"><a class="markdownIt-Anchor" href="#代码折叠"></a> 代码折叠</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot; Enable folding</span><br><span class="line">set foldmethod=syntax  &quot; 语法折叠</span><br><span class="line">set foldlevelstart=99  &quot; 关闭自动折叠</span><br></pre></td></tr></table></figure>
-<p>zc 关闭折叠<br>
-zo 打开折叠<br>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot; Enable folding</span><br><span class="line">set foldmethod=syntax  &quot; 语法折叠</span><br><span class="line">set foldlevelstart=99  &quot; 关闭自动折叠</span><br></pre></td></tr></table></figure>
+<p>zc 关闭折叠<br />
+zo 打开折叠<br />
 za 打开/关闭折叠互相切换</p>
 <h3 id="系统剪贴板"><a class="markdownIt-Anchor" href="#系统剪贴板"></a> 系统剪贴板</h3>
 <p>通常Vim会忽视系统剪贴板，而使用自带的剪贴板。但是有时候你想从Vim之外的程序中剪切、复制、粘贴文本。你可以通过这行代码访问你的系统剪贴板：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set clipboard=unnamed</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set clipboard=unnamed</span><br></pre></td></tr></table></figure>
 <h3 id="禁止生成缓存文件"><a class="markdownIt-Anchor" href="#禁止生成缓存文件"></a> 禁止生成缓存文件</h3>
 <p>每次输入保存命令之后系统都会生成以.un~和.bak结尾的文件，我们可以通过下面的配置禁止vim生成undo文件和备份文件:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set noundofile</span><br><span class="line">set nobackup</span><br><span class="line">set noswapfile</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">set noundofile</span><br><span class="line">set nobackup</span><br><span class="line">set noswapfile</span><br></pre></td></tr></table></figure>
 <h2 id="主题插件"><a class="markdownIt-Anchor" href="#主题插件"></a> 主题插件</h2>
 <p>主题插件推荐使用flazz/vim-colorschemes</p>
 <p>可以使用vim-plug安装，然后再配置_vimrc文件，例如在配置文件中增加下面的代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">colorscheme wombat</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">colorscheme wombat</span><br></pre></td></tr></table></figure>
 <h1 id="mac-linux环境"><a class="markdownIt-Anchor" href="#mac-linux环境"></a> Mac &amp; Linux环境</h1>
 <h2 id="插件管理器安装"><a class="markdownIt-Anchor" href="#插件管理器安装"></a> 插件管理器安装</h2>
 <p>使用如下命令安装plug-vim插件:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir -vp ~/.vim/autoload/</span><br><span class="line">cd ~/.vim/autoload/</span><br><span class="line">wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir -vp ~/.vim/autoload/</span><br><span class="line">cd ~/.vim/autoload/</span><br><span class="line">wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim</span><br></pre></td></tr></table></figure>
 <h2 id="安装示例"><a class="markdownIt-Anchor" href="#安装示例"></a> 安装示例</h2>
 <p>仍然以NERDTree插件安装为例：</p>
 <p>编辑配置文件<code>vim ~/.vimrc</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;插件管理 vim-plug</span><br><span class="line">call plug#begin(&#x27;~/.vim/plugged&#x27;) &quot;插件保存的目录</span><br><span class="line">Plug &#x27;scrooloose/nerdtree&#x27;, &#123;&#x27;on&#x27;: &#x27;NERDTreeToggle&#x27;&#125;  &quot;NERDTree插件</span><br><span class="line">call plug#end()</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;插件管理 vim-plug</span><br><span class="line">call plug#begin(&#x27;~/.vim/plugged&#x27;) &quot;插件保存的目录</span><br><span class="line">Plug &#x27;scrooloose/nerdtree&#x27;, &#123;&#x27;on&#x27;: &#x27;NERDTreeToggle&#x27;&#125;  &quot;NERDTree插件</span><br><span class="line">call plug#end()</span><br></pre></td></tr></table></figure>
 <p>其他操作和Windows系统相同。</p>
 
     </div>
@@ -579,7 +579,7 @@ za 打开/关闭折叠互相切换</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

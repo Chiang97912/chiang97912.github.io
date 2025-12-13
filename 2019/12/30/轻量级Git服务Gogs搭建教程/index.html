@@ -77,9 +77,9 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<link rel="alternate" href="/atom.xml" title="Peter's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="alternate" href="/atom.xml" title="Peter's Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -267,17 +267,17 @@
 <span id="more"></span>
 <h2 id="创建系统用户"><a class="markdownIt-Anchor" href="#创建系统用户"></a> 创建系统用户</h2>
 <p>创建新的系统用户 “git”，并切换为 “git” 用户:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo useradd -m git</span><br><span class="line">sudo su - git</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo useradd -m git</span><br><span class="line">sudo su - git</span><br></pre></td></tr></table></figure>
 <h2 id="创建数据库"><a class="markdownIt-Anchor" href="#创建数据库"></a> 创建数据库</h2>
 <p>创建新的数据库并命名为gogs：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt;create database gogs;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql&gt;create database gogs;</span><br></pre></td></tr></table></figure>
 <h2 id="安装gogs"><a class="markdownIt-Anchor" href="#安装gogs"></a> 安装Gogs</h2>
 <p>本文以v0.11.53 版本为例，最新版本读者可以前往<a href="https://dl.gogs.io/">dl.gogs.io</a>查看：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget https://dl.gogs.io/0.11.53/gogs_0.11.53_linux_amd64.tar.gz</span><br><span class="line">tar xzvf gogs_0.11.53_linux_amd64.tar.gz</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://dl.gogs.io/0.11.53/gogs_0.11.53_linux_amd64.tar.gz</span><br><span class="line">tar xzvf gogs_0.11.53_linux_amd64.tar.gz</span><br></pre></td></tr></table></figure>
 <h2 id="运行gogs"><a class="markdownIt-Anchor" href="#运行gogs"></a> 运行Gogs</h2>
 <p>进入解压后的文件夹，然后执行命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./gogs web</span><br></pre></td></tr></table></figure>
-<p>最后浏览器访问http://<IP>:3000完成相应的配置即可。</IP></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">./gogs web</span><br></pre></td></tr></table></figure>
+<p>最后浏览器访问http://<IP>:3000完成相应的配置即可。</p>
 <h2 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> 问题</h2>
 <p>Gogs不支持移动适配，但是它的开源分支Gitea支持，且Gitea的安装流程基本和Gogs一致。</p>
 
@@ -401,7 +401,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

@@ -78,9 +78,9 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<link rel="alternate" href="/atom.xml" title="Peter's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="alternate" href="/atom.xml" title="Peter's Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -267,24 +267,24 @@
 <span id="more"></span>
 <h1 id="lamp环境搭建"><a class="markdownIt-Anchor" href="#lamp环境搭建"></a> LAMP环境搭建</h1>
 <h2 id="安装apache2"><a class="markdownIt-Anchor" href="#安装apache2"></a> 安装Apache2</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get  install apache2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get  install apache2</span><br></pre></td></tr></table></figure>
 <p>检查apache2是否安装成功</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apache2 –v</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apache2 –v</span><br></pre></td></tr></table></figure>
 <h2 id="安装php7"><a class="markdownIt-Anchor" href="#安装php7"></a> 安装PHP7</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install php</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install php</span><br></pre></td></tr></table></figure>
 <p>查看PHP版本并检查PHP是否按照成功</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php –v</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">php –v</span><br></pre></td></tr></table></figure>
 <h2 id="安装mysql"><a class="markdownIt-Anchor" href="#安装mysql"></a> 安装MYSQL</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-server</span><br><span class="line">sudo apt-get install mysql-client</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install mysql-server</span><br><span class="line">sudo apt-get install mysql-client</span><br></pre></td></tr></table></figure>
 <h2 id="安装配置组件"><a class="markdownIt-Anchor" href="#安装配置组件"></a> 安装配置组件</h2>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo apt<span class="operator">-</span><span class="keyword">get</span> install libapache2<span class="operator">-</span>mod<span class="operator">-</span>php</span><br><span class="line"></span><br><span class="line">sudo apt<span class="operator">-</span><span class="keyword">get</span> install libapache2<span class="operator">-</span>mod<span class="operator">-</span>auth<span class="operator">-</span>mysql  # 现在这个组件作者以及放弃维护了，因为新版apache以及包含这个模块所实现的功能，可以不用安装</span><br><span class="line"></span><br><span class="line">sudo apt<span class="operator">-</span><span class="keyword">get</span> install php<span class="operator">-</span>mysql</span><br><span class="line"></span><br><span class="line">sudo apt<span class="operator">-</span><span class="keyword">get</span> install php<span class="operator">-</span>gd  # php图形库</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">sudo apt<span class="operator">-</span><span class="keyword">get</span> install libapache2<span class="operator">-</span>mod<span class="operator">-</span>php</span><br><span class="line"></span><br><span class="line">sudo apt<span class="operator">-</span><span class="keyword">get</span> install libapache2<span class="operator">-</span>mod<span class="operator">-</span>auth<span class="operator">-</span>mysql  # 现在这个组件作者以及放弃维护了，因为新版apache以及包含这个模块所实现的功能，可以不用安装</span><br><span class="line"></span><br><span class="line">sudo apt<span class="operator">-</span><span class="keyword">get</span> install php<span class="operator">-</span>mysql</span><br><span class="line"></span><br><span class="line">sudo apt<span class="operator">-</span><span class="keyword">get</span> install php<span class="operator">-</span>gd  # php图形库</span><br></pre></td></tr></table></figure>
 <h2 id="启用mod_rewrite模块"><a class="markdownIt-Anchor" href="#启用mod_rewrite模块"></a> 启用mod_rewrite模块</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service apache2 restart</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">service apache2 restart</span><br></pre></td></tr></table></figure>
 <h2 id="重启apache2和mysql"><a class="markdownIt-Anchor" href="#重启apache2和mysql"></a> 重启Apache2和MYSQL</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo service apache2 restart</span><br><span class="line">sudo service mysql restart</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo service apache2 restart</span><br><span class="line">sudo service mysql restart</span><br></pre></td></tr></table></figure>
 <h2 id="测试php"><a class="markdownIt-Anchor" href="#测试php"></a> 测试PHP</h2>
 <p>创建一个php文件来测试环境是否安装成功，PHP文件（文件名为test.php）内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">    echo phpinfo();</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">    echo phpinfo();</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
 <p>通过IP/test.php查看是否连接成功。</p>
 <h2 id="端口允许"><a class="markdownIt-Anchor" href="#端口允许"></a> 端口允许</h2>
 <p>通过上述步骤我们可能还是不能通过IP地址访问服务器，那是因为阿里云默认是没有开放80端口的，我们需要前往阿里云的控制台将80端口添加到安全组。</p>
@@ -292,15 +292,15 @@
 <h2 id="修改mysql配置"><a class="markdownIt-Anchor" href="#修改mysql配置"></a> 修改MYSQL配置</h2>
 <p>我们通过修改MYSQL的配置文件运行允许所有主机访问服务器上的MYSQL数据库：</p>
 <p>使用vim编辑mysql的配置文件/etc/mysql/mysql.conf.d/mysqld.cnf</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/mysql/mysql.conf.d/mysqld.cnf</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim /etc/mysql/mysql.conf.d/mysqld.cnf</span><br></pre></td></tr></table></figure>
 <p>然后修改文件中的bind-address的值为0.0.0.0</p>
 <h2 id="修改mysql用户访问权限"><a class="markdownIt-Anchor" href="#修改mysql用户访问权限"></a> 修改MYSQL用户访问权限</h2>
 <p>首先进入MYSQL数据库，使用mysql数据库:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use mysql;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use mysql;</span><br></pre></td></tr></table></figure>
 <p>然后:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update user set host = &#x27;%&#x27; where user = &#x27;root&#x27;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">update user set host = &#x27;%&#x27; where user = &#x27;root&#x27;;</span><br></pre></td></tr></table></figure>
 <p>查看MYSQL用户权限：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select host, user from user;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">select host, user from user;</span><br></pre></td></tr></table></figure>
 <p>have fun!</p>
 
     </div>
@@ -424,7 +424,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

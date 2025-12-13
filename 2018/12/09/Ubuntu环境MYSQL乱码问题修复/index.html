@@ -75,9 +75,9 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<link rel="alternate" href="/atom.xml" title="Peter's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="alternate" href="/atom.xml" title="Peter's Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -267,17 +267,17 @@
 <h1 id="修改配置文件"><a class="markdownIt-Anchor" href="#修改配置文件"></a> 修改配置文件</h1>
 <h2 id="修改mysqld"><a class="markdownIt-Anchor" href="#修改mysqld"></a> 修改[mysqld]</h2>
 <p>找到文件/etc/mysql/mysql.conf.d/mysqld.cnf 中的[mysqld]并在其最后面追加如下代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">character-set-server=utf8</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">character-set-server=utf8</span><br></pre></td></tr></table></figure>
 <h2 id="修改mysql"><a class="markdownIt-Anchor" href="#修改mysql"></a> 修改[mysql]</h2>
 <p>找到文件/etc/mysql/conf.d/mysql.cnf中的[mysql]并在其最后面追加如下代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">default-character-set=utf8</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">default-character-set=utf8</span><br></pre></td></tr></table></figure>
 <h2 id="修改client"><a class="markdownIt-Anchor" href="#修改client"></a> 修改[client]</h2>
 <p>找到文件/etc/mysql/debian.cnf中的[client]并在其最后面追加如下代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">default-character-set=utf8</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">default-character-set=utf8</span><br></pre></td></tr></table></figure>
 <h1 id="重启mysql"><a class="markdownIt-Anchor" href="#重启mysql"></a> 重启MYSQL</h1>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysql restart</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">service mysql restart</span><br></pre></td></tr></table></figure>
 <h1 id="查看字符集"><a class="markdownIt-Anchor" href="#查看字符集"></a> 查看字符集</h1>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p </span><br><span class="line">show variables like &#x27;%character%&#x27;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mysql -u root -p </span><br><span class="line">show variables like &#x27;%character%&#x27;;</span><br></pre></td></tr></table></figure>
 <h1 id="其他问题"><a class="markdownIt-Anchor" href="#其他问题"></a> 其他问题</h1>
 <p>笔者在做完如上配置之后发现通过navicat连接mysql查看内容还是出现乱码，但是其他地方返回的数据均能够正常显示。出现上述情况可以按照如下步骤进行操作：</p>
 <ol>
@@ -407,7 +407,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

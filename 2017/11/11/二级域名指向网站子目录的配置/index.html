@@ -75,9 +75,9 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<link rel="alternate" href="/atom.xml" title="Peter's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="alternate" href="/atom.xml" title="Peter's Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -273,13 +273,13 @@
 	RewriteRule ^(.*)$ /wordpress/$1?Rewrite [L,QSA]
 	&lt;/IfModule&gt;
 </code></pre>
-<p>上面的内容是根据我的网站设定的，你可以根据你的需求进行更改<br>
-如果你此时访问的二级域名不成功的话，很可能你没有开启服务器url重写功能。<br>
-如果这样，你可以按一下步骤打开服务器的url重写功能(以我的ubuntu服务器为例子)<br>
+<p>上面的内容是根据我的网站设定的，你可以根据你的需求进行更改<br />
+如果你此时访问的二级域名不成功的话，很可能你没有开启服务器url重写功能。<br />
+如果这样，你可以按一下步骤打开服务器的url重写功能(以我的ubuntu服务器为例子)<br />
 首先确保/etc/apache2/mods-enabled/rewrite.load文件中的</p>
 <pre><code>	LoadModule rewrite_module /usr/lib/apache2/modules/mod_ rewrite.so
 </code></pre>
-<p>没有被注释掉（如果有#号表示就被注释），如果被注释了取消注释（只需要删除前面的#）即可，然后vim保存退出。<br>
+<p>没有被注释掉（如果有#号表示就被注释），如果被注释了取消注释（只需要删除前面的#）即可，然后vim保存退出。<br />
 然后编辑/etc/apache2/apache2.conf 文件，找到</p>
 <pre><code>&lt;Directory /var/www/&gt;
 Options Indexes FollowSymLinks
@@ -287,10 +287,10 @@ AllowOverride None
 Require all granted
 &lt;/Directory&gt;
 </code></pre>
-<p>然后将AllowOverride None中的None改为All<br>
+<p>然后将AllowOverride None中的None改为All<br />
 到此为止二级域名指向服务器子目录就成功了</p>
 <h1 id="一些问题及解决办法"><a class="markdownIt-Anchor" href="#一些问题及解决办法"></a> 一些问题及解决办法</h1>
-<p>我通过blog.figurinn.xyz设置二级域名指向子目录成功后，该二级域名可以访问，可是发现当访问某一篇文章时，却发现文章的前缀还是www.figurinn.xyz/wordpress，后来发现是wordpress设置的问题<br>
+<p>我通过blog.figurinn.xyz设置二级域名指向子目录成功后，该二级域名可以访问，可是发现当访问某一篇文章时，却发现文章的前缀还是www.figurinn.xyz/wordpress，后来发现是wordpress设置的问题<br />
 如果你也有同样的问题，你可以进入wordpress后台，然后点击设置，你会发现有“WordPress地址”、“站点地址”，如果你希望访问wordpress中某一篇文章时url的前缀也是你设置的二级域名的话，你只需要将上文提到的两个设置选项设置为你的二级域名即可。</p>
 
     </div>
@@ -411,7 +411,7 @@ Require all granted
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

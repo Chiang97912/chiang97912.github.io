@@ -76,9 +76,9 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<link rel="alternate" href="/atom.xml" title="Peter's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="alternate" href="/atom.xml" title="Peter's Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -268,9 +268,9 @@
 <p>安装方法：<code>pip install bounter</code></p>
 <p>这里给出bounter在github上的官方教材使用的代码：</p>
 <p><strong>示例一：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from bounter import bounter</span><br><span class="line"></span><br><span class="line">counts = bounter(size_mb=1024)  # use at most 1 GB of RAM</span><br><span class="line">counts.update([u&#x27;a&#x27;, &#x27;few&#x27;, u&#x27;words&#x27;, u&#x27;a&#x27;, u&#x27;few&#x27;, u&#x27;times&#x27;])  # count item frequencies</span><br><span class="line"></span><br><span class="line">print(counts[u&#x27;few&#x27;])  # query the counts</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from bounter import bounter</span><br><span class="line"></span><br><span class="line">counts = bounter(size_mb=1024)  # use at most 1 GB of RAM</span><br><span class="line">counts.update([u&#x27;a&#x27;, &#x27;few&#x27;, u&#x27;words&#x27;, u&#x27;a&#x27;, u&#x27;few&#x27;, u&#x27;times&#x27;])  # count item frequencies</span><br><span class="line"></span><br><span class="line">print(counts[u&#x27;few&#x27;])  # query the counts</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
 <p><strong>示例二</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">from bounter import bounter</span><br><span class="line"></span><br><span class="line">counts = bounter(size_mb=200)  # default version, unless you specify need_items or need_counts</span><br><span class="line">counts.update([&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;a&#x27;, &#x27;b&#x27;])</span><br><span class="line">print(counts.total(), counts.cardinality())  # total and cardinality still work</span><br><span class="line">(5L, 3)</span><br><span class="line">print(counts[&#x27;a&#x27;])  # individual item frequency still works</span><br><span class="line">2</span><br><span class="line"></span><br><span class="line">print(list(counts))  # iterator returns keys, just like Counter</span><br><span class="line">[u&#x27;b&#x27;, u&#x27;a&#x27;, u&#x27;c&#x27;]</span><br><span class="line">print(list(counts.iteritems()))  # supports iterating over key-count pairs, etc.</span><br><span class="line">[(u&#x27;b&#x27;, 2L), (u&#x27;a&#x27;, 2L), (u&#x27;c&#x27;, 1L)]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from bounter import bounter</span><br><span class="line"></span><br><span class="line">counts = bounter(size_mb=200)  # default version, unless you specify need_items or need_counts</span><br><span class="line">counts.update([&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;a&#x27;, &#x27;b&#x27;])</span><br><span class="line">print(counts.total(), counts.cardinality())  # total and cardinality still work</span><br><span class="line">(5L, 3)</span><br><span class="line">print(counts[&#x27;a&#x27;])  # individual item frequency still works</span><br><span class="line">2</span><br><span class="line"></span><br><span class="line">print(list(counts))  # iterator returns keys, just like Counter</span><br><span class="line">[u&#x27;b&#x27;, u&#x27;a&#x27;, u&#x27;c&#x27;]</span><br><span class="line">print(list(counts.iteritems()))  # supports iterating over key-count pairs, etc.</span><br><span class="line">[(u&#x27;b&#x27;, 2L), (u&#x27;a&#x27;, 2L), (u&#x27;c&#x27;, 1L)]</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -391,7 +391,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
