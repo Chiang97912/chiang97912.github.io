@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"chiang97912.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="写这篇博客，一来是整理我最近一两个月的数据抓取经验，二来是帮助新手快速入门爬虫。听到爬虫这个词很多人可能会联想到谷歌，百度，必应等搜索引擎，它们拥有强大的数据检索能力，为我们查找资料提供了极大的帮助。这些搜索引擎之所以强大就是因为它们有一个强大的数据抓取系统。下面我们从0到1逐层展开讲解。   基础 其实爬虫很简单，归结起来就是下面两个步骤：  获取网页源代码 解析源代码获取需要的信息   获取">
+  <meta name="description" content="写这篇博客，一来是整理我最近一两个月的数据抓取经验，二来是帮助新手快速入门爬虫。听到爬虫这个词很多人可能会联想到谷歌，百度，必应等搜索引擎，它们拥有强大的数据检索能力，为我们查找资料提供了极大的帮助。这些搜索引擎之所以强大就是因为它们有一个强大的数据抓取系统。下面我们从0到1逐层展开讲解。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python爬虫入门实践">
 <meta property="og:url" content="http://chiang97912.github.io/2018/01/23/Python%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8%E5%AE%9E%E8%B7%B5/index.html">
 <meta property="og:site_name" content="Peter&#39;s Blog">
-<meta property="og:description" content="写这篇博客，一来是整理我最近一两个月的数据抓取经验，二来是帮助新手快速入门爬虫。听到爬虫这个词很多人可能会联想到谷歌，百度，必应等搜索引擎，它们拥有强大的数据检索能力，为我们查找资料提供了极大的帮助。这些搜索引擎之所以强大就是因为它们有一个强大的数据抓取系统。下面我们从0到1逐层展开讲解。   基础 其实爬虫很简单，归结起来就是下面两个步骤：  获取网页源代码 解析源代码获取需要的信息   获取">
+<meta property="og:description" content="写这篇博客，一来是整理我最近一两个月的数据抓取经验，二来是帮助新手快速入门爬虫。听到爬虫这个词很多人可能会联想到谷歌，百度，必应等搜索引擎，它们拥有强大的数据检索能力，为我们查找资料提供了极大的帮助。这些搜索引擎之所以强大就是因为它们有一个强大的数据抓取系统。下面我们从0到1逐层展开讲解。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-01-23T15:55:18.000Z">
-<meta property="article:modified_time" content="2022-07-12T06:18:00.000Z">
+<meta property="article:modified_time" content="2025-12-13T12:15:23.488Z">
 <meta property="article:author" content="Peter Chiang">
 <meta property="article:tag" content="爬虫">
 <meta name="twitter:card" content="summary">
@@ -230,7 +230,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-12 14:18:00" itemprop="dateModified" datetime="2022-07-12T14:18:00+08:00">2022-07-12</time>
+                <time title="修改时间：2025-12-13 20:15:23" itemprop="dateModified" datetime="2025-12-13T20:15:23+08:00">2025-12-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -263,21 +263,22 @@
         <blockquote>
 <p>写这篇博客，一来是整理我最近一两个月的数据抓取经验，二来是帮助新手快速入门爬虫。听到爬虫这个词很多人可能会联想到谷歌，百度，必应等搜索引擎，它们拥有强大的数据检索能力，为我们查找资料提供了极大的帮助。这些搜索引擎之所以强大就是因为它们有一个强大的数据抓取系统。下面我们从0到1逐层展开讲解。</p>
 </blockquote>
-<h1 id="基础"><a class="markdownIt-Anchor" href="#基础"></a> 基础</h1>
+<span id="more"></span>
+<h1>基础</h1>
 <p>其实爬虫很简单，归结起来就是下面两个步骤：</p>
 <ol>
 <li>获取网页源代码</li>
 <li>解析源代码获取需要的信息</li>
 </ol>
-<h2 id="获取网页源代码"><a class="markdownIt-Anchor" href="#获取网页源代码"></a> 获取网页源代码</h2>
+<h2 id="获取网页源代码">获取网页源代码</h2>
 <p>在Python3中，获取网页源代码通常有两种方式：第一种是通过Python3自带的urllib库中的request.urlopen函数来请求网页源代码；第二种方式也是最常使用的方式就是使用requests库来实现网页的抓取。</p>
-<h3 id="urllib"><a class="markdownIt-Anchor" href="#urllib"></a> urllib</h3>
+<h3 id="urllib">urllib</h3>
 <p>首先我先来简单的介绍一下urllib库请求网页的方法：</p>
 <pre><code>from urllib.request import urlopen
 response = urlopen('https://pixabay.com/en/') #抓取全球著名免费矢量图网站pixabay
 html = response.read()
 </code></pre>
-<h3 id="requests"><a class="markdownIt-Anchor" href="#requests"></a> requests</h3>
+<h3 id="requests">requests</h3>
 <p>下面开始介绍本教程获取网页源代码主要使用的工具：requests<br>
 requests的使用很简单和urllib类似：</p>
 <pre><code>import requests
@@ -285,8 +286,7 @@ response = requests.get('https://pixabay.com/en/') #注意一定要加上url前�
 response.encoding = 'utf-8' #设置网页的源代码编码格式为utf-8，你可以根据具体情况设置诸如gbk（国标）等编码格式。
 html = response.text #获取源代码
 </code></pre>
-<span id="more"></span>
-<h2 id="解析html"><a class="markdownIt-Anchor" href="#解析html"></a> 解析HTML</h2>
+<h2 id="解析HTML">解析HTML</h2>
 <p>关于HTML我简要的说明一下：对于整个网页来说，它是使用html标记语言编写的，所以网页中的每一个元素都是一个节点，其中html标签用于包裹整个网页，head标签用于一些不需要可视化的代码编写其中包括网页的标题，引用的css文件和js文件等。而网站的主体被body标签包裹。body标签中有图层标签div（主要的标签）、img标签（图片标签）等。而每个标签都有一些属性比如class(类)、id(编号)等。其中id在整个网页中是唯一指定的，而class属性并不唯一。我们可以通过标签的层次关系以及这些标签的属性来定位我们需要抓取的数据。学习网络爬虫需要掌握一定的网页知识，如果读者欠缺这方面的知识可以前往<a href="http://www.runoob.com/">菜鸟教程</a>学习有关html以及css有关的知识。</p>
 <p>解析HTML或者XML的工具或框架有很多，最常用的有:</p>
 <ol>
@@ -295,7 +295,7 @@ html = response.text #获取源代码
 <li>scrapy：集成爬虫框架</li>
 <li>pyquery：Python中对jquery的实现，对于熟悉前端的人来说非常容易上手。</li>
 </ol>
-<h3 id="beautifulsoup"><a class="markdownIt-Anchor" href="#beautifulsoup"></a> BeautifulSoup</h3>
+<h3 id="BeautifulSoup">BeautifulSoup</h3>
 <p>BeautifulSoup有多种使用方法，对于查找元素可以使用find_all方法，但是笔者习惯使用select方法（css选择器语法）搜索文档。关于css选择器如果读者对前端足够熟悉的话应该能够轻松上手。经常使用到的标签包括div、span、ul、li、img、a等。我们使用点（.）表示标签的class属性，使用井（#）表示标签的id属性。在使用select方法的时候可以通过他们定位标签数据的位置。关于BeautifulSoup的具体使用方法，读者可以前往<a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc.zh/">官方文档</a>学习。</p>
 <p>这里我们以抓取pixabay网站首页图片的url为例：</p>
 <p>对于爬虫我建议大家使用chrome浏览器的控制台对页面进行分析（F12调出控制台）。 打开控制台后，选中Elements选项卡我们可以查看网页源代码，通过对网页的分析我们会发现图片的url为img标签的src属性，而img标签的父标签为a,a标签的父标签为div标签，div的父标签为带有class属性为flex_grid和credits的div标签，而该标签的父标签是id属性为gallery的标签。由于id属性是唯一的我们可以以该标签为源点，查找目标标签。</p>
@@ -331,7 +331,7 @@ https://cdn.pixabay.com/photo/2018/06/28/15/23/soft-fruits-3504149__340.jpg
 https://cdn.pixabay.com/photo/2018/06/28/17/02/water-lily-3504363__340.jpg
 https://cdn.pixabay.com/photo/2018/06/29/01/47/piano-3505109__340.jpg
 </code></pre>
-<h3 id="lxml"><a class="markdownIt-Anchor" href="#lxml"></a> lxml</h3>
+<h3 id="lxml">lxml</h3>
 <p>总的来说使用BeautifulSoup已经能够解决大部分爬虫问题了，但是由于BeautifulSoup的另辟蹊径，独创了一套正则表达式的查询方法导致了爬虫的爬取速度非常的慢，而且BeautifulSoup对于列表项的爬取是非常的糟糕的。但是lxml就不存在着两个问题，lxml由于底层采用c语言代码编写，所以速度上是非常快的。而且由于lxml采用xpath语法解析HTML，对列表项的爬取是非常轻松的。</p>
 <p>关于lxml框架和xpath语法，读者可以参看<a href="https://cuiqingcai.com/2621.html">崔庆才的博客</a>。</p>
 <p>下面使用lxml爬取pixabay网站图片url:</p>
@@ -369,14 +369,14 @@ https://cdn.pixabay.com/photo/2018/06/28/15/23/soft-fruits-3504149__340.jpg
 https://cdn.pixabay.com/photo/2018/06/28/17/02/water-lily-3504363__340.jpg
 https://cdn.pixabay.com/photo/2018/06/29/01/47/piano-3505109__340.jpg
 </code></pre>
-<h1 id="进阶"><a class="markdownIt-Anchor" href="#进阶"></a> 进阶</h1>
-<h2 id="动态数据爬取"><a class="markdownIt-Anchor" href="#动态数据爬取"></a> 动态数据爬取</h2>
+<h1>进阶</h1>
+<h2 id="动态数据爬取">动态数据爬取</h2>
 <p>占位</p>
-<h3 id="百度地图数据爬取"><a class="markdownIt-Anchor" href="#百度地图数据爬取"></a> 百度地图数据爬取</h3>
+<h3 id="百度地图数据爬取">百度地图数据爬取</h3>
 <p>占位</p>
-<h3 id="微博数据爬取实战"><a class="markdownIt-Anchor" href="#微博数据爬取实战"></a> 微博数据爬取实战</h3>
+<h3 id="微博数据爬取实战">微博数据爬取实战</h3>
 <p>占位</p>
-<h3 id="球探网数据爬取"><a class="markdownIt-Anchor" href="#球探网数据爬取"></a> 球探网数据爬取</h3>
+<h3 id="球探网数据爬取">球探网数据爬取</h3>
 <p>占位</p>
 <p>未完待续。。。</p>
 
@@ -482,7 +482,7 @@ https://cdn.pixabay.com/photo/2018/06/29/01/47/piano-3505109__340.jpg
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text"> 基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E7%BD%91%E9%A1%B5%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="nav-number">1.1.</span> <span class="nav-text"> 获取网页源代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#urllib"><span class="nav-number">1.1.1.</span> <span class="nav-text"> urllib</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#requests"><span class="nav-number">1.1.2.</span> <span class="nav-text"> requests</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%9E%90html"><span class="nav-number">1.2.</span> <span class="nav-text"> 解析HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#beautifulsoup"><span class="nav-number">1.2.1.</span> <span class="nav-text"> BeautifulSoup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lxml"><span class="nav-number">1.2.2.</span> <span class="nav-text"> lxml</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6"><span class="nav-number">2.</span> <span class="nav-text"> 进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E6%95%B0%E6%8D%AE%E7%88%AC%E5%8F%96"><span class="nav-number">2.1.</span> <span class="nav-text"> 动态数据爬取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE%E6%95%B0%E6%8D%AE%E7%88%AC%E5%8F%96"><span class="nav-number">2.1.1.</span> <span class="nav-text"> 百度地图数据爬取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AE%E5%8D%9A%E6%95%B0%E6%8D%AE%E7%88%AC%E5%8F%96%E5%AE%9E%E6%88%98"><span class="nav-number">2.1.2.</span> <span class="nav-text"> 微博数据爬取实战</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%90%83%E6%8E%A2%E7%BD%91%E6%95%B0%E6%8D%AE%E7%88%AC%E5%8F%96"><span class="nav-number">2.1.3.</span> <span class="nav-text"> 球探网数据爬取</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E7%BD%91%E9%A1%B5%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="nav-number">1.1.</span> <span class="nav-text">获取网页源代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#urllib"><span class="nav-number">1.1.1.</span> <span class="nav-text">urllib</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#requests"><span class="nav-number">1.1.2.</span> <span class="nav-text">requests</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%9E%90HTML"><span class="nav-number">1.2.</span> <span class="nav-text">解析HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BeautifulSoup"><span class="nav-number">1.2.1.</span> <span class="nav-text">BeautifulSoup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lxml"><span class="nav-number">1.2.2.</span> <span class="nav-text">lxml</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E6%95%B0%E6%8D%AE%E7%88%AC%E5%8F%96"><span class="nav-number">2.1.</span> <span class="nav-text">动态数据爬取</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE%E6%95%B0%E6%8D%AE%E7%88%AC%E5%8F%96"><span class="nav-number">2.1.1.</span> <span class="nav-text">百度地图数据爬取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AE%E5%8D%9A%E6%95%B0%E6%8D%AE%E7%88%AC%E5%8F%96%E5%AE%9E%E6%88%98"><span class="nav-number">2.1.2.</span> <span class="nav-text">微博数据爬取实战</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%90%83%E6%8E%A2%E7%BD%91%E6%95%B0%E6%8D%AE%E7%88%AC%E5%8F%96"><span class="nav-number">2.1.3.</span> <span class="nav-text">球探网数据爬取</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

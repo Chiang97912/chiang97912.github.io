@@ -227,7 +227,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 11:20:40" itemprop="dateModified" datetime="2020-08-01T11:20:40+08:00">2020-08-01</time>
+                <time title="修改时间：2025-12-13 20:16:16" itemprop="dateModified" datetime="2025-12-13T20:16:16+08:00">2025-12-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -254,19 +254,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="定义"><a class="markdownIt-Anchor" href="#定义"></a> 定义</h1>
+          <h1>定义</h1>
 <p>mask矩阵是一个由0和1组成的矩阵。在NLP中，一个常见的问题是输入序列长度不等，而mask可以帮助我们处理。虽然RNN等模型可以处理不定长的输入，但是在实践中，需要对输入中长度较短的句子进行填充，即在句尾填充0占位，转换成固定大小的tensor，方便矩阵操作。</p>
-<p>举个例子：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">case 1: I like cats.</span><br><span class="line">case 2: He does not like cats.</span><br></pre></td></tr></table></figure>
-<p>假设默认的序列长度是5，一般会对case 1做pad处理，变成</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">I like cats &lt;PAD&gt; &lt;PAD&gt;</span><br></pre></td></tr></table></figure>
-<p>在上述例子数字编码后，开始做embedding，而pad也会有embedding向量，但pad本身没有实际意义，参与训练可能还是有害的。因此，有必要维护一个mask tensor来记录哪些是真实的value，上述例子的两个mask如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 1 1 0 0</span><br><span class="line">1 1 1 1 1</span><br></pre></td></tr></table></figure>
-<p>后续再梯度传播中，mask起到了过滤的作用。</p>
-<p>使用TensorFlow实现上述过程：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line">maxlen = <span class="number">5</span></span><br><span class="line">lengths = [[<span class="number">3</span>, <span class="number">5</span>, <span class="number">4</span>], [<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>]]</span><br><span class="line">mask = tf.cast(tf.sequence_mask(lengths, maxlen), tf.float32)</span><br><span class="line">sess = tf.Session()</span><br><span class="line">mask = sess.run(mask)</span><br><span class="line"><span class="built_in">print</span>(mask)</span><br></pre></td></tr></table></figure>
-<p>运行结果：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[[[1. 1. 1. 0. 0.]</span><br><span class="line">  [1. 1. 1. 1. 1.]</span><br><span class="line">  [1. 1. 1. 1. 0.]]</span><br><span class="line"></span><br><span class="line"> [[1. 0. 0. 0. 0.]</span><br><span class="line">  [1. 1. 1. 0. 0.]</span><br><span class="line">  [1. 1. 0. 0. 0.]]]</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/08/01/Mask%E7%9F%A9%E9%98%B5%E5%9C%A8%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/#more" rel="contents">
@@ -324,7 +313,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 11:20:40" itemprop="dateModified" datetime="2020-08-01T11:20:40+08:00">2020-08-01</time>
+                <time title="修改时间：2025-12-13 20:16:43" itemprop="dateModified" datetime="2025-12-13T20:16:43+08:00">2025-12-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -347,23 +336,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="基本操作"><a class="markdownIt-Anchor" href="#基本操作"></a> 基本操作</h1>
-<h2 id="git基本配置git-config"><a class="markdownIt-Anchor" href="#git基本配置git-config"></a> Git基本配置（git config）</h2>
+          <h1>基本操作</h1>
+<h2 id="Git基本配置（git-config）">Git基本配置（git config）</h2>
 <p>git config可以配置git的参数，可以使用<code>git config --list</code>查看已经配置的git参数。其中有三个级别的保存位置，–system、–global、–local，分别表示所有用户（本系统）、当前用户（全局）、本地配置（当前目录），默认使用–local。</p>
-<p><strong>配置用户名及邮箱</strong><br>
-在使用Git提交前，必须配置用户名和邮箱，这些信息会永久保存到历史记录中。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;Peter&quot;</span><br><span class="line">git config --global user.email Peter@gmail.com</span><br></pre></td></tr></table></figure>
-<ol>
-<li>
-<p><strong>创建Git仓库（git init）</strong></p>
-<p>可以直接调用<code>git init</code>初始化当前目录，即创建Git仓库。</p>
-</li>
-<li>
-<p><strong>获取Git仓库（git clone）</strong></p>
-<p>如果需要克隆远程仓库，可以使用<code>git clone</code>，比如：</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git  clone https://github.com/tensorflow/tensorflow.git</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/03/24/Git%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95/#more" rel="contents">
@@ -421,7 +396,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-12 14:14:13" itemprop="dateModified" datetime="2022-07-12T14:14:13+08:00">2022-07-12</time>
+                <time title="修改时间：2025-12-13 20:14:18" itemprop="dateModified" datetime="2025-12-13T20:14:18+08:00">2025-12-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -445,13 +420,6 @@
 
       
           <p>在机器学习或者神经网络编程过程中，我们的运算对象通常是矩阵，而常用的矩阵操作就是点乘(dot product)和元素相乘(elementwise multiplication)。学过线性代数的读者肯定对点乘不会陌生，但是元素相乘就不一定知道了。其实elementwise multiplication就是将两个shape一样的矩阵按照对应元素相乘。</p>
-<h2 id="点乘matmul"><a class="markdownIt-Anchor" href="#点乘matmul"></a> 点乘matmul</h2>
-<p>在tensorflow中的点乘使用matmul方法，其中matmul分两种情况。</p>
-<p>首先我们通过一个例子来了解matmul方法的使用 ：<br>
-代码示例:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot; 2-D &quot;&quot;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;2-D:&quot;</span>)</span><br><span class="line">sess = tf.Session()</span><br><span class="line">a = tf.constant([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], shape=[<span class="number">2</span>, <span class="number">3</span>])  <span class="comment"># 2-D tensor `a`</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;a = &quot;</span>, sess.run(a))</span><br><span class="line">b = tf.constant([<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>], shape=[<span class="number">3</span>, <span class="number">2</span>])  <span class="comment"># 2-D tensor `b`</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;b = &quot;</span>, sess.run(a))</span><br><span class="line">c = tf.matmul(a, b)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;c = &quot;</span>, sess.run(c))</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot; 3-D &quot;&quot;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;3-D:&quot;</span>)</span><br><span class="line">a = tf.constant(np.arange(<span class="number">1</span>, <span class="number">13</span>, dtype=np.int32), shape=[<span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>])  <span class="comment"># 3-D tensor `a`</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;a = &quot;</span>, sess.run(a))</span><br><span class="line">b = tf.constant(np.arange(<span class="number">13</span>, <span class="number">25</span>, dtype=np.int32), shape=[<span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>])  <span class="comment"># 3-D tensor `b`</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;b = &quot;</span>, sess.run(a))</span><br><span class="line">c = tf.matmul(a, b)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;c = &quot;</span>, sess.run(c))</span><br><span class="line">sess.close()</span><br></pre></td></tr></table></figure>
-<p>运行结果：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">2-D:</span><br><span class="line">a =  [[1 2 3]</span><br><span class="line">      [4 5 6]]</span><br><span class="line">b =  [[1 2 3]</span><br><span class="line">      [4 5 6]]</span><br><span class="line">c =  [[ 58  64]</span><br><span class="line">      [139 154]]</span><br><span class="line"></span><br><span class="line">3-D:</span><br><span class="line">a =  [[[ 1  2  3]</span><br><span class="line">       [ 4  5  6]]</span><br><span class="line">      [[ 7  8  9]</span><br><span class="line">       [10 11 12]]]</span><br><span class="line">b =  [[[ 1  2  3]</span><br><span class="line">       [ 4  5  6]]</span><br><span class="line">      [[ 7  8  9]</span><br><span class="line">       [10 11 12]]]</span><br><span class="line">c =  [[[ 94 100]</span><br><span class="line">       [229 244]]</span><br><span class="line">      [[508 532]</span><br><span class="line">       [697 730]]]</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/04/09/tensorflow%E4%B8%AD%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95matmul%E5%92%8Cmultiply%E8%AF%A6%E8%A7%A3/#more" rel="contents">
@@ -509,7 +477,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-12-13 16:10:51" itemprop="dateModified" datetime="2025-12-13T16:10:51+08:00">2025-12-13</time>
+                <time title="修改时间：2025-12-13 20:19:22" itemprop="dateModified" datetime="2025-12-13T20:19:22+08:00">2025-12-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -532,34 +500,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="混淆矩阵"><a class="markdownIt-Anchor" href="#混淆矩阵"></a> 混淆矩阵</h2>
-<p>混淆矩阵（confusion matrix）如下所示：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">真实\预测</th>
-<th style="text-align:center">正例</th>
-<th style="text-align:center">反例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><strong>正例</strong></td>
-<td style="text-align:center">TP(真正例)</td>
-<td style="text-align:center">FN(假反例)</td>
-</tr>
-<tr>
-<td style="text-align:center"><strong>反例</strong></td>
-<td style="text-align:center">FP(假正例)</td>
-<td style="text-align:center">TN(真反例)</td>
-</tr>
-</tbody>
-</table>
-<p>TP: 将正例预测为正例（预测正确）；</p>
-<p>FN: 将正例预测为负例（预测错误）；</p>
-<p>FP: 将负例预测为正例（预测错误）；</p>
-<p>TN: 将负例预测为负例（预测正确）。</p>
-<p>正例包括 TP、FN；反例包括 TN、FP</p>
+          <h2 id="混淆矩阵">混淆矩阵</h2>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/01/10/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95%E5%8F%8A%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/#more" rel="contents">
@@ -617,7 +558,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 11:20:40" itemprop="dateModified" datetime="2020-08-01T11:20:40+08:00">2020-08-01</time>
+                <time title="修改时间：2025-12-13 20:17:39" itemprop="dateModified" datetime="2025-12-13T20:17:39+08:00">2025-12-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -640,14 +581,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
+          <h2 id="前言">前言</h2>
 <p>Gogs是一个类似于Gitlab的开源Git服务，它具有易安装、跨平台、轻量级等特点。相比于Gitlab它的资源占有率极低，对于个人开发者或者小型团队是非常实用的一款Git服务。</p>
-<h2 id="创建系统用户"><a class="markdownIt-Anchor" href="#创建系统用户"></a> 创建系统用户</h2>
-<p>创建新的系统用户 “git”，并切换为 “git” 用户:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo useradd -m git</span><br><span class="line">sudo su - git</span><br></pre></td></tr></table></figure>
-<h2 id="创建数据库"><a class="markdownIt-Anchor" href="#创建数据库"></a> 创建数据库</h2>
-<p>创建新的数据库并命名为gogs：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt;create database gogs;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/12/30/%E8%BD%BB%E9%87%8F%E7%BA%A7Git%E6%9C%8D%E5%8A%A1Gogs%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/#more" rel="contents">
@@ -705,7 +640,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 11:20:40" itemprop="dateModified" datetime="2020-08-01T11:20:40+08:00">2020-08-01</time>
+                <time title="修改时间：2025-12-13 20:15:59" itemprop="dateModified" datetime="2025-12-13T20:15:59+08:00">2025-12-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -728,13 +663,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="pyinstaller基本使用方法"><a class="markdownIt-Anchor" href="#pyinstaller基本使用方法"></a> PyInstaller基本使用方法</h1>
+          <h1>PyInstaller基本使用方法</h1>
 <p>下面列举几个常见的可选参数：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">pyinstaller [options] my_script.py</span><br><span class="line">[options]:</span><br><span class="line">	-h 显示帮助并退出</span><br><span class="line">	-D 生成一个文件夹，其中包含一个可执行文件（默认）</span><br><span class="line">	-F 生成单个可执行文件</span><br><span class="line">	-w 生成一个无命令行界面的程序</span><br><span class="line">	-i file.ico 指定图标</span><br><span class="line">	--add-data SRC;DEST 在程序中用到的其他（非二进制）文件，不建议用</span><br><span class="line">	--hidden-import MODULENAME 在程序中隐式导入的库，可多次使用</span><br><span class="line">	--exclude-module MODULENAME 不希望导入的库，可多次使用</span><br></pre></td></tr></table></figure>
 <p>更详细的使用方法可以参看<a href="https://pyinstaller.readthedocs.io/en/stable/">官方手册</a>，本文不再赘述。</p>
-<h1 id="问题打包后程序体积太大"><a class="markdownIt-Anchor" href="#问题打包后程序体积太大"></a> 问题：打包后程序体积太大</h1>
-<p>由于笔者使用的是Anaconda作为Python环境，最近有个项目需要将Python代码打包成可执行文件。在之前的需求中没有使用科学计算库（例如numpy、pandas等）所以打包出来的结果也就10M左右，完全可以接受。但是最近在项目中使用了numpy等科学计算库之后，程序打包的结果接近1G左右，这样的打包结果简直令人窒息。这里主要有两个解决方案：1. 使用虚拟环境打包 2. 使用纯净版本的Python打包</p>
-<p>推荐使用第二种方法。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/08/25/Pyinstaller%E6%89%93%E5%8C%85Python%E7%A8%8B%E5%BA%8F%E6%94%BB%E7%95%A5/#more" rel="contents">
@@ -792,7 +724,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-03 19:50:03" itemprop="dateModified" datetime="2020-09-03T19:50:03+08:00">2020-09-03</time>
+                <time title="修改时间：2025-12-13 20:18:36" itemprop="dateModified" datetime="2025-12-13T20:18:36+08:00">2025-12-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -815,101 +747,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="windows环境"><a class="markdownIt-Anchor" href="#windows环境"></a> Windows环境</h1>
-<h2 id="插件管理器"><a class="markdownIt-Anchor" href="#插件管理器"></a> 插件管理器</h2>
+          <h1>Windows环境</h1>
+<h2 id="插件管理器">插件管理器</h2>
 <p>VIM的插件管理器主要有vim-plug和vundle</p>
-<h2 id="vim-plug"><a class="markdownIt-Anchor" href="#vim-plug"></a> Vim-plug</h2>
-<ol>
-<li>
-<p>首先下载vim-plug，可以去<a href="https://github.com/junegunn/vim-plug">github</a>下载</p>
-</li>
-<li>
-<p>下载完成后解压压缩包将plug.vim复制到vim安装目录下的autoload文件夹下，即可完成vim-plug的安装。</p>
-</li>
-<li>
-<p>使用管理员身份运行gvim,，然后点击gvim的“编辑”——“启动设定”，打开_vimrc配置文件。</p>
-</li>
-</ol>
-<h3 id="插件安装示例"><a class="markdownIt-Anchor" href="#插件安装示例"></a> 插件安装示例</h3>
-<p>在_vimrc中添加如下的内容，这里以vim-plug下载<strong>nerdtree</strong>插件为例。设置完成后保存设置。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">call plug#begin(&#x27;~/.vim/plugged&#x27;) &quot;插件保存的目录</span><br><span class="line">Plug &#x27;scrooloose/nerdtree&#x27;, &#123;&#x27;on&#x27;: &#x27;NERDTreeToggle&#x27;&#125;  &quot;NERDTree插件</span><br><span class="line">call plug#end()</span><br></pre></td></tr></table></figure>
-<h3 id="常用操作"><a class="markdownIt-Anchor" href="#常用操作"></a> 常用操作</h3>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>:PlugStatus</td>
-<td>查看插件安装状态</td>
-</tr>
-<tr>
-<td>:PlugInstall</td>
-<td>安装在_vimrc中配置的插件。注意命令的大小写，执行后vim-plug会自动克隆并安装插件</td>
-</tr>
-<tr>
-<td>:PlugUpdate</td>
-<td>更新插件</td>
-</tr>
-<tr>
-<td>:PlugClean</td>
-<td>清理插件（需要先在_vimrc中删除或注释）</td>
-</tr>
-<tr>
-<td>:PlugUpgrade</td>
-<td>更新vim-plug</td>
-</tr>
-</tbody>
-</table>
-<h2 id="vundle"><a class="markdownIt-Anchor" href="#vundle"></a> Vundle</h2>
-<ol>
-<li>
-<p>首先下载vundle，可以去<a href="https://github.com/VundleVim/Vundle.vim">github</a>下载</p>
-</li>
-<li>
-<p>下载完成后解压压缩包到vim安装目录下的bundle文件夹下（没有就新建），即可完成vundle的安装。</p>
-</li>
-<li>
-<p>使用管理员身份运行gvim,，然后点击gvim的“编辑”——“启动设定”，打开_vimrc配置文件。</p>
-</li>
-</ol>
-<h3 id="插件安装示例-2"><a class="markdownIt-Anchor" href="#插件安装示例-2"></a> 插件安装示例</h3>
-<p>在_vimrc中添加如下的内容，这里以vundle下载<strong>nerdtree</strong>插件为例。设置完成后保存设置。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">set rtp+=~/.vim/bundle/Vundle.vim</span><br><span class="line">call vundle#begin()</span><br><span class="line">Plugin &#x27;VundleVim/Vundle.vim&#x27;</span><br><span class="line">Plugin &#x27;scrooloose/nerdtree&#x27;</span><br><span class="line">call vundle#end()</span><br></pre></td></tr></table></figure>
-<h3 id="常用操作-2"><a class="markdownIt-Anchor" href="#常用操作-2"></a> 常用操作</h3>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>:PluginList</td>
-<td>查看插件安装状态</td>
-</tr>
-<tr>
-<td>:PluginInstall</td>
-<td>安装在_vimrc中配置的插件。注意命令的大小写，执行后vundle会自动克隆并安装插件</td>
-</tr>
-<tr>
-<td>:PluginUpdate</td>
-<td>更新插件</td>
-</tr>
-<tr>
-<td>:PluginClean</td>
-<td>清理插件（需要先在_vimrc中删除或注释）</td>
-</tr>
-<tr>
-<td>:PluginSearch</td>
-<td>搜索插件，例如:PluginSearch xml可以搜到xml相关的插件</td>
-</tr>
-</tbody>
-</table>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/08/01/%E4%BD%BF%E7%94%A8VIM%E4%BD%9C%E4%B8%BAIDE/#more" rel="contents">
@@ -967,7 +807,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 11:20:40" itemprop="dateModified" datetime="2020-08-01T11:20:40+08:00">2020-08-01</time>
+                <time title="修改时间：2025-12-13 20:14:34" itemprop="dateModified" datetime="2025-12-13T20:14:34+08:00">2025-12-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -990,7 +830,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="创建变量"><a class="markdownIt-Anchor" href="#创建变量"></a> 创建变量</h2>
+          <h2 id="创建变量">创建变量</h2>
 <p>Tensorflow创建变量有两种方式：</p>
 <ol>
 <li>tf.get_variable()</li>
@@ -998,9 +838,6 @@
 </ol>
 <p>它们的区别如下：</p>
 <p>在 tf.name_scope下时，tf.get_variable()创建的变量名不受 name_scope 的影响，而且在未指定共享变量时，如果重名会报错，tf.Variable()会自动检测有没有变量重名，如果有则会自行处理。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import tensorflow as tf</span><br><span class="line"></span><br><span class="line">with tf.name_scope(&#x27;name_scope_x&#x27;):</span><br><span class="line">    var1 = tf.get_variable(name=&#x27;var1&#x27;, shape=[1], dtype=tf.float32)</span><br><span class="line">    var3 = tf.Variable(name=&#x27;var2&#x27;, initial_value=[2], dtype=tf.float32)</span><br><span class="line">    var4 = tf.Variable(name=&#x27;var2&#x27;, initial_value=[2], dtype=tf.float32)</span><br><span class="line"></span><br><span class="line">with tf.Session() as sess:</span><br><span class="line">    sess.run(tf.global_variables_initializer())</span><br><span class="line">    print(var1.name, sess.run(var1))</span><br><span class="line">    print(var3.name, sess.run(var3))</span><br><span class="line">    print(var4.name, sess.run(var4))</span><br><span class="line"># 输出结果：</span><br><span class="line"># var1:0 [-0.30036557]   可以看到前面不含有指定的&#x27;name_scope_x&#x27;</span><br><span class="line"># name_scope_x/var2:0 [ 2.]</span><br><span class="line"># name_scope_x/var2_1:0 [ 2.]  可以看到变量名自行变成了&#x27;var2_1&#x27;，避免了和&#x27;var2&#x27;冲突</span><br></pre></td></tr></table></figure>
-<p>如果使用tf.get_variable()创建变量，且没有设置共享变量，重名时会报错</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import tensorflow as tf</span><br><span class="line"></span><br><span class="line">with tf.name_scope(&#x27;name_scope_1&#x27;):</span><br><span class="line">    var1 = tf.get_variable(name=&#x27;var1&#x27;, shape=[1], dtype=tf.float32)</span><br><span class="line">    var2 = tf.get_variable(name=&#x27;var1&#x27;, shape=[1], dtype=tf.float32)</span><br><span class="line">with tf.Session() as sess:</span><br><span class="line">    sess.run(tf.global_variables_initializer())</span><br><span class="line">    print(var1.name, sess.run(var1))</span><br><span class="line">    print(var2.name, sess.run(var2))</span><br><span class="line"></span><br><span class="line"># ValueError: Variable var1 already exists, disallowed. Did you mean </span><br><span class="line"># to set reuse=True in VarScope? Originally defined at:</span><br><span class="line"># var1 = tf.get_variable(name=&#x27;var1&#x27;, shape=[1], dtype=tf.float32)</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2019/02/25/tensorflow%E5%85%B1%E4%BA%AB%E5%8F%98%E9%87%8F%E6%9C%BA%E5%88%B6%E7%90%86%E8%A7%A3%E4%B8%8E%E5%BA%94%E7%94%A8/#more" rel="contents">
@@ -1058,7 +895,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 11:20:40" itemprop="dateModified" datetime="2020-08-01T11:20:40+08:00">2020-08-01</time>
+                <time title="修改时间：2025-12-13 20:14:03" itemprop="dateModified" datetime="2025-12-13T20:14:03+08:00">2025-12-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1084,18 +921,6 @@
           <blockquote>
 <p>首先声明笔者使用的服务器是Ubuntu16.04，数据库安装的是Mysql 5.7。初始的mysql默认字符集是latin1，如果向数据库中插入中文就会出现乱码，下面我们通过修改配置文件的方式修改mysql的默认编码。</p>
 </blockquote>
-<h1 id="修改配置文件"><a class="markdownIt-Anchor" href="#修改配置文件"></a> 修改配置文件</h1>
-<h2 id="修改mysqld"><a class="markdownIt-Anchor" href="#修改mysqld"></a> 修改[mysqld]</h2>
-<p>找到文件/etc/mysql/mysql.conf.d/mysqld.cnf 中的[mysqld]并在其最后面追加如下代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">character-set-server=utf8</span><br></pre></td></tr></table></figure>
-<h2 id="修改mysql"><a class="markdownIt-Anchor" href="#修改mysql"></a> 修改[mysql]</h2>
-<p>找到文件/etc/mysql/conf.d/mysql.cnf中的[mysql]并在其最后面追加如下代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">default-character-set=utf8</span><br></pre></td></tr></table></figure>
-<h2 id="修改client"><a class="markdownIt-Anchor" href="#修改client"></a> 修改[client]</h2>
-<p>找到文件/etc/mysql/debian.cnf中的[client]并在其最后面追加如下代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">default-character-set=utf8</span><br></pre></td></tr></table></figure>
-<h1 id="重启mysql"><a class="markdownIt-Anchor" href="#重启mysql"></a> 重启MYSQL</h1>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysql restart</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/12/09/Ubuntu%E7%8E%AF%E5%A2%83MYSQL%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E4%BF%AE%E5%A4%8D/#more" rel="contents">
@@ -1153,7 +978,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 11:20:40" itemprop="dateModified" datetime="2020-08-01T11:20:40+08:00">2020-08-01</time>
+                <time title="修改时间：2025-12-13 20:16:28" itemprop="dateModified" datetime="2025-12-13T20:16:28+08:00">2025-12-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1177,17 +1002,6 @@
 
       
           <p>首先声明笔者使用的服务器是Ubuntu16.04。下面正式进入配置教程：</p>
-<h1 id="lamp环境搭建"><a class="markdownIt-Anchor" href="#lamp环境搭建"></a> LAMP环境搭建</h1>
-<h2 id="安装apache2"><a class="markdownIt-Anchor" href="#安装apache2"></a> 安装Apache2</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get  install apache2</span><br></pre></td></tr></table></figure>
-<p>检查apache2是否安装成功</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apache2 –v</span><br></pre></td></tr></table></figure>
-<h2 id="安装php7"><a class="markdownIt-Anchor" href="#安装php7"></a> 安装PHP7</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install php</span><br></pre></td></tr></table></figure>
-<p>查看PHP版本并检查PHP是否按照成功</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php –v</span><br></pre></td></tr></table></figure>
-<h2 id="安装mysql"><a class="markdownIt-Anchor" href="#安装mysql"></a> 安装MYSQL</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-server</span><br><span class="line">sudo apt-get install mysql-client</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/12/04/LAMP%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E4%BB%A5%E5%8F%8AMYSQL%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE%E9%85%8D%E7%BD%AE/#more" rel="contents">

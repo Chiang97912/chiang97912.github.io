@@ -28,7 +28,7 @@
 <meta property="og:description" content="和上一篇文章一样，这篇文章也是我在数学建模中碰到的，如果只是普通数据量的计数问题那么我们不妨使用counter，但是如果数据量达到一定规模，那么我们不得不考虑其他算法来解决问题了。我们这里使用hyperloglog算法来实现大数据量计数问题，这种算法是一种基于统计的计数算法，算法并不一定准确，但是足够快，如果读者将速度放在第一位那么不妨试试这种算法，而且hyperloglog算法准确率逼近100%">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-09-10T07:58:34.000Z">
-<meta property="article:modified_time" content="2020-08-01T03:20:40.000Z">
+<meta property="article:modified_time" content="2025-12-13T12:15:38.079Z">
 <meta property="article:author" content="Peter Chiang">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="算法">
@@ -231,7 +231,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 11:20:40" itemprop="dateModified" datetime="2020-08-01T11:20:40+08:00">2020-08-01</time>
+                <time title="修改时间：2025-12-13 20:15:38" itemprop="dateModified" datetime="2025-12-13T20:15:38+08:00">2025-12-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -262,7 +262,8 @@
 
       
         <p>和上一篇文章一样，这篇文章也是我在数学建模中碰到的，如果只是普通数据量的计数问题那么我们不妨使用counter，但是如果数据量达到一定规模，那么我们不得不考虑其他算法来解决问题了。我们这里使用hyperloglog算法来实现大数据量计数问题，这种算法是一种基于统计的计数算法，算法并不一定准确，但是足够快，如果读者将速度放在第一位那么不妨试试这种算法，而且hyperloglog算法准确率逼近100%，试问1000001和100000又有多大的差距呢，所以这种算法是有一定实用性的。</p>
-<h1 id="代码实现"><a class="markdownIt-Anchor" href="#代码实现"></a> 代码实现</h1>
+<span id="more"></span>
+<h1>代码实现</h1>
 <p>当然作为胶水语言的Python，我们当然不必重复造轮子，这里我们可以直接使用python的bounter库来实现hyperloglog算法计数。</p>
 <p>安装方法：<code>pip install bounter</code></p>
 <p>这里给出bounter在github上的官方教材使用的代码：</p>
@@ -270,7 +271,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from bounter import bounter</span><br><span class="line"></span><br><span class="line">counts = bounter(size_mb=1024)  # use at most 1 GB of RAM</span><br><span class="line">counts.update([u&#x27;a&#x27;, &#x27;few&#x27;, u&#x27;words&#x27;, u&#x27;a&#x27;, u&#x27;few&#x27;, u&#x27;times&#x27;])  # count item frequencies</span><br><span class="line"></span><br><span class="line">print(counts[u&#x27;few&#x27;])  # query the counts</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
 <p><strong>示例二</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">from bounter import bounter</span><br><span class="line"></span><br><span class="line">counts = bounter(size_mb=200)  # default version, unless you specify need_items or need_counts</span><br><span class="line">counts.update([&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;a&#x27;, &#x27;b&#x27;])</span><br><span class="line">print(counts.total(), counts.cardinality())  # total and cardinality still work</span><br><span class="line">(5L, 3)</span><br><span class="line">print(counts[&#x27;a&#x27;])  # individual item frequency still works</span><br><span class="line">2</span><br><span class="line"></span><br><span class="line">print(list(counts))  # iterator returns keys, just like Counter</span><br><span class="line">[u&#x27;b&#x27;, u&#x27;a&#x27;, u&#x27;c&#x27;]</span><br><span class="line">print(list(counts.iteritems()))  # supports iterating over key-count pairs, etc.</span><br><span class="line">[(u&#x27;b&#x27;, 2L), (u&#x27;a&#x27;, 2L), (u&#x27;c&#x27;, 1L)]</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
+
     </div>
 
     
@@ -374,7 +375,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.</span> <span class="nav-text"> 代码实现</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">代码实现</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
