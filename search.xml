@@ -122,26 +122,18 @@
 <p>Transformer的基本结构，通过模型结构图可看出Transformer是由Encoder与Decoder构成：</p>
 <p>左边的部分是编码器Encoder，右边的部分是解码器Decoder，根据不同的任务需要，使用对应的部分，一般编码器部分常用于文本编码分类，解码器部分用于语言模型生成，Encoder和Decoder都包含6个block层，编码器和解码器并不是简单的串联关系。</p>
 <h2 id="编码器encoder"><a class="markdownIt-Anchor" href="#编码器encoder"></a> <strong>编码器Encoder</strong></h2>
+<p>每个编码器由两层结构组成：</p>
 <ul>
-<li>每个编码器由两层结构组成。</li>
 <li>第一层包括：多头自注意力层， 规范化层（LayerNorm）、残差连接。</li>
 <li>第二层包括：前馈全连接层、规范化层（LayerNorm）、残差连接。</li>
 </ul>
 <p>编码器Encoder 由6个相同层block组成，每一层由相同的两部分组成：一个多头注意力层和一个Feed Forward层。这两个部分后面都进行残差连接和LayerNorm归一化 LayerNorm(x +Sublayer(x))。Feed Forward层其实就是简单的MLP层，由两个线性层组成，中间用ReLU函数进行激活。</p>
 <h2 id="解码器decoder"><a class="markdownIt-Anchor" href="#解码器decoder"></a> <strong>解码器Decoder</strong></h2>
+<p>每个解码器由三层结构组成：</p>
 <ul>
-<li>
-<p>每个编码器由三层结构组成。</p>
-</li>
-<li>
-<p>第一层包括：多头自注意力层（Masked Multi-Head Attention）、规范化层（LayerNorm）、残差连接。</p>
-</li>
-<li>
-<p>第二层包含：多头注意力层（Multi-Head Attention）、规范化层（LayerNorm）、残差连接。</p>
-</li>
-<li>
-<p>第三层包含：前馈全连接层、规范化层（LayerNorm）、残差连接。</p>
-</li>
+<li>第一层包括：多头自注意力层（Masked Multi-Head Attention）、规范化层（LayerNorm）、残差连接。</li>
+<li>第二层包含：多头注意力层（Multi-Head Attention）、规范化层（LayerNorm）、残差连接。</li>
+<li>第三层包含：前馈全连接层、规范化层（LayerNorm）、残差连接。</li>
 </ul>
 <p>解码器Decoder 也是由6个相同层组成，每一层由相同的三部分组成：一个<strong>带掩码的多头注意力层</strong>（Masked Multi-Head Attention）、一个<strong>多头交叉注意力层</strong>（Multi-Head Cross Attention）和一个MLP层。与编码器一样都在各部分后添加残差和LayerNorm归一化，<strong>不同的是在多头注意力层中输入的是由编码器输出的key、value和经过带掩码的多头注意力层输出的query。</strong></p>
 <p><strong>Masked Multi-Head Attention：</strong></p>
