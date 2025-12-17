@@ -241,12 +241,26 @@ M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">�
 <p><a href="https://www.zhihu.com/question/404452350/answer/2217828686">https://www.zhihu.com/question/404452350/answer/2217828686</a></p>
 <h1 id="gpt"><a class="markdownIt-Anchor" href="#gpt"></a> <strong>GPT</strong></h1>
 <p>论文：</p>
+<ul>
+<li>
 <p>GPT-1：<a href="https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf">Improving Language Understanding by Generative Pre-Training</a></p>
+</li>
+<li>
 <p>GPT-2：<a href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf">Language Models are Unsupervised Multitask Learners</a></p>
+</li>
+<li>
 <p>GPT-3：<a href="http://arxiv.org/abs/2005.14165">Language Models are Few-Shot Learners</a></p>
+</li>
+</ul>
 <p>源码（PyTorch版本）:</p>
+<ul>
+<li>
 <p><a href="https://github.com/huggingface/transformers/blob/main/src/transformers/models/gpt2/modeling_gpt2.py">https://github.com/huggingface/transformers/blob/main/src/transformers/models/gpt2/modeling_gpt2.py</a></p>
+</li>
+<li>
 <p><a href="https://github.com/graykode/gpt-2-Pytorch/blob/master/GPT2/model.py">https://github.com/graykode/gpt-2-Pytorch/blob/master/GPT2/model.py</a></p>
+</li>
+</ul>
 <h2 id="模型细节"><a class="markdownIt-Anchor" href="#模型细节"></a> <strong>模型细节</strong></h2>
 <h3 id="模型架构"><a class="markdownIt-Anchor" href="#模型架构"></a> <strong>模型架构</strong></h3>
 <img src="/2025/12/13/Transformer%E7%B3%BB%E5%88%97%E6%A8%A1%E5%9E%8B%E7%AC%94%E8%AE%B0/1765639184891.jpg" class="" title="图片">
@@ -304,8 +318,14 @@ P(u) &amp; =\operatorname{softmax}\left(h_n W_e^T\right)
 <h3 id="gpt-3"><a class="markdownIt-Anchor" href="#gpt-3"></a> <strong>GPT-3</strong></h3>
 <p>GPT-3 ：相比GPT-1和GPT-2拥有更大的数据集和更大的模型。</p>
 <p>参考文章：</p>
+<ul>
+<li>
 <p><a href="https://zhuanlan.zhihu.com/p/626494749">https://zhuanlan.zhihu.com/p/626494749</a></p>
+</li>
+<li>
 <p><a href="https://blog.csdn.net/weixin_42426841/article/details/145123776">https://blog.csdn.net/weixin_42426841/article/details/145123776</a></p>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>深度学习</category>
