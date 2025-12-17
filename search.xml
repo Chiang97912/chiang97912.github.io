@@ -124,7 +124,7 @@
 <h2 id="编码器encoder"><a class="markdownIt-Anchor" href="#编码器encoder"></a> <strong>编码器Encoder</strong></h2>
 <ul>
 <li>每个编码器由两层结构组成。</li>
-<li>第一层包括：多头自注意力子层， 规范化层（LayerNorm）、残差连接。</li>
+<li>第一层包括：多头自注意力层， 规范化层（LayerNorm）、残差连接。</li>
 <li>第二层包括：前馈全连接层、规范化层（LayerNorm）、残差连接。</li>
 </ul>
 <p>编码器Encoder 由6个相同层block组成，每一层由相同的两部分组成：一个多头注意力层和一个Feed Forward层。这两个部分后面都进行残差连接和LayerNorm归一化 LayerNorm(x +Sublayer(x))。Feed Forward层其实就是简单的MLP层，由两个线性层组成，中间用ReLU函数进行激活。</p>
@@ -134,10 +134,10 @@
 <p>每个编码器由三层结构组成。</p>
 </li>
 <li>
-<p>第一层包括：多头自注意力子层（Masked Multi-Head Attention）、规范化层（LayerNorm）、残差连接。</p>
+<p>第一层包括：多头自注意力层（Masked Multi-Head Attention）、规范化层（LayerNorm）、残差连接。</p>
 </li>
 <li>
-<p>第二层包含：多头注意力子层（Multi-Head Attention）、规范化层（LayerNorm）、残差连接。</p>
+<p>第二层包含：多头注意力层（Multi-Head Attention）、规范化层（LayerNorm）、残差连接。</p>
 </li>
 <li>
 <p>第三层包含：前馈全连接层、规范化层（LayerNorm）、残差连接。</p>
