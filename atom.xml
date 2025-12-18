@@ -55,11 +55,11 @@
     <link href="http://chiang97912.github.io/2025/12/13/Transformer%E7%B3%BB%E5%88%97%E6%A8%A1%E5%9E%8B%E7%AC%94%E8%AE%B0/"/>
     <id>http://chiang97912.github.io/2025/12/13/Transformer%E7%B3%BB%E5%88%97%E6%A8%A1%E5%9E%8B%E7%AC%94%E8%AE%B0/</id>
     <published>2025-12-13T13:43:50.000Z</published>
-    <updated>2025-12-18T10:27:25.246Z</updated>
+    <updated>2025-12-18T11:37:22.554Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;transformer&quot;&gt;&lt;strong&gt;Transformer&lt;/strong&gt;&lt;/h1&gt;
-&lt;h2 id=&quot;总体架构&quot;&gt;&lt;strong&gt;总体架构&lt;/strong&gt;&lt;/h2&gt;
+    <summary type="html">&lt;h1 id=&quot;transformer&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#transformer&quot;&gt;&lt;/a&gt; &lt;strong&gt;Transformer&lt;/strong&gt;&lt;/h1&gt;
+&lt;h2 id=&quot;总体架构&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#总体架构&quot;&gt;&lt;/a&gt; &lt;strong&gt;总体架构&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;论文：&lt;a href=&quot;https://arxiv.org/pdf/1706.03762&quot;&gt;Attention Is All You Need&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;代码：&lt;a href=&quot;https://github.com/harvardnlp/annotated-transformer/tree/master&quot;&gt;harvardnlp/annotated-transformer&lt;/a&gt;&lt;/p&gt;</summary>
     
@@ -125,7 +125,7 @@
     <updated>2025-12-13T12:17:39.262Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#前言&quot;&gt;&lt;/a&gt; 前言&lt;/h2&gt;
 &lt;p&gt;Gogs是一个类似于Gitlab的开源Git服务，它具有易安装、跨平台、轻量级等特点。相比于Gitlab它的资源占有率极低，对于个人开发者或者小型团队是非常实用的一款Git服务。&lt;/p&gt;</summary>
     
     
@@ -149,7 +149,7 @@
     <updated>2025-12-13T12:15:59.369Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;pyinstaller基本使用方法&quot;&gt;PyInstaller基本使用方法&lt;/h1&gt;
+    <summary type="html">&lt;h1 id=&quot;pyinstaller基本使用方法&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#pyinstaller基本使用方法&quot;&gt;&lt;/a&gt; PyInstaller基本使用方法&lt;/h1&gt;
 &lt;p&gt;下面列举几个常见的可选参数：&lt;/p&gt;
 &lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pyinstaller [options] my_script.py&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;[options]:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	-h 显示帮助并退出&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	-D 生成一个文件夹，其中包含一个可执行文件（默认）&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	-F 生成单个可执行文件&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	-w 生成一个无命令行界面的程序&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	-i file.ico 指定图标&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	--add-data SRC;DEST 在程序中用到的其他（非二进制）文件，不建议用&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	--hidden-import MODULENAME 在程序中隐式导入的库，可多次使用&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	--exclude-module MODULENAME 不希望导入的库，可多次使用&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;更详细的使用方法可以参看&lt;a href=&quot;https://pyinstaller.readthedocs.io/en/stable/&quot;&gt;官方手册&lt;/a&gt;，本文不再赘述。&lt;/p&gt;</summary>
@@ -179,8 +179,8 @@
     <updated>2025-12-13T12:18:36.570Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;windows环境&quot;&gt;Windows环境&lt;/h1&gt;
-&lt;h2 id=&quot;插件管理器&quot;&gt;插件管理器&lt;/h2&gt;
+    <summary type="html">&lt;h1 id=&quot;windows环境&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#windows环境&quot;&gt;&lt;/a&gt; Windows环境&lt;/h1&gt;
+&lt;h2 id=&quot;插件管理器&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#插件管理器&quot;&gt;&lt;/a&gt; 插件管理器&lt;/h2&gt;
 &lt;p&gt;VIM的插件管理器主要有vim-plug和vundle&lt;/p&gt;</summary>
     
     
@@ -204,7 +204,7 @@
     <updated>2025-12-13T14:02:51.261Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;定义&quot;&gt;定义&lt;/h1&gt;
+    <summary type="html">&lt;h1 id=&quot;定义&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#定义&quot;&gt;&lt;/a&gt; 定义&lt;/h1&gt;
 &lt;p&gt;mask矩阵是一个由0和1组成的矩阵。在NLP中，一个常见的问题是输入序列长度不等，而mask可以帮助我们处理。虽然RNN等模型可以处理不定长的输入，但是在实践中，需要对输入中长度较短的句子进行填充，即在句尾填充0占位，转换成固定大小的tensor，方便矩阵操作。&lt;/p&gt;</summary>
     
     
@@ -232,8 +232,8 @@
     <updated>2025-12-13T14:03:07.177Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;基本操作&quot;&gt;基本操作&lt;/h1&gt;
-&lt;h2 id=&quot;git基本配置-git-config&quot;&gt;Git基本配置（git config）&lt;/h2&gt;
+    <summary type="html">&lt;h1 id=&quot;基本操作&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#基本操作&quot;&gt;&lt;/a&gt; 基本操作&lt;/h1&gt;
+&lt;h2 id=&quot;git基本配置git-config&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#git基本配置git-config&quot;&gt;&lt;/a&gt; Git基本配置（git config）&lt;/h2&gt;
 &lt;p&gt;git config可以配置git的参数，可以使用&lt;code&gt;git config --list&lt;/code&gt;查看已经配置的git参数。其中有三个级别的保存位置，–system、–global、–local，分别表示所有用户（本系统）、当前用户（全局）、本地配置（当前目录），默认使用–local。&lt;/p&gt;</summary>
     
     
@@ -253,7 +253,7 @@
     <updated>2025-12-13T12:14:34.008Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;创建变量&quot;&gt;创建变量&lt;/h2&gt;
+    <summary type="html">&lt;h2 id=&quot;创建变量&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#创建变量&quot;&gt;&lt;/a&gt; 创建变量&lt;/h2&gt;
 &lt;p&gt;Tensorflow创建变量有两种方式：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;tf.get_variable()&lt;/li&gt;
@@ -325,7 +325,7 @@
     <updated>2025-12-13T12:16:08.956Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;背景&quot;&gt;背景&lt;/h2&gt;
+    <summary type="html">&lt;h2 id=&quot;背景&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#背景&quot;&gt;&lt;/a&gt; 背景&lt;/h2&gt;
 &lt;p&gt;最近在用PHP写用户登录接口，但是将PHP代码部署到生产环境却发生了错误，用浏览器访问接口产生错误状态码500如下：&lt;/p&gt;
 &lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;HTTP ERROR 500&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;这个错误是由于PHP代码存在错误引起的，但是默认PHP是关闭错误提示的。如果想要知道代码的错误必须先打开PHP的错误显示功能。&lt;/p&gt;</summary>
@@ -414,8 +414,8 @@
     <updated>2025-12-13T12:19:01.049Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;模糊综合评价法原理&quot;&gt;模糊综合评价法原理&lt;/h1&gt;
-&lt;h2 id=&quot;基本思想&quot;&gt;基本思想&lt;/h2&gt;
+    <summary type="html">&lt;h1 id=&quot;模糊综合评价法原理&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#模糊综合评价法原理&quot;&gt;&lt;/a&gt; 模糊综合评价法原理&lt;/h1&gt;
+&lt;h2 id=&quot;基本思想&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#基本思想&quot;&gt;&lt;/a&gt; 基本思想&lt;/h2&gt;
 &lt;p&gt;模糊综合评价法是一种基于模糊数学的综合评价方法。该综合评价法根据模糊数学的&lt;strong&gt;隶属度理论&lt;/strong&gt;把定性评价转化为定量评价，即用模糊数学对受到多种因素制约的事物或对象做出一个总体的评价。它具有结果清晰，系统性强的特点，能较好地解决模糊的、难以量化的问题，适合各种非确定性问题的解决。&lt;/p&gt;</summary>
     
     
@@ -437,7 +437,7 @@
     <updated>2025-12-13T12:17:31.728Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;优化模型&quot;&gt;优化模型&lt;/h1&gt;
+    <summary type="html">&lt;h1 id=&quot;优化模型&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#优化模型&quot;&gt;&lt;/a&gt; 优化模型&lt;/h1&gt;
 &lt;p&gt;优化模型就是给定一个目标函数，然后在约束条件下求出该目标函数的最优值。&lt;/p&gt;</summary>
     
     
@@ -457,7 +457,7 @@
     <updated>2025-12-13T12:18:52.036Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;灰色关联分析基本原理&quot;&gt;灰色关联分析基本原理&lt;/h1&gt;
+    <summary type="html">&lt;h1 id=&quot;灰色关联分析基本原理&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#灰色关联分析基本原理&quot;&gt;&lt;/a&gt; 灰色关联分析基本原理&lt;/h1&gt;
 &lt;p&gt;对于两个系统之间的因素，其随时间或不同对象而变化的关联性大小的度量，称为关联度。而根据因素之间发展趋势的相似或相异程度作为衡量因素间关联程度的方法称为灰色关联分析方法。对于本题衡量客户接受的程度与哪些因素关联度更高，我们可以使用灰色关联分析来衡量购买价格、维护成本、车门数、人员携带能力、行李箱大小、汽车安全性能等调查项和汽车可接受性之间的关联程度。&lt;/p&gt;</summary>
     
     

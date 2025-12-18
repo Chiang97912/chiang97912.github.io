@@ -265,7 +265,7 @@
 <p>插曲是这样的，之前一直在给别人写外包程序，在程序中我使用到了numpy库中的argsort排序方法，这个排序方法十分方便，对可迭代对象进行排序并返回原顺序的索引值。由于程序要传给客户，所以我将代码封装成了exe可执行程序。之前封装出来的程序最多也就40来兆，可是自从我将开发环境切换到anaconda后，封装出来的程序高达200多兆，简直吓死我了。今天客户再次需要这个程序，于是我决定抛弃numpy库，自己实现argsort算法。</p>
 </blockquote>
 <span id="more"></span>
-<h1 id="numpy实现">numpy实现</h1>
+<h1 id="numpy实现"><a class="markdownIt-Anchor" href="#numpy实现"></a> numpy实现</h1>
 <p>首先来看看numpy库中argsort的用法：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">argsort(a, axis=-1, kind=&#x27;quicksort&#x27;, order=None)</span><br></pre></td></tr></table></figure>
 <p>第一个参数是需要排序的可迭代对象，第二个参数是排序的维度，第三个参数是排序的算法，常见的有快排（quicksort）、堆排序（heapsort）以及归并排序（mergesort）。第四个参数是排序的次序。</p>
@@ -273,7 +273,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">li = [1.5, 3, 15, 21, 7, 31, 5]</span><br><span class="line"></span><br><span class="line">indies = np.argsort(li, kind=&#x27;heapsort&#x27;)</span><br><span class="line">print(indies)</span><br></pre></td></tr></table></figure>
 <p>运行结果：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[0 1 6 4 2 3 5]</span><br></pre></td></tr></table></figure>
-<h1 id="原生python实现">原生python实现</h1>
+<h1 id="原生python实现"><a class="markdownIt-Anchor" href="#原生python实现"></a> 原生python实现</h1>
 <p>其实原生python的实现主要是借用python内置函数sorted，但是sorted函数返回的结果是排序的最终结果而不是排序之前的索引值序列。但是我们可以利用sorted函数对字典排序的能力，将列表转换成字典就可以了。列表转字典的方法是先将列表通过enumerate函数转换成枚举型，然后在通过dict函数转换成字典。这样传入的列表就变为一个键为索引值为原值的一个字典了。这样我们再使用sorted函数对字典排序，再返回字典的键就可以了。</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">def argsort(X):</span><br><span class="line">    d = dict(enumerate(X))</span><br><span class="line">    r = dict(sorted(d.items(), key=lambda x:x[1]))</span><br><span class="line">    return list(r.keys())</span><br><span class="line"></span><br><span class="line">li = [1.5, 3, 15, 21, 7, 31, 5]</span><br><span class="line"></span><br><span class="line">indies = argsort(li)</span><br><span class="line">print(indies)</span><br></pre></td></tr></table></figure>
 <p>运行结果：</p>
@@ -382,7 +382,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#numpy%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.</span> <span class="nav-text">numpy实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8E%9F%E7%94%9Fpython%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.</span> <span class="nav-text">原生python实现</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#numpy%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.</span> <span class="nav-text"> numpy实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8E%9F%E7%94%9Fpython%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.</span> <span class="nav-text"> 原生python实现</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -262,9 +262,9 @@
       
         <p>在机器学习或者神经网络编程过程中，我们的运算对象通常是矩阵，而常用的矩阵操作就是点乘(dot product)和元素相乘(elementwise multiplication)。学过线性代数的读者肯定对点乘不会陌生，但是元素相乘就不一定知道了。其实elementwise multiplication就是将两个shape一样的矩阵按照对应元素相乘。</p>
 <span id="more"></span>
-<h2 id="点乘matmul">点乘matmul</h2>
+<h2 id="点乘matmul"><a class="markdownIt-Anchor" href="#点乘matmul"></a> 点乘matmul</h2>
 <p>在tensorflow中的点乘使用matmul方法，其中matmul分两种情况。</p>
-<p>首先我们通过一个例子来了解matmul方法的使用 ：<br>
+<p>首先我们通过一个例子来了解matmul方法的使用 ：<br />
 代码示例:</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot; 2-D &quot;&quot;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;2-D:&quot;</span>)</span><br><span class="line">sess = tf.Session()</span><br><span class="line">a = tf.constant([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], shape=[<span class="number">2</span>, <span class="number">3</span>])  <span class="comment"># 2-D tensor `a`</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;a = &quot;</span>, sess.run(a))</span><br><span class="line">b = tf.constant([<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>], shape=[<span class="number">3</span>, <span class="number">2</span>])  <span class="comment"># 2-D tensor `b`</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;b = &quot;</span>, sess.run(a))</span><br><span class="line">c = tf.matmul(a, b)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;c = &quot;</span>, sess.run(c))</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot; 3-D &quot;&quot;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;3-D:&quot;</span>)</span><br><span class="line">a = tf.constant(np.arange(<span class="number">1</span>, <span class="number">13</span>, dtype=np.int32), shape=[<span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>])  <span class="comment"># 3-D tensor `a`</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;a = &quot;</span>, sess.run(a))</span><br><span class="line">b = tf.constant(np.arange(<span class="number">13</span>, <span class="number">25</span>, dtype=np.int32), shape=[<span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>])  <span class="comment"># 3-D tensor `b`</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;b = &quot;</span>, sess.run(a))</span><br><span class="line">c = tf.matmul(a, b)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;c = &quot;</span>, sess.run(c))</span><br><span class="line">sess.close()</span><br></pre></td></tr></table></figure>
 <p>运行结果：</p>
@@ -273,7 +273,7 @@
 <li>如果做点乘的两个矩阵的shape维度为2维，那么就按照一般矩阵点乘来计算。</li>
 <li>如果点乘的两个矩阵的shape维度为3维，那么我们通常将第一维定义为batch_size，那么matmul方法就会逐个数据的将对应的维度按照第一种情况对两个矩阵做点乘。</li>
 </ol>
-<h2 id="元素相乘multiply">元素相乘multiply</h2>
+<h2 id="元素相乘multiply"><a class="markdownIt-Anchor" href="#元素相乘multiply"></a> 元素相乘multiply</h2>
 <p>两个矩阵中对应元素各自相乘</p>
 <p>例如有矩阵</p>
 <pre><code>M1 = [
@@ -403,7 +403,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%B9%E4%B9%98matmul"><span class="nav-number">1.</span> <span class="nav-text">点乘matmul</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%83%E7%B4%A0%E7%9B%B8%E4%B9%98multiply"><span class="nav-number">2.</span> <span class="nav-text">元素相乘multiply</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%B9%E4%B9%98matmul"><span class="nav-number">1.</span> <span class="nav-text"> 点乘matmul</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%83%E7%B4%A0%E7%9B%B8%E4%B9%98multiply"><span class="nav-number">2.</span> <span class="nav-text"> 元素相乘multiply</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
