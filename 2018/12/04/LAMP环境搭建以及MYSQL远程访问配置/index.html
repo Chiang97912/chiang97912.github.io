@@ -265,36 +265,36 @@
       
         <p>首先声明笔者使用的服务器是Ubuntu16.04。下面正式进入配置教程：</p>
 <span id="more"></span>
-<h1 id="lamp环境搭建"><a class="markdownIt-Anchor" href="#lamp环境搭建"></a> LAMP环境搭建</h1>
-<h2 id="安装apache2"><a class="markdownIt-Anchor" href="#安装apache2"></a> 安装Apache2</h2>
+<h1 id="lamp环境搭建">LAMP环境搭建</h1>
+<h2 id="安装apache2">安装Apache2</h2>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get  install apache2</span><br></pre></td></tr></table></figure>
 <p>检查apache2是否安装成功</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apache2 –v</span><br></pre></td></tr></table></figure>
-<h2 id="安装php7"><a class="markdownIt-Anchor" href="#安装php7"></a> 安装PHP7</h2>
+<h2 id="安装php7">安装PHP7</h2>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install php</span><br></pre></td></tr></table></figure>
 <p>查看PHP版本并检查PHP是否按照成功</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">php –v</span><br></pre></td></tr></table></figure>
-<h2 id="安装mysql"><a class="markdownIt-Anchor" href="#安装mysql"></a> 安装MYSQL</h2>
+<h2 id="安装mysql">安装MYSQL</h2>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt-get install mysql-server</span><br><span class="line">sudo apt-get install mysql-client</span><br></pre></td></tr></table></figure>
-<h2 id="安装配置组件"><a class="markdownIt-Anchor" href="#安装配置组件"></a> 安装配置组件</h2>
+<h2 id="安装配置组件">安装配置组件</h2>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">sudo apt<span class="operator">-</span><span class="keyword">get</span> install libapache2<span class="operator">-</span>mod<span class="operator">-</span>php</span><br><span class="line"></span><br><span class="line">sudo apt<span class="operator">-</span><span class="keyword">get</span> install libapache2<span class="operator">-</span>mod<span class="operator">-</span>auth<span class="operator">-</span>mysql  # 现在这个组件作者以及放弃维护了，因为新版apache以及包含这个模块所实现的功能，可以不用安装</span><br><span class="line"></span><br><span class="line">sudo apt<span class="operator">-</span><span class="keyword">get</span> install php<span class="operator">-</span>mysql</span><br><span class="line"></span><br><span class="line">sudo apt<span class="operator">-</span><span class="keyword">get</span> install php<span class="operator">-</span>gd  # php图形库</span><br></pre></td></tr></table></figure>
-<h2 id="启用mod_rewrite模块"><a class="markdownIt-Anchor" href="#启用mod_rewrite模块"></a> 启用mod_rewrite模块</h2>
+<h2 id="启用mod-rewrite模块">启用mod_rewrite模块</h2>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">service apache2 restart</span><br></pre></td></tr></table></figure>
-<h2 id="重启apache2和mysql"><a class="markdownIt-Anchor" href="#重启apache2和mysql"></a> 重启Apache2和MYSQL</h2>
+<h2 id="重启apache2和mysql">重启Apache2和MYSQL</h2>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo service apache2 restart</span><br><span class="line">sudo service mysql restart</span><br></pre></td></tr></table></figure>
-<h2 id="测试php"><a class="markdownIt-Anchor" href="#测试php"></a> 测试PHP</h2>
+<h2 id="测试php">测试PHP</h2>
 <p>创建一个php文件来测试环境是否安装成功，PHP文件（文件名为test.php）内容：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">    echo phpinfo();</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
 <p>通过IP/test.php查看是否连接成功。</p>
-<h2 id="端口允许"><a class="markdownIt-Anchor" href="#端口允许"></a> 端口允许</h2>
+<h2 id="端口允许">端口允许</h2>
 <p>通过上述步骤我们可能还是不能通过IP地址访问服务器，那是因为阿里云默认是没有开放80端口的，我们需要前往阿里云的控制台将80端口添加到安全组。</p>
-<h1 id="mysql远程访问配置"><a class="markdownIt-Anchor" href="#mysql远程访问配置"></a> MYSQL远程访问配置</h1>
-<h2 id="修改mysql配置"><a class="markdownIt-Anchor" href="#修改mysql配置"></a> 修改MYSQL配置</h2>
+<h1 id="mysql远程访问配置">MYSQL远程访问配置</h1>
+<h2 id="修改mysql配置">修改MYSQL配置</h2>
 <p>我们通过修改MYSQL的配置文件运行允许所有主机访问服务器上的MYSQL数据库：</p>
 <p>使用vim编辑mysql的配置文件/etc/mysql/mysql.conf.d/mysqld.cnf</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim /etc/mysql/mysql.conf.d/mysqld.cnf</span><br></pre></td></tr></table></figure>
 <p>然后修改文件中的bind-address的值为0.0.0.0</p>
-<h2 id="修改mysql用户访问权限"><a class="markdownIt-Anchor" href="#修改mysql用户访问权限"></a> 修改MYSQL用户访问权限</h2>
+<h2 id="修改mysql用户访问权限">修改MYSQL用户访问权限</h2>
 <p>首先进入MYSQL数据库，使用mysql数据库:</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">use mysql;</span><br></pre></td></tr></table></figure>
 <p>然后:</p>
@@ -408,7 +408,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lamp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-number">1.</span> <span class="nav-text"> LAMP环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85apache2"><span class="nav-number">1.1.</span> <span class="nav-text"> 安装Apache2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85php7"><span class="nav-number">1.2.</span> <span class="nav-text"> 安装PHP7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85mysql"><span class="nav-number">1.3.</span> <span class="nav-text"> 安装MYSQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E7%BB%84%E4%BB%B6"><span class="nav-number">1.4.</span> <span class="nav-text"> 安装配置组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E7%94%A8mod_rewrite%E6%A8%A1%E5%9D%97"><span class="nav-number">1.5.</span> <span class="nav-text"> 启用mod_rewrite模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E5%90%AFapache2%E5%92%8Cmysql"><span class="nav-number">1.6.</span> <span class="nav-text"> 重启Apache2和MYSQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95php"><span class="nav-number">1.7.</span> <span class="nav-text"> 测试PHP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AB%AF%E5%8F%A3%E5%85%81%E8%AE%B8"><span class="nav-number">1.8.</span> <span class="nav-text"> 端口允许</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mysql%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text"> MYSQL远程访问配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9mysql%E9%85%8D%E7%BD%AE"><span class="nav-number">2.1.</span> <span class="nav-text"> 修改MYSQL配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9mysql%E7%94%A8%E6%88%B7%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90"><span class="nav-number">2.2.</span> <span class="nav-text"> 修改MYSQL用户访问权限</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lamp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-number">1.</span> <span class="nav-text">LAMP环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85apache2"><span class="nav-number">1.1.</span> <span class="nav-text">安装Apache2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85php7"><span class="nav-number">1.2.</span> <span class="nav-text">安装PHP7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85mysql"><span class="nav-number">1.3.</span> <span class="nav-text">安装MYSQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E7%BB%84%E4%BB%B6"><span class="nav-number">1.4.</span> <span class="nav-text">安装配置组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E7%94%A8mod-rewrite%E6%A8%A1%E5%9D%97"><span class="nav-number">1.5.</span> <span class="nav-text">启用mod_rewrite模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%87%8D%E5%90%AFapache2%E5%92%8Cmysql"><span class="nav-number">1.6.</span> <span class="nav-text">重启Apache2和MYSQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95php"><span class="nav-number">1.7.</span> <span class="nav-text">测试PHP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AB%AF%E5%8F%A3%E5%85%81%E8%AE%B8"><span class="nav-number">1.8.</span> <span class="nav-text">端口允许</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mysql%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">MYSQL远程访问配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9mysql%E9%85%8D%E7%BD%AE"><span class="nav-number">2.1.</span> <span class="nav-text">修改MYSQL配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9mysql%E7%94%A8%E6%88%B7%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90"><span class="nav-number">2.2.</span> <span class="nav-text">修改MYSQL用户访问权限</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -424,7 +424,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
