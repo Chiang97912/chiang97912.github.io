@@ -77,8 +77,8 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Peter's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
+<link rel="alternate" href="/atom.xml" title="Peter's Blog" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
@@ -260,12 +260,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="背景">背景</h2>
+        <h2 id="背景"><a class="markdownIt-Anchor" href="#背景"></a> 背景</h2>
 <p>最近在用PHP写用户登录接口，但是将PHP代码部署到生产环境却发生了错误，用浏览器访问接口产生错误状态码500如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">HTTP ERROR 500</span><br></pre></td></tr></table></figure>
 <p>这个错误是由于PHP代码存在错误引起的，但是默认PHP是关闭错误提示的。如果想要知道代码的错误必须先打开PHP的错误显示功能。</p>
 <span id="more"></span>
-<h2 id="解决方法">解决方法</h2>
+<h2 id="解决方法"><a class="markdownIt-Anchor" href="#解决方法"></a> 解决方法</h2>
 <p>首先声明笔者使用的生产环境是Ubuntu 16.04。</p>
 <p>第一步：先找到PHP的配置文件php.ini文件所在位置，这里笔者的Ubuntu中的php7的php.ini存在于路径/etc/php/7.0/apache2/下面，我们只需要使用vi/vim从上述路径下打开php.ini文件；</p>
 <p>第二步：查找并修改php.ini文件中的display_errors和display_startup_errors中的值为On即可；</p>
@@ -378,7 +378,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">解决方法</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text"> 背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text"> 解决方法</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -394,20 +394,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-count">56</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

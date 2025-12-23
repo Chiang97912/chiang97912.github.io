@@ -79,8 +79,8 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Peter's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
+<link rel="alternate" href="/atom.xml" title="Peter's Blog" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
@@ -264,9 +264,9 @@
       
         <p>数学建模中遇到求最近点对的问题，按理说我们使用朴素法进行暴力求解答案也是可行的，但是由于数据过于庞大，我们最初使用朴素法在计算机上跑了6个小时都没有得到问题的解，最终只得作罢。后来我们利用分治法解决了最近点对问题，具体思路参看<a href="http://apir8181.github.io/algorithm/2014/10/02/closest_pair.html">这里</a>。</p>
 <span id="more"></span>
-<h1 id="分治法">分治法</h1>
+<h1 id="分治法"><a class="markdownIt-Anchor" href="#分治法"></a> 分治法</h1>
 <p>分治法解决最近点对问题的算法过程读者可以参见上文给出的参考博客。分治法的思想就是先将问题分解成一个个小的问题，最后将小问题的答案合并得到问题的解。这其中关键步骤是分解与合并，具体实现方法是使用递归，核心思想是空间换时间。</p>
-<h1 id="代码实现">代码实现</h1>
+<h1 id="代码实现"><a class="markdownIt-Anchor" href="#代码实现"></a> 代码实现</h1>
 <p>上面给出的教程中是使用C++实现的，我这里给出Python实现。</p>
 <p>由于我这里具体的问题是给出经纬度找出最近点对，所以我采用的距离为改进的球面余弦距离。</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">from collections import Counter</span><br><span class="line">from math import sqrt,acos, sin, cos, radians</span><br><span class="line"></span><br><span class="line">def nearest_dot(s):</span><br><span class="line">    mid = int(len(s)/2)</span><br><span class="line">    left = s[0:mid]</span><br><span class="line">    right = s[mid:]</span><br><span class="line">    mid_x = (left[-1][0]+right[0][0])/2.0</span><br><span class="line"></span><br><span class="line">    if len(left) &gt; 2:   lmin = nearest_dot(left)    #左侧部分最近点对</span><br><span class="line">    else:   lmin = left</span><br><span class="line">    if len(right) &gt; 2:   rmin = nearest_dot(right)   #右侧部分最近点对</span><br><span class="line">    else:   rmin = right</span><br><span class="line"></span><br><span class="line">    if len(lmin) &gt;1: dis_l = get_distance(lmin)</span><br><span class="line">    else: dis_l = float(&quot;inf&quot;)</span><br><span class="line">    if len(rmin) &gt;1: dis_r = get_distance(rmin)</span><br><span class="line">    else: dis_r = float(&quot;inf&quot;)</span><br><span class="line"></span><br><span class="line">    d = min(dis_l, dis_r)   #最近点对距离</span><br><span class="line"></span><br><span class="line">    mid_min=[]</span><br><span class="line">    for i in left:</span><br><span class="line">        if mid_x-i[0]&lt;=d :   #如果左侧部分与中间线的距离&lt;=d</span><br><span class="line">            for j in right:</span><br><span class="line">                if abs(i[0]-j[0])&lt;=d and abs(i[1]-j[1])&lt;=d:     #如果右侧部分点在i点的(d,2d)之间</span><br><span class="line">                    if get_distance((i,j))&lt;=d: mid_min.append([i,j])   #ij两点的间距若小于d则加入队列</span><br><span class="line">    if mid_min:</span><br><span class="line">        dic=[]</span><br><span class="line">        for i in mid_min:</span><br><span class="line">            dic.append(&#123;get_distance(i):i&#125;)</span><br><span class="line">        dic.sort(key=lambda x: x.keys())</span><br><span class="line">        return list(dic[0].values())[0]</span><br><span class="line">    elif dis_l&gt;dis_r:</span><br><span class="line">        return rmin</span><br><span class="line">    else:</span><br><span class="line">        return lmin</span><br><span class="line">        </span><br><span class="line"># 求点对的距离</span><br><span class="line">def get_distance(m):</span><br><span class="line">    dx = m[0][1] - m[1][1]  # 经度差值</span><br><span class="line">    dy = m[0][0] - m[1][0]  # 纬度差值</span><br><span class="line">    # b = (lat1 + lat2) / 2.0  # 平均纬度</span><br><span class="line">    # Lx = (a[3] * b*b*b  + a[2]* b*b  + a[1] * b + a[0]) * radians(dx) * 6367000.0  # 东西距离(单位：米)</span><br><span class="line">    Lx = cos(dx) * radians(dx) * 6367000.0  # 东西距离(单位：米)</span><br><span class="line">    Ly = 6367000.0 * radians(dy)  # 南北距离</span><br><span class="line">    return sqrt(Lx * Lx + Ly * Ly)</span><br><span class="line"></span><br><span class="line">def divide_conquer(s):</span><br><span class="line">    s.sort()</span><br><span class="line">    nearest_dots = nearest_dot(s)</span><br><span class="line">    return nearest_dots</span><br></pre></td></tr></table></figure>
@@ -375,7 +375,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E6%B2%BB%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">分治法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.</span> <span class="nav-text">代码实现</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E6%B2%BB%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text"> 分治法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.</span> <span class="nav-text"> 代码实现</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -391,20 +391,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-count">56</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

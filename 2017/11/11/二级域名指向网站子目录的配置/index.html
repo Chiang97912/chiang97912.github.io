@@ -77,8 +77,8 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Peter's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
+<link rel="alternate" href="/atom.xml" title="Peter's Blog" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
@@ -260,11 +260,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="第一步：添加二级域名">第一步：添加二级域名</h1>
+        <h1 id="第一步添加二级域名"><a class="markdownIt-Anchor" href="#第一步添加二级域名"></a> 第一步：添加二级域名</h1>
 <p>首先声明的是，我的wordpress保存在网站的根目录下的wordpress子目录，所以我现在想把wordpress目录指向二级域名blog.figurinn.xyz.经过多次尝试终于成功了。</p>
 <span id="more"></span>
 <p>首先，你需要在你申请域名的服务商那里新增二级域名。如果你是在阿里云申请的域名，那么你需要到阿里云的DNS解析里面找到新增DNS的按钮，纪录类型选择A，然后主机纪录填你想要申请的名称，例如我的就填blog，记录值就是你服务器的IP地址，其他的默认就好了。</p>
-<h1 id="第二步：服务器设置">第二步：服务器设置</h1>
+<h1 id="第二步服务器设置"><a class="markdownIt-Anchor" href="#第二步服务器设置"></a> 第二步：服务器设置</h1>
 <p>这一步你需要在你的网站根目录下增加一个名叫.htaccess的文件，然后填入一下的内容</p>
 <pre><code>	&lt;IfModule mod_rewrite.c&gt;
 	RewriteEngine On
@@ -273,13 +273,13 @@
 	RewriteRule ^(.*)$ /wordpress/$1?Rewrite [L,QSA]
 	&lt;/IfModule&gt;
 </code></pre>
-<p>上面的内容是根据我的网站设定的，你可以根据你的需求进行更改<br>
-如果你此时访问的二级域名不成功的话，很可能你没有开启服务器url重写功能。<br>
-如果这样，你可以按一下步骤打开服务器的url重写功能(以我的ubuntu服务器为例子)<br>
+<p>上面的内容是根据我的网站设定的，你可以根据你的需求进行更改<br />
+如果你此时访问的二级域名不成功的话，很可能你没有开启服务器url重写功能。<br />
+如果这样，你可以按一下步骤打开服务器的url重写功能(以我的ubuntu服务器为例子)<br />
 首先确保/etc/apache2/mods-enabled/rewrite.load文件中的</p>
 <pre><code>	LoadModule rewrite_module /usr/lib/apache2/modules/mod_ rewrite.so
 </code></pre>
-<p>没有被注释掉（如果有#号表示就被注释），如果被注释了取消注释（只需要删除前面的#）即可，然后vim保存退出。<br>
+<p>没有被注释掉（如果有#号表示就被注释），如果被注释了取消注释（只需要删除前面的#）即可，然后vim保存退出。<br />
 然后编辑/etc/apache2/apache2.conf 文件，找到</p>
 <pre><code>&lt;Directory /var/www/&gt;
 Options Indexes FollowSymLinks
@@ -287,10 +287,10 @@ AllowOverride None
 Require all granted
 &lt;/Directory&gt;
 </code></pre>
-<p>然后将AllowOverride None中的None改为All<br>
+<p>然后将AllowOverride None中的None改为All<br />
 到此为止二级域名指向服务器子目录就成功了</p>
-<h1 id="一些问题及解决办法">一些问题及解决办法</h1>
-<p>我通过blog.figurinn.xyz设置二级域名指向子目录成功后，该二级域名可以访问，可是发现当访问某一篇文章时，却发现文章的前缀还是www.figurinn.xyz/wordpress，后来发现是wordpress设置的问题<br>
+<h1 id="一些问题及解决办法"><a class="markdownIt-Anchor" href="#一些问题及解决办法"></a> 一些问题及解决办法</h1>
+<p>我通过blog.figurinn.xyz设置二级域名指向子目录成功后，该二级域名可以访问，可是发现当访问某一篇文章时，却发现文章的前缀还是www.figurinn.xyz/wordpress，后来发现是wordpress设置的问题<br />
 如果你也有同样的问题，你可以进入wordpress后台，然后点击设置，你会发现有“WordPress地址”、“站点地址”，如果你希望访问wordpress中某一篇文章时url的前缀也是你设置的二级域名的话，你只需要将上文提到的两个设置选项设置为你的二级域名即可。</p>
 
     </div>
@@ -395,7 +395,7 @@ Require all granted
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E6%B7%BB%E5%8A%A0%E4%BA%8C%E7%BA%A7%E5%9F%9F%E5%90%8D"><span class="nav-number">1.</span> <span class="nav-text">第一步：添加二级域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">第二步：服务器设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">一些问题及解决办法</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E6%B7%BB%E5%8A%A0%E4%BA%8C%E7%BA%A7%E5%9F%9F%E5%90%8D"><span class="nav-number">1.</span> <span class="nav-text"> 第一步：添加二级域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%AE%BE%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text"> 第二步：服务器设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text"> 一些问题及解决办法</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -411,20 +411,20 @@ Require all granted
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-count">56</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
