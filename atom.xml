@@ -6,7 +6,7 @@
   <link href="http://chiang97912.github.io/atom.xml" rel="self"/>
   
   <link href="http://chiang97912.github.io/"/>
-  <updated>2025-12-23T17:04:46.749Z</updated>
+  <updated>2026-01-11T05:46:03.066Z</updated>
   <id>http://chiang97912.github.io/</id>
   
   <author>
@@ -15,6 +15,64 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>大模型位置编码笔记</title>
+    <link href="http://chiang97912.github.io/2026/01/04/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81%E7%AC%94%E8%AE%B0/"/>
+    <id>http://chiang97912.github.io/2026/01/04/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81%E7%AC%94%E8%AE%B0/</id>
+    <published>2026-01-04T15:21:35.000Z</published>
+    <updated>2026-01-11T05:46:03.066Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;旋转位置编码&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#旋转位置编码&quot;&gt;&lt;/a&gt; 旋转位置编码&lt;/h1&gt;
+&lt;p&gt;论文：&lt;a href=&quot;https://arxiv.org/abs/2104.09864&quot;&gt;RoFormer: Enhanced Transformer with Rotary Position Embedding&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;代码：&lt;a href=&quot;https://github.com/ZhuiyiTechnology/roformer&quot;&gt;https://github.com/ZhuiyiTechnology/roformer&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="大模型" scheme="http://chiang97912.github.io/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
+    
+    
+    <category term="大模型" scheme="http://chiang97912.github.io/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
+    
+    <category term="位置编码" scheme="http://chiang97912.github.io/tags/%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81/"/>
+    
+    <category term="相对位置编码" scheme="http://chiang97912.github.io/tags/%E7%9B%B8%E5%AF%B9%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81/"/>
+    
+    <category term="旋转位置编码" scheme="http://chiang97912.github.io/tags/%E6%97%8B%E8%BD%AC%E4%BD%8D%E7%BD%AE%E7%BC%96%E7%A0%81/"/>
+    
+    <category term="RoPE" scheme="http://chiang97912.github.io/tags/RoPE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>大模型强化学习笔记</title>
+    <link href="http://chiang97912.github.io/2025/12/29/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://chiang97912.github.io/2025/12/29/%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2025-12-29T11:21:42.000Z</published>
+    <updated>2026-01-11T05:53:10.489Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;ppo&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#ppo&quot;&gt;&lt;/a&gt; PPO&lt;/h1&gt;
+&lt;p&gt;论文：&lt;a href=&quot;http://arxiv.org/abs/1707.06347&quot;&gt;Proximal Policy Optimization Algorithms&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;代码：&lt;a href=&quot;https://github.com/CarperAI/trlx/blob/main/trlx/models/modeling_ppo.py#L134&quot;&gt;https://github.com/CarperAI/trlx/blob/main/trlx/models/modeling_ppo.py#L134&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="大模型" scheme="http://chiang97912.github.io/categories/%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
+    
+    
+    <category term="大模型" scheme="http://chiang97912.github.io/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/"/>
+    
+    <category term="强化学习" scheme="http://chiang97912.github.io/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="PPO" scheme="http://chiang97912.github.io/tags/PPO/"/>
+    
+    <category term="GRPO" scheme="http://chiang97912.github.io/tags/GRPO/"/>
+    
+    <category term="DPO" scheme="http://chiang97912.github.io/tags/DPO/"/>
+    
+  </entry>
   
   <entry>
     <title>大模型激活函数</title>
@@ -488,49 +546,6 @@
     <category term="python" scheme="http://chiang97912.github.io/tags/python/"/>
     
     <category term="代码" scheme="http://chiang97912.github.io/tags/%E4%BB%A3%E7%A0%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>模糊综合评价法原理及实现</title>
-    <link href="http://chiang97912.github.io/2018/09/02/%E6%A8%A1%E7%B3%8A%E7%BB%BC%E5%90%88%E8%AF%84%E4%BB%B7%E6%B3%95%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/"/>
-    <id>http://chiang97912.github.io/2018/09/02/%E6%A8%A1%E7%B3%8A%E7%BB%BC%E5%90%88%E8%AF%84%E4%BB%B7%E6%B3%95%E5%8E%9F%E7%90%86%E5%8F%8A%E5%AE%9E%E7%8E%B0/</id>
-    <published>2018-09-02T09:45:12.000Z</published>
-    <updated>2025-12-13T12:19:01.049Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;模糊综合评价法原理&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#模糊综合评价法原理&quot;&gt;&lt;/a&gt; 模糊综合评价法原理&lt;/h1&gt;
-&lt;h2 id=&quot;基本思想&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#基本思想&quot;&gt;&lt;/a&gt; 基本思想&lt;/h2&gt;
-&lt;p&gt;模糊综合评价法是一种基于模糊数学的综合评价方法。该综合评价法根据模糊数学的&lt;strong&gt;隶属度理论&lt;/strong&gt;把定性评价转化为定量评价，即用模糊数学对受到多种因素制约的事物或对象做出一个总体的评价。它具有结果清晰，系统性强的特点，能较好地解决模糊的、难以量化的问题，适合各种非确定性问题的解决。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="数学建模" scheme="http://chiang97912.github.io/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
-    
-    
-    <category term="数学建模" scheme="http://chiang97912.github.io/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
-    
-    <category term="模糊综合评价法" scheme="http://chiang97912.github.io/tags/%E6%A8%A1%E7%B3%8A%E7%BB%BC%E5%90%88%E8%AF%84%E4%BB%B7%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数学建模笔记</title>
-    <link href="http://chiang97912.github.io/2018/08/29/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%AC%94%E8%AE%B0/"/>
-    <id>http://chiang97912.github.io/2018/08/29/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E7%AC%94%E8%AE%B0/</id>
-    <published>2018-08-29T02:08:05.000Z</published>
-    <updated>2025-12-13T12:17:31.728Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;优化模型&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#优化模型&quot;&gt;&lt;/a&gt; 优化模型&lt;/h1&gt;
-&lt;p&gt;优化模型就是给定一个目标函数，然后在约束条件下求出该目标函数的最优值。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="数学建模" scheme="http://chiang97912.github.io/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
-    
-    
-    <category term="数学建模" scheme="http://chiang97912.github.io/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
     
   </entry>
   
